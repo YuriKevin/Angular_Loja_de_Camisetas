@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 4vw;
+}
+.card:hover {
+    transform: scale(1.1); /* Aumenta o tamanho em 10% ao passar o mouse */
+    transition: transform 0.3s ease; /* Transição suave apenas para a propriedade de transformação */
+}
+.carrinho:hover {
+    transform: scale(1.1); /* Aumenta o tamanho em 10% ao passar o mouse */
+    transition: transform 0.3s ease; /* Transição suave apenas para a propriedade de transformação */
+}
+@media (min-width: 768px) {
+
+    .card {
+        width: 18vw;
+        height: 27vw;
+        font-family: 'Lexend', sans-serif;
+        border-radius: 10%;
+        margin-left: 5vw;
+        margin-bottom: 8vw;
+        font-size: 1.2vw;
+        font-family: 'Lexend', sans-serif;
+        margin: 3vw;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        /*5px: Define o deslocamento horizontal da sombra.
+        5px: Define o deslocamento vertical da sombra.
+        10px: Define o desfoque da sombra (quanto maior o valor, mais difusa é a sombra).
+        rgba(0, 0, 0, 0.5): Define a cor da sombra. Neste caso, é uma sombra preta semi-transparente.
+        */
+    }
+    .card img{
+        width: 15vw;
+        height: 15vw;
+        margin-top: 1vw;
+    }
+    .card h3{
+        font-size: 1em;
+    }
+    .card h4{
+        font-size: 1em;
+        color: gray;
+    }
+    .card h5{
+        font-size: 1em;
+        color: #1f796c;
+    }
+    .card > * {
+        margin-left: 1vw; /* Defina a margem desejada à esquerda para os elementos filhos do .card */
+    }
+
+    .carrinho {
+        position: fixed; /* Torna o carrinho um elemento fixo */
+        bottom: 2vw; /* Define a distância do topo da tela (ajuste conforme necessário) */
+        right: 1vw; /* Define a distância da direita da tela (ajuste conforme necessário) */
+        width: 10vw; /* Define a largura do carrinho (ajuste conforme necessário) */
+        height: 10vw;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra do carrinho */
+        z-index: 999; /* Define a ordem de empilhamento (z-index) para que fique acima de outros elementos */
+      }
+      .carrinho img{
+        width: 5vw;
+        height: 5vw;
+    
+      }
+
+}
+
+@media (max-width: 767px) {
+    .card {
+      width: 40%; /* Dois cartões por linha */
+      height: auto; /* Ajuste a altura automaticamente para manter a proporção */
+      font-family: 'Lexend', sans-serif;
+      border-radius: 10%;
+      margin-left: 5vw; /* Espaçamento menor entre os cartões */
+      margin-bottom:5vw; /* Espaçamento menor entre os cartões */
+      font-size: 1vw; /* Tamanho da fonte menor */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+  
+    .card img {
+      width: 80%; /* Redimensiona a imagem para se ajustar melhor a dois cartões por linha */
+      height: auto; /* Ajuste a altura automaticamente para manter a proporção */
+      margin-top: 3vw;
+    }
+    .card h3{
+        font-size: 3em;
+    }
+    .card h4{
+        font-size: 3em;
+        color: gray;
+    }
+    .card h5{
+        font-size: 3em;
+        color: #1f796c;
+    }
+    .card > * {
+        margin-left: 2em; /* Defina a margem desejada à esquerda para os elementos filhos do .card */
+    }
+     .carrinho {
+
+        position: fixed; /* Torna o carrinho um elemento fixo */
+        bottom: 2vw; /* Define a distância do topo da tela (ajuste conforme necessário) */
+        right: 1vw; /* Define a distância da direita da tela (ajuste conforme necessário) */
+        width: 20vw; /* Define a largura do carrinho (ajuste conforme necessário) */
+        height: 20vw;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra do carrinho */
+        z-index: 999; /* Define a ordem de empilhamento (z-index) para que fique acima de outros elementos */
+      }
+      .carrinho img{
+        width: 10vw;
+        height: 10vw;
+    
+      }
+  }
+    
