@@ -89,23 +89,23 @@ main{
       margin-top: 3vw;
     }
     .card h3{
-        font-size: 3em;
+        font-size: 4vw;
     }
     .card h4{
-        font-size: 3em;
+        font-size: 4vw;
         color: gray;
     }
     .card h5{
-        font-size: 3em;
+        font-size: 4vw;
         color: #1f796c;
     }
     .card > * {
-        margin-left: 2em; /* Defina a margem desejada à esquerda para os elementos filhos do .card */
+        margin-left: 3vw; /* Defina a margem desejada à esquerda para os elementos filhos do .card */
     }
      .carrinho {
 
         position: fixed; /* Torna o carrinho um elemento fixo */
-        bottom: 2vw; /* Define a distância do topo da tela (ajuste conforme necessário) */
+        bottom: 7vw; /* Define a distância do topo da tela (ajuste conforme necessário) */
         right: 1vw; /* Define a distância da direita da tela (ajuste conforme necessário) */
         width: 20vw; /* Define a largura do carrinho (ajuste conforme necessário) */
         height: 20vw;
