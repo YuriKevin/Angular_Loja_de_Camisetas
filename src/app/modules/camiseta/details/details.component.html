@@ -1,0 +1,19 @@
+<app-header></app-header>
+<main>
+    <div class="card">
+      <img [src]="camiseta.imagem" alt="{{ camiseta.clube }}">
+      <div>
+        <h3>{{ camiseta.clube }}</h3>
+        <h4>{{ camiseta.ano }}</h4>
+        <h5>R$ {{ camiseta.valor }}</h5>
+        <button class="add">
+          <h1>Adicionar ao carrinho</h1>
+         </button>
+      </div>
+    </div>
+    <button class="carrinho">
+      <img src="../../../../assets/images/carrinho-de-compras.png" alt="Carrinho">
+    </button>
+    
+  </main>
+<app-footer></app-footer>

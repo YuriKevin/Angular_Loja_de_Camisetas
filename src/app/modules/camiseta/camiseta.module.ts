@@ -6,12 +6,15 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from 'src/app/core/header/header.component';
 import { FooterComponent } from 'src/app/core/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DetailsComponent } from './details/details.component';
+
 
 @NgModule({
   declarations: [
     HomeComponent, 
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    DetailsComponent
   ],
   imports: [
     CommonModule,

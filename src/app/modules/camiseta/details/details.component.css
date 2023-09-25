@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 2vw;
+}
+.carrinho:hover {
+    transform: scale(1.1); /* Aumenta o tamanho em 10% ao passar o mouse */
+    transition: transform 0.3s ease; /* Transição suave apenas para a propriedade de transformação */
+}
+
+
+@media (min-width: 767px) {
+    div{
+        display: flex;
+        align-items: center;
+    
+    }
+    div> * {
+    display:block;
+    }
+    .card {
+        margin: auto;
+        width: 60vw;
+        height: 38vw;
+        font-family: 'Lexend', sans-serif;
+        font-size: 1.2vh;
+        font-family: 'Lexend', sans-serif;
+    }
+    .card img{
+        display: block;
+        width: 35vw;
+        height: 35vw;
+    }
+    .card h3{
+        font-size: 2vw;
+    }
+    .card h4{
+        font-size: 2vw;
+        color: gray;
+    }
+    .card h5{
+        font-size: 2vw;
+        color: #1f796c;
+    }
+    .card > * {
+        margin-left: 1vw; /* Defina a margem desejada à esquerda para os elementos filhos do .card */
+    }
+
+    .carrinho {
+        margin-right: 3vw;
+        margin-bottom: 4vw;
+        position: fixed; /* Torna o carrinho um elemento fixo */
+        bottom: 2vh; /* Define a distância do topo da tela (ajuste conforme necessário) */
+        right: 1vh; /* Define a distância da direita da tela (ajuste conforme necessário) */
+        width: 10vh; /* Define a largura do carrinho (ajuste conforme necessário) */
+        height: 10vh;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra do carrinho */
+        z-index: 999; /* Define a ordem de empilhamento (z-index) para que fique acima de outros elementos */
+      }
+      .carrinho img{
+        width: 5vh;
+        height: 5vh;
+    
+      }
+
+
+.add:hover {
+    transform: scale(1.1); /* Aumenta o tamanho em 10% ao passar o mouse */
+    transition: transform 0.3s ease; /* Transição suave apenas para a propriedade de transformação */
+}
+.add{
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra do carrinho */
+    width: 15vw;
+    height: 3vw;
+    font-size: 0.5vw;
+}
+
+}
+@media (max-width: 767px) {
+    .card {
+        margin: auto;
+        width: 95vw;
+        height: 140vw;
+        font-family: 'Lexend', sans-serif;
+        font-size: 1.2vh;
+        font-family: 'Lexend', sans-serif;
+    }
+    .card img{
+        margin: auto;
+        display: block;
+        width: 70vw;
+        height: 70vw;
+    }
+    .card h3{
+        font-size: 5vw;
+    }
+    .card h4{
+        font-size: 5vw;
+        color: gray;
+    }
+    .card h5{
+        font-size: 5vw;
+        color: #1f796c;
+    }
+    .card > * {
+        margin-left: 1vw; /* Defina a margem desejada à esquerda para os elementos filhos do .card */
+        margin-top: 1px;
+    }
+
+    .carrinho {
+        margin-right: 3vw;
+        margin-bottom: 12vw;
+        position: fixed; /* Torna o carrinho um elemento fixo */
+        bottom: 2vw; /* Define a distância do topo da tela (ajuste conforme necessário) */
+        right: 1vw; /* Define a distância da direita da tela (ajuste conforme necessário) */
+        width: 25vw; /* Define a largura do carrinho (ajuste conforme necessário) */
+        height: 25vw;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra do carrinho */
+        z-index: 999; /* Define a ordem de empilhamento (z-index) para que fique acima de outros elementos */
+      }
+      .carrinho img{
+        width: 10vw;
+        height: 10vw;
+    
+      }
+
+
+.add:hover {
+    transform: scale(1.1); /* Aumenta o tamanho em 10% ao passar o mouse */
+    transition: transform 0.3s ease; /* Transição suave apenas para a propriedade de transformação */
+}
+.add{
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra do carrinho */
+    width: 60vw;
+    height: 15vw;
+    font-size: 2vw;
+}
+}

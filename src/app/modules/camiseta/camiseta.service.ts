@@ -30,6 +30,13 @@ export class CamisetaService {
         //catchError(this.handleError)
       );
   }
+
+  find(id:number): Observable<any> {
+    return this.httpClient.get(this.apiURL + '/camisetas/' + id)
+    .pipe(
+    //catchError(this.errorHandler)
+    )
+    }
   
   
   

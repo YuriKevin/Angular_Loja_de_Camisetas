@@ -1,7 +1,7 @@
 <app-header></app-header>
 <main>
     <div class="card" *ngFor="let camiseta of camisetas">
-      <a href="">
+      <a [routerLink]="['/details', camiseta.id]">
         <img [src]="camiseta.imagem" alt="{{ camiseta.clube }}">
       </a>
       <h3>{{ camiseta.clube }}</h3>
