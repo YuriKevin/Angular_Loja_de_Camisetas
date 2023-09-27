@@ -7,6 +7,9 @@ hr{
     width: 100%;
     
 }
+a{
+    text-decoration: none;
+}
 @media (min-width: 768px) {
 header {
     top: 0;

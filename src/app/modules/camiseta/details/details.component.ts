@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CamisetaService } from '../camiseta.service';
 import { Camiseta } from '../camiseta';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-details',
@@ -9,10 +10,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  camisetaId: number = 0;
-  camiseta: Camiseta;
+  id!: number;
+  camiseta!: Camiseta;
 
-  constructor(private route: ActivatedRoute, public camisetaService: CamisetaService) { 
+  constructor(private route: ActivatedRoute, private router: Router, public camisetaService: CamisetaService) { 
     this.camiseta = {
       id : 0,
       clube: "",
@@ -25,24 +26,22 @@ export class DetailsComponent implements OnInit {
   
   ngOnInit(): void {
     
-
-    // Obtém o valor do parâmetro 'id' da rota
-    const idParam = this.route.snapshot.paramMap.get('id');
+    this.id = this.route.snapshot.params['id'];
   
-    if (idParam !== null) {
-      this.camisetaId = +idParam;
-      console.log(this.camisetaId);
+    if (this.id !== null) {
+      console.log(this.id);
 
-       this.camisetaService.find(this.camisetaId).subscribe((data: Camiseta)=>{
-      this.camiseta = data;
+       this.camisetaService.find(this.id).subscribe((data: Camiseta)=>{
+        this.camiseta = data;
         console.log(this.camiseta);
         })
     }
     else{
-     // this.router.navigate(['../home']); ir para home
+      this.router.navigateByUrl('');
     }
   }
   
+//&& typeof this.id === 'number'
 
 
 

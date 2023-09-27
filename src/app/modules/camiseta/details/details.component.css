@@ -9,6 +9,7 @@ main{
 .carrinho:hover {
     transform: scale(1.1); /* Aumenta o tamanho em 10% ao passar o mouse */
     transition: transform 0.3s ease; /* Transição suave apenas para a propriedade de transformação */
+    cursor: pointer;
 }
 
 
@@ -71,6 +72,7 @@ main{
 .add:hover {
     transform: scale(1.1); /* Aumenta o tamanho em 10% ao passar o mouse */
     transition: transform 0.3s ease; /* Transição suave apenas para a propriedade de transformação */
+    cursor: pointer;
 }
 .add{
     background-color: #ffffff;
@@ -144,4 +146,9 @@ main{
     height: 15vw;
     font-size: 2vw;
 }
+}
+.footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
 }

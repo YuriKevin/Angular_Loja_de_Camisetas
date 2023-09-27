@@ -1,0 +1,15 @@
+<app-header></app-header>
+<main>
+    <div class="card" *ngFor="let camiseta of camisetas">
+      <a [routerLink]="['/details', camiseta.id]">
+        <img [src]="camiseta.imagem" alt="{{ camiseta.clube }}">
+      </a>
+      <h3>{{ camiseta.clube }}</h3>
+      <h4>{{ camiseta.ano }}</h4>
+      <h5>R$ {{ camiseta.valor }}</h5>
+    </div>
+    <button class="carrinho">
+      <img src="../../../../assets/images/carrinho-de-compras.png" alt="Carrinho">
+    </button>
+  </main>
+<app-footer></app-footer>

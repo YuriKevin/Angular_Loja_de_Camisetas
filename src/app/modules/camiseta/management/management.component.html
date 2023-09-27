@@ -1,0 +1,23 @@
+<app-header></app-header>
+<main>
+    <img [routerLink]="['/create']" class="create" src="../../../../assets/images/botao_add.png" alt="" >
+    <div class="card" *ngFor="let camiseta of camisetas">
+        <img [src]="camiseta.imagem" alt="{{ camiseta.clube }}">
+        <div class="infos">
+            <h3>{{ camiseta.clube }}</h3>
+            <h4>{{ camiseta.ano }}</h4>
+            <h4>R$ {{ camiseta.valor }}</h4>
+            <h4>Quantidade: {{ camiseta.quantidade }}</h4>
+        </div>
+        <div class="buttons">
+            <a [routerLink]="['/details', camiseta.id]" target="_blank">
+                <button class="view">Visualizar</button>
+            </a>
+            <a [routerLink]="['/edit', camiseta.id]" target="_blank">
+                <button class="update">Atualizar</button>
+            </a>
+            <button (click)="deleteCamiseta(camiseta.id)" class="delete">Deletar</button>
+        </div>
+    </div>
+  </main>
+<app-footer></app-footer>

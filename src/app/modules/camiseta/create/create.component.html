@@ -1,0 +1,68 @@
+<app-header></app-header>
+<body>
+    <main>
+    <div class="principal">
+        <h1>Nova camiseta</h1>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="atributos">
+                <label for="clube">Clube - Home/Away:</label>
+                <input 
+                    formControlName="clube"
+                    id="clube" 
+                    type="text" 
+                    
+                    placeholder="ex: Barcelona - Home">
+                <div *ngIf="f['clube'].touched && f['clube'].invalid" class="alert">
+                    <div *ngIf="f['clube'].errors?.['required']">*</div>
+                </div>
+            </div>
+            <div class="atributos">
+                <label for="ano">Ano:</label>
+                <input 
+                    formControlName="ano"
+                    id="number" 
+                    type="text">
+                <div *ngIf="f['ano'].touched && f['ano'].invalid" class="alert">
+                    <div *ngIf="f['ano'].errors?.['required']">*</div>
+                </div>
+            </div>
+            <div class="atributos">
+                <label for="quantidade">Quantidade:</label>
+                <input 
+                    formControlName="quantidade"
+                    id="quantidade" 
+                    type="number">
+                <div *ngIf="f['quantidade'].touched && f['quantidade'].invalid" class="alert">
+                    <div *ngIf="f['quantidade'].errors?.['required']">*</div>
+                </div>
+            </div>
+            <div class="atributos">
+                <label for="valor">Valor:</label>
+                <input 
+                    formControlName="valor"
+                    id="valor" 
+                    type="number" >
+                <div *ngIf="f['valor'].touched && f['valor'].invalid" class="alert">
+                    <div *ngIf="f['valor'].errors?.['required']">*</div>
+                </div>
+            </div>
+            <div class="atributos">
+                <label for="imagem">URL da Imagem:</label>
+                <input 
+                    formControlName="imagem"
+                    id="imagem" 
+                    type="text">
+                <div *ngIf="f['imagem'].touched && f['imagem'].invalid" class="alert">
+                    <div *ngIf="f['imagem'].errors?.['required']">*</div>
+                </div>
+                <div *ngIf="f['imagem'].touched && f['imagem'].valid" class="alert">
+                    <div *ngIf="f['imagem'].errors?.['required']"><img src="" alt=""></div>
+                </div>
+            </div>
+            <button type="submit" [disabled]="!form.valid">Adicionar</button>
+        </form>
+    </div>
+
+    </main>
+</body>
+<app-footer class="footer"></app-footer>
