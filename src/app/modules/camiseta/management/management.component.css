@@ -23,6 +23,12 @@ main{
 }
 
 @media (min-width: 768px) {
+.modulos{
+    display:flex;
+    margin-top: 1vw;
+    margin-left: 30%;
+    margin-bottom: 3vw;
+}
 .card{
     margin-left: 10vw;
     font-family: 'Lexend', sans-serif;
@@ -55,7 +61,7 @@ button{
     cursor: pointer;
     font-size: 1vw;
     margin-left: 1vw;
-    
+    background-color: #F4483C;
 }
 
 
@@ -63,6 +69,20 @@ button{
 
 }
 @media (max-width: 767px) {
+    .modulos{
+        display:flex;
+        margin-top: 1vw;
+        margin-bottom: 3vw;
+        margin-left: 2vw;
+    }
+    .modulos button{
+        height: 10vw;
+        width: 25vw;
+        font-size: 4vw;
+        margin: 0;
+        margin-right: 2vw;
+        background-color: #F4483C;
+    }
     .card{
         margin-left: 5vw;
         font-family: 'Lexend', sans-serif;
@@ -116,21 +136,12 @@ button{
         height: 8vw;
         width: 42vw;
         margin-bottom: 1vw;
+        background-color: #F4483C;
 
     }
     .create{
         right: 2vw;
-        top: 40vw;
+        top: 60vw;
         width: 15vw;
     }
-    }
-
-    .view{
-        background-color: #F4483C;
-    }
-    .update{
-        background-color: #F4483C;
-    }
-    .delete{
-        background-color: #F4483C;
     }

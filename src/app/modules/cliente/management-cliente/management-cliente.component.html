@@ -1,0 +1,30 @@
+<app-header></app-header>
+<main>
+    <div class="modulos">
+        <a [routerLink]="['/management']">
+            <button class="update">Camisetas</button>
+        </a>
+        <a [routerLink]="['/clientes']">
+            <button class="update">Clientes</button>
+        </a>
+        <a [routerLink]="['/vendas']">
+            <button class="update">Vendas</button>
+        </a>
+    </div>
+    <div class="card" *ngFor="let cliente of clientes">
+        <div class="infos">
+            <h3>{{ cliente.nome }}</h3>
+            <h4>{{ cliente.cpf }}</h4>
+            <a [routerLink]="['/clientes/details', cliente.id]">
+                <button>Compras realizadas</button>
+            </a>
+        </div>
+        <div class="buttons">
+            <a [routerLink]="['/clientes/edit', cliente.id]">
+                <button>Atualizar</button>
+            </a>
+            <button (click)="deleteCliente(cliente.id)">Deletar</button>
+        </div>
+    </div>
+  </main>
+<app-footer></app-footer>

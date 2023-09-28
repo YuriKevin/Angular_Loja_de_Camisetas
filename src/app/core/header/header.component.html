@@ -1,24 +1,25 @@
 <header>
-<div class="principal">
-    <div class="broke-line">
-        <a [routerLink]="['']">
-            <h1>Camisetas</h1>
-        </a>
-            <div class="search">
-                <input type="text" placeholder="Digite o nome do clube..." [(ngModel)]="search" (keyup.enter)="navigateToSearch()">
-                <a [routerLink]="['/search', search]">
-                    <img src="../../../assets/images/botao_pesquisa.png" alt="">
-                </a>
-            </div>
+    <div class="principal">
+        <div class="broke-line">
+            <a [routerLink]="['']">
+                <h1>Camisetas</h1>
+            </a>
+                <div class="search">
+                    <input type="text" placeholder="Digite o nome do clube..." [(ngModel)]="search" (keyup.enter)="navigateToSearch()">
+                    <a [routerLink]="['/search', search]">
+                        <img src="../../../assets/images/botao_pesquisa.png" alt="">
+                    </a>
+                </div>
+        </div>
+        <div class="broke-line">
+            <h3>Português (BR)</h3>
+            <button class="config">
+                <a [routerLink]="['/management']">
+                    <img src="../../../assets/images/botao_configuracoes.png" alt="">
+                 </a>
+            </button>
+        </div>
     </div>
-    <div class="broke-line">
-        <h3>Português (BR)</h3>
-        <button class="config">
-            <a [routerLink]="['/management']">
-                <img src="../../../assets/images/botao_configuracoes.png" alt="">
-             </a>
-        </button>
-    </div>
-</div>
-<hr>
-</header>
+    <hr>
+    </header>
+    

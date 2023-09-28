@@ -1,0 +1,30 @@
+.card >*{
+    margin-left: 5vw;
+
+}
+.infos button{
+    margin-left: -1vw;
+    background-color: #F4483C;
+    color: white;
+  
+}
+@media (max-width: 767px) {
+.card{
+    width: 70%;
+}
+.infos{
+    display: inline-block;
+    width: fit-content;
+}
+.infos button{
+    width: 42vw;
+    height: 8vw;
+    font-size: 4vw;
+    margin-bottom: 1vw;
+    margin-left: 1vw;
+}
+.buttons button{
+    margin-left:1vw;
+}
+}
+

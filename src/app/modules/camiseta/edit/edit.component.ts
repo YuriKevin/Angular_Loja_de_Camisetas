@@ -13,7 +13,7 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 export class EditComponent implements OnInit {
 
   id!: number;
-  camiseta!: Camiseta;
+  camiseta: Camiseta = {} as Camiseta;
   form!: FormGroup;
   imagem!: string;
 
@@ -23,14 +23,7 @@ export class EditComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router
   ) { 
-    this.camiseta = {
-      id : 0,
-      clube: "",
-      ano: 0,
-      quantidade: 0,
-      valor: 1000,
-      imagem: ""
-    };
+  
   }
 
   ngOnInit(): void {
@@ -50,10 +43,10 @@ export class EditComponent implements OnInit {
     }
     this.form = new FormGroup({
       clube: new FormControl('', [Validators.required]),
-      ano: new FormControl('', Validators.required),
-      quantidade: new FormControl('', Validators.required),
-      valor: new FormControl('', Validators.required),
-      imagem: new FormControl('', Validators.required)
+      ano: new FormControl('', [Validators.required]),
+      quantidade: new FormControl('', [Validators.required]),
+      valor: new FormControl('', [Validators.required]),
+      imagem: new FormControl('', [Validators.required])
     });
   }
 

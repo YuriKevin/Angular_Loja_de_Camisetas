@@ -1,0 +1,25 @@
+<app-header></app-header>
+<main *ngIf="venda">
+    <div class="infos" >
+        <h3>Nome: {{ venda.cliente.nome }}</h3>
+        <h4>CPF: {{ venda.cliente.cpf }}</h4>
+    </div>
+            <div class="card">
+                <div class="venda_infos ">
+                    <h4>Valor total da compra: <h5>R$ {{ venda.valor }}</h5></h4>
+                    <h4>Data: {{ venda.dia_venda }}</h4>
+                    <h4>Camisetas:</h4>
+                </div>
+                <div class="flex">
+                    <div class="camisetas"  *ngFor="let camiseta of venda.camisetas">
+                        <img [src]="camiseta.imagem" alt="{{ camiseta.clube }}">
+                        <div class="infos_camisetas">
+                            <h4>{{ camiseta.clube }}</h4>
+                            <h5>R$ {{ camiseta.valor }}</h5>
+                            <h4>Quantidade: {{ camiseta.quantidade }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  </main>
+  <app-footer class="footer"></app-footer>

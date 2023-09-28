@@ -1,5 +1,16 @@
 <app-header></app-header>
 <main>
+    <div class="modulos">
+        <a [routerLink]="['/management']">
+            <button class="update">Camisetas</button>
+        </a>
+        <a [routerLink]="['/clientes']">
+            <button class="update">Clientes</button>
+        </a>
+        <a [routerLink]="['/vendas']">
+            <button class="update">Vendas</button>
+        </a>
+    </div>
     <img [routerLink]="['/create']" class="create" src="../../../../assets/images/botao_add.png" alt="" >
     <div class="card" *ngFor="let camiseta of camisetas">
         <img [src]="camiseta.imagem" alt="{{ camiseta.clube }}">
@@ -10,13 +21,13 @@
             <h4>Quantidade: {{ camiseta.quantidade }}</h4>
         </div>
         <div class="buttons">
-            <a [routerLink]="['/details', camiseta.id]" target="_blank">
-                <button class="view">Visualizar</button>
+            <a [routerLink]="['/details', camiseta.id]">
+                <button>Visualizar</button>
             </a>
-            <a [routerLink]="['/edit', camiseta.id]" target="_blank">
-                <button class="update">Atualizar</button>
+            <a [routerLink]="['/edit', camiseta.id]">
+                <button>Atualizar</button>
             </a>
-            <button (click)="deleteCamiseta(camiseta.id)" class="delete">Deletar</button>
+            <button (click)="deleteCamiseta(camiseta.id)">Deletar</button>
         </div>
     </div>
   </main>

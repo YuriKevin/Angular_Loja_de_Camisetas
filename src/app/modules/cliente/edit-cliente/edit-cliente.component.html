@@ -1,0 +1,37 @@
+<app-header></app-header>
+<body>
+    <main>
+        <div class="edit">
+            <div class="principal">
+                <h1>Atualizar cliente</h1>
+                <form [formGroup]="form" (ngSubmit)="submit()">
+                    <div class="atributos">
+                        <label for="nome">Nome:</label>
+                        <input 
+                            formControlName="nome"
+                            id="nome" 
+                            type="text" 
+                            [(ngModel)]="cliente.nome">
+                        <div *ngIf="f['nome'].touched && f['nome'].invalid" class="alert">
+                            <div *ngIf="f['nome'].errors?.['required']">*</div>
+                        </div>
+                    </div>
+                    <div class="atributos">
+                        <label for="cpf">CPF:</label>
+                        <input 
+                            formControlName="cpf"
+                            id="cpf" 
+                            [(ngModel)]="cliente.cpf"
+                            type="text">
+                        <div *ngIf="f['cpf'].touched && f['cpf'].invalid" class="alert">
+                            <div *ngIf="f['cpf'].errors?.['required']">*</div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" [disabled]="!form.valid">Atualizar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+<app-footer class="footer"></app-footer>

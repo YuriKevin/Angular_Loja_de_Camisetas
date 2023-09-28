@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { CamisetaRoutingModule } from './camiseta-routing.module';
 import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from 'src/app/core/header/header.component';
-import { FooterComponent } from 'src/app/core/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './details/details.component';
 import { ManagementComponent } from './management/management.component';
@@ -13,12 +10,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EditComponent } from './edit/edit.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
+import { CoreModule } from 'src/app/core/core.module';
 
 @NgModule({
   declarations: [
-    HomeComponent, 
-    HeaderComponent,
-    FooterComponent,
+    HomeComponent,
     DetailsComponent,
     ManagementComponent,
     CreateComponent,
@@ -30,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     CamisetaRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CoreModule
     
   ]
 })

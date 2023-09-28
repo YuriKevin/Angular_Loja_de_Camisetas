@@ -14,14 +14,7 @@ export class DetailsComponent implements OnInit {
   camiseta!: Camiseta;
 
   constructor(private route: ActivatedRoute, private router: Router, public camisetaService: CamisetaService) { 
-    this.camiseta = {
-      id : 0,
-      clube: "",
-      ano: 0,
-      quantidade: 0,
-      valor: 1000,
-      imagem: ""
-    };
+ 
   }
   
   ngOnInit(): void {

@@ -1,0 +1,31 @@
+<app-header></app-header>
+<main>
+    <div class="modulos">
+        <a [routerLink]="['/management']">
+            <button class="update">Camisetas</button>
+        </a>
+        <a [routerLink]="['/clientes']">
+            <button class="update">Clientes</button>
+        </a>
+        <a [routerLink]="['/vendas']">
+            <button class="update">Vendas</button>
+        </a>
+    </div>
+    <div class="card" *ngFor="let venda of vendas">
+        <div class="infos">
+            <h3>Número da compra: {{ venda.id }}</h3>
+            <h3>{{ venda.cliente.nome }}</h3>
+            <h4>{{ venda.cliente.cpf }}</h4>
+            <a [routerLink]="['/vendas/details', venda.id]">
+                <button>Camisetas adquiridas</button>
+            </a>
+        </div>
+        <div class="buttons">
+            <a [routerLink]="['/vendas/edit', venda.cliente.id]">
+                <button>Atualizar</button>
+            </a>
+            <button (click)="deleteVenda(venda.id)">Deletar</button>
+        </div>
+    </div>
+  </main>
+<app-footer></app-footer>

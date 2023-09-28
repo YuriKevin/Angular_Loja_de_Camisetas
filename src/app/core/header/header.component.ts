@@ -13,5 +13,4 @@ export class HeaderComponent {
       this.router.navigate(['/search', this.search]);
     }
   }
-
 }

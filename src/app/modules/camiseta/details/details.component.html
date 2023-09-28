@@ -1,5 +1,5 @@
 <app-header></app-header>
-<main>
+<main *ngIf="camiseta">
     <div class="card">
       <img [src]="camiseta.imagem" alt="{{ camiseta.clube }}">
       <div>

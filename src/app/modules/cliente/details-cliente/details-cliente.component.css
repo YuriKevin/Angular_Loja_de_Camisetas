@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+main{
+    width: 100%;
+    margin-top: 2vw;
+    font-family: 'Lexend', sans-serif;
+
+}
+.venda_infos{
+    font-size: 1vw;
+    margin-left: 1vw;
+}
+.camisetas{
+    border-radius: 10px;
+    margin-left: 1vw;
+    font-size: 1vw;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2vw;
+    margin-right: 1vw;
+}
+.camisetas > *{
+    margin-left: 1vw;
+}
+.infos{
+
+    width:fit-content;
+    margin: 0 auto;
+    
+}
+.flex{
+    display: flex;
+}
+.card{
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    margin-bottom: 2vw;
+    font-family: 'Lexend', sans-serif;
+    border-radius: 10px;
+    font-size: 1.2vw;
+    font-family: 'Lexend', sans-serif;
+    border: 1px solid black;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.card img{
+    width: 12vw;
+    height: 12vw;
+    margin-top: 1vw;
+}
+.card h3{
+    font-size: 1em;
+}
+.card h4{
+    font-size: 1em;
+}
+.card h5{
+    font-size: 1em;
+    color: #1f796c;
+}
+.card > * {
+    margin-left: 1vw; /* Defina a margem desejada à esquerda para os elementos filhos do .card */
+}
