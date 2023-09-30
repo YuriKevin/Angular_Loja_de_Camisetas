@@ -9,11 +9,11 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './edit-cliente.component.html',
   styleUrls: ['../../camiseta/edit/edit.component.css','./edit-cliente.component.css']
 })
-export class EditClienteComponent {
+export class EditClienteComponent implements OnInit{
   id!: number;
   cliente: Cliente = {} as Cliente;
   form!: FormGroup;
-  imagem!: string;
+
   constructor(
     public clienteService: ClienteService,
     private route: ActivatedRoute,
@@ -54,8 +54,8 @@ export class EditClienteComponent {
     this.cliente.nome = this.form.value.nome;
     this.cliente.cpf = this.form.value.cpf;
       this.clienteService.update(this.cliente).subscribe(res => {
-        console.log('Camiseta atualizada com sucesso!');
-        this.router.navigateByUrl('clientes/details/'+this.cliente.id), { target: '_blank' };
+        console.log('Cliente atualizado com sucesso!');
+        this.router.navigateByUrl('clientes/details/'+this.cliente.id);
     })
   }
 }

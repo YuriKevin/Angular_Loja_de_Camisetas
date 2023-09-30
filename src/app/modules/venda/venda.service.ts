@@ -44,6 +44,15 @@ export class VendaService {
         );
     }
 
+    update(venda:Venda): Observable<any> {
+
+      return this.httpClient.put(this.apiURL + 'vendas', JSON.stringify(venda), this.httpOptions)
+  
+      .pipe(
+        catchError(this.errorHandler)
+      )
+    }
+
     delete(id:number){
       return this.httpClient.delete(this.apiURL + '/vendas/' + id, this.httpOptions)
       .pipe(

@@ -1,0 +1,55 @@
+<app-header></app-header>
+<body>
+    <main>
+        <div class="edit">
+            <div class="principal">
+                <h1>Atualizar Venda</h1>
+                <form [formGroup]="form" (ngSubmit)="submit()">
+                   
+                        <h1>Nome: {{ this.venda.cliente.nome }}</h1>
+                        <h1>CPF: {{ this.venda.cliente.cpf }}</h1>
+                        <h1>Valor da compra: {{ this.venda.valor }}</h1>
+                    <div class="atributos">
+                        <label for="cliente_id">ID do cliente:</label>
+                        <input 
+                            formControlName="cliente_id"
+                            id="cliente_id" 
+                            [(ngModel)]="this.venda.cliente.id"
+                            type="number">
+                        <div *ngIf="f['cliente_id'].touched && f['cliente_id'].invalid" class="alert">
+                            <div *ngIf="f['cliente_id'].errors?.['required']">*</div>
+                        </div>
+                    </div>
+                    
+                    <div class="atributos">
+                        <label for="cliente_id">Data da compra:</label>
+                        <input 
+                            formControlName="data_compra"
+                            id="data_compra" 
+                            [(ngModel)]="this.venda.dia_venda"
+                            type="text">
+                        <div *ngIf="f['data_compra'].touched && f['data_compra'].invalid" class="alert">
+                            <div *ngIf="f['data_compra'].errors?.['required']">*</div>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="camisetas" *ngFor="let camiseta of venda.camisetas">
+                            <img [src]="camiseta.imagem" alt="{{ camiseta.clube }}">
+                            <div class="infos_camisetas">
+                                <h4>{{ camiseta.clube }}</h4>
+                                <h5>R$ {{ camiseta.valor }}</h5>
+                                <h4>Quantidade: {{ camiseta.quantidade }}</h4>
+                                <button class="remove" (click)="removeCamisetaDeVenda(camiseta)">Remover</button>
+                            </div>
+                        </div>
+                    </div>
+                    <a [routerLink]="['/vendas/', venda.id, 'add_camiseta']">
+                    <button>Adicionar Camiseta</button>
+                    </a>
+                    <button type="submit" [disabled]="!form.valid">Atualizar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+<app-footer class="footer"></app-footer>

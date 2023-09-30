@@ -11,6 +11,8 @@ import { EditClienteComponent } from './modules/cliente/edit-cliente/edit-client
 import { DetailsClienteComponent } from './modules/cliente/details-cliente/details-cliente.component';
 import { ManagementVendasComponent } from './modules/venda/management-vendas/management-vendas.component';
 import { DetailsVendaComponent } from './modules/venda/details-venda/details-venda.component';
+import { EditVendasComponent } from './modules/venda/edit-vendas/edit-vendas.component';
+import { AddCamisetaComponent } from './modules/venda/add-camiseta/add-camiseta.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -24,6 +26,8 @@ const routes: Routes = [
   { path: 'clientes/details/:id', component: DetailsClienteComponent},
   { path: 'vendas', component: ManagementVendasComponent},
   { path: 'vendas/details/:id', component: DetailsVendaComponent},
+  { path: 'vendas/edit/:id', component: EditVendasComponent},
+  { path: 'vendas/:id/add_camiseta', component: AddCamisetaComponent},
 ];
 
 
