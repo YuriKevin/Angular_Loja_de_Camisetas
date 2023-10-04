@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Venda } from './venda';
+import { CamisetaVenda } from './camisetavenda';
 @Injectable({
   providedIn: 'root'
 })
@@ -51,6 +52,22 @@ export class VendaService {
       .pipe(
         catchError(this.errorHandler)
       )
+    }
+
+    addCamiseta(camiseta:CamisetaVenda){
+      return this.httpClient.put(this.apiURL + 'vendas/add_camiseta', JSON.stringify(camiseta), this.httpOptions)
+  
+      .pipe(
+        catchError(this.errorHandler)
+      )
+
+    }
+    AtualizaCamisetasVenda(camiseta:CamisetaVenda){
+      return this.httpClient.put(this.apiURL + '/vendas/remove_camiseta', JSON.stringify(camiseta), this.httpOptions)
+      .pipe(
+        catchError(this.errorHandler)
+      )
+
     }
 
     delete(id:number){

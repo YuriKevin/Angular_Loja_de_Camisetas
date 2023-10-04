@@ -1,5 +1,5 @@
 .remove{
-    background-color: red;
+    background-color: #F4483C;
 }
 .flex{
     display: flex;
@@ -11,4 +11,23 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     margin-bottom: 2vw;
     margin-right: 1vw;
+}
+button{
+    background-color: #F4483C;
+    color: white;
+    width: 20vw;
+    height:3vw;
+    border-radius: 10px;
+    margin-bottom: 2vw;
+    margin-top: 2vw;
+    margin-left: 0vw;
+    font-size: 2vw;
+
+}
+input{
+    width: 10vw;
+    font-size: 2vw;
+}
+label{
+    font-size: 2vw;
 }

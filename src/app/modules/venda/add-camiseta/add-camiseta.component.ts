@@ -4,6 +4,8 @@ import { Venda } from '../venda';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Camiseta } from '../../camiseta/camiseta';
 import { CamisetaService } from '../../camiseta/camiseta.service';
+import { CamisetaVenda } from '../camisetavenda';
+
 @Component({
   selector: 'app-add-camiseta',
   templateUrl: './add-camiseta.component.html',
@@ -13,7 +15,7 @@ export class AddCamisetaComponent implements OnInit{
   id!: number;
   id_camiseta!:number;
   venda: Venda = {} as Venda;
-  camiseta: Camiseta = {} as Camiseta;
+  camiseta: CamisetaVenda = {} as CamisetaVenda;
   camisetas!: Camiseta[];
 
   constructor(
@@ -40,15 +42,20 @@ export class AddCamisetaComponent implements OnInit{
         console.log(this.camisetas);
         })
 
+        
 
     }
     addCamisetaToVenda(camiseta: Camiseta) {
-      this.venda.camisetas.push(camiseta);
-      this.vendaService.update(this.venda).subscribe(res => {
-        this.router.navigateByUrl('/vendas/edit/'+ this.venda.id);
+      this.camiseta.camiseta = camiseta;
+      this.camiseta.valor = this.camiseta.camiseta.valor;
+      this.camiseta.vendaId = this.venda.id;
+      this.camiseta.quantidade = 1;
+      this.vendaService.addCamiseta(this.camiseta).subscribe(res => {
+      this.router.navigateByUrl('/vendas/edit/'+ this.venda.id);
     })
       
     }
+    
     
 
   }

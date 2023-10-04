@@ -5,7 +5,6 @@
             <div class="principal">
                 <h1>Atualizar Venda</h1>
                 <form [formGroup]="form" (ngSubmit)="submit()">
-                   
                         <h1>Nome: {{ this.venda.cliente.nome }}</h1>
                         <h1>CPF: {{ this.venda.cliente.cpf }}</h1>
                         <h1>Valor da compra: {{ this.venda.valor }}</h1>
@@ -32,24 +31,27 @@
                             <div *ngIf="f['data_compra'].errors?.['required']">*</div>
                         </div>
                     </div>
+                    <button type="submit" [disabled]="!form.valid">Atualizar</button>
+                   
+                    <button [routerLink]="['/vendas/'+venda.id+'/add_camiseta']">Adicionar Camiseta</button>
+                            
                     <div class="flex">
-                        <div class="camisetas" *ngFor="let camiseta of venda.camisetas">
-                            <img [src]="camiseta.imagem" alt="{{ camiseta.clube }}">
+                        <div class="camisetas" *ngFor="let camiseta of venda.camisetaVendas">
+                            <img [src]="camiseta.camiseta.imagem" alt="{{ camiseta.camiseta.clube }}">
                             <div class="infos_camisetas">
-                                <h4>{{ camiseta.clube }}</h4>
+                                <h4>{{ camiseta.camiseta.clube }}</h4>
                                 <h5>R$ {{ camiseta.valor }}</h5>
-                                <h4>Quantidade: {{ camiseta.quantidade }}</h4>
-                                <button class="remove" (click)="removeCamisetaDeVenda(camiseta)">Remover</button>
+                                <div class="quantidade">
+                                    <label for="quantidade">Quantidade:</label>
+                                    <input type="number" id="quantidade" formControlName="quantidade" name="quantidade" placeholder="{{camiseta.quantidade}}">
+                                </div>
+                                <button class="remove" (click)="AtualizaCamisetasVenda(camiseta)">Remover</button>
                             </div>
                         </div>
-                    </div>
-                    <a [routerLink]="['/vendas/', venda.id, 'add_camiseta']">
-                    <button>Adicionar Camiseta</button>
-                    </a>
-                    <button type="submit" [disabled]="!form.valid">Atualizar</button>
+                    </div>      
                 </form>
             </div>
         </div>
     </main>
 </body>
-<app-footer class="footer"></app-footer>
+<app-footer></app-footer>
