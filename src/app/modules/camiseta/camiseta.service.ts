@@ -11,7 +11,7 @@ import { Camiseta } from 'src/app/modules/camiseta/camiseta';
 })
 export class CamisetaService {
 
-  private apiURL = "camisetas.up.railway.app/";
+  private apiURL = "https://camisetas.up.railway.app/";
 
   httpOptions = {
     headers: new HttpHeaders({
