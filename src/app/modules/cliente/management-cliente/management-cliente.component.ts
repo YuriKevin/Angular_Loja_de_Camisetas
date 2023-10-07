@@ -14,17 +14,14 @@ export class ManagementClienteComponent implements OnInit {
   ngOnInit(): void {
     this.clienteService.getClientes().subscribe((data: Cliente[])=>{
     this.clientes = data;
-    console.log(this.clientes);
     })
     }
     deleteCliente(id: number): void {
       if (confirm('Tem certeza que deseja excluir este cliente?')) {
+        
         this.clienteService.delete(id).subscribe(() => {
-          // Após a exclusão bem-sucedida, atualize a lista de camisetas
-          this.clienteService.getClientes().subscribe((data: Cliente[])=>{
-            this.clientes = data;
-            console.log(this.clientes);
-            })
+          this.clientes = this.clientes.filter(cliente => cliente.id !== id);
+          
         });
       }
     }

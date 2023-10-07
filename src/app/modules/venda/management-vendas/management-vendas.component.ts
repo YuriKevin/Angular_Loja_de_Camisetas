@@ -12,17 +12,13 @@ export class ManagementVendasComponent implements OnInit{
   ngOnInit(): void {
     this.vendaService.getVendas().subscribe((data: Venda[])=>{
     this.vendas = data;
-    console.log(this.vendas);
     })
     }
     deleteVenda(id: number): void {
       if (confirm('Tem certeza que deseja excluir esta venda?')) {
-        this.vendaService.delete(id).subscribe(() => {
-          
-          this.vendaService.getVendas().subscribe((data: Venda[])=>{
-            this.vendas = data;
-            console.log(this.vendas);
-            })
+        
+        this.vendaService.delete(id).subscribe((res) => {
+          this.vendas = this.vendas.filter(venda => venda.id !== id);
         });
       }
     }

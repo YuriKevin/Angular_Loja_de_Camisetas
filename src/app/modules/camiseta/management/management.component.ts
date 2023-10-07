@@ -20,12 +20,10 @@ export class ManagementComponent implements OnInit {
     }
     deleteCamiseta(id: number): void {
       if (confirm('Tem certeza que deseja excluir esta camiseta?')) {
+       
         this.camisetaService.delete(id).subscribe(() => {
-          // Após a exclusão bem-sucedida, atualize a lista de camisetas
-          this.camisetaService.getCamisetas().subscribe((data: Camiseta[])=>{
-            this.camisetas = data;
-            console.log(this.camisetas);
-            })
+          this.camisetas = this.camisetas.filter(camiseta => camiseta.id !== id);
+          
         });
       }
     }
