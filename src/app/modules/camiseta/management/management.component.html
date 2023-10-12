@@ -1,5 +1,11 @@
 <app-header></app-header>
 <main>
+    <div class="pesquisa">
+        <label class="busca">Digite o nome da camiseta:
+            <input type="text"  [(ngModel)]="valorBusca" (keyup.enter)="busca()">
+            <button (click)="busca()">Buscar</button>
+        </label>
+    </div>
     <div class="modulos">
         <a [routerLink]="['/management']">
             <button class="update">Camisetas</button>
@@ -12,7 +18,7 @@
         </a>
     </div>
     <img [routerLink]="['/create']" class="create" src="../../../../assets/images/botao_add.png" alt="" >
-    <div class="card" *ngFor="let camiseta of camisetas">
+    <div class="card" *ngFor="let camiseta of camisetasFiltradas">
         <img [src]="camiseta.imagem" alt="{{ camiseta.clube }}">
         <div class="infos">
             <h3>{{ camiseta.clube }}</h3>

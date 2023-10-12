@@ -27,4 +27,17 @@
     margin-left:1vw;
 }
 }
+.pesquisa{
+    width: 100%;
+    justify-content: center;
+}
+.busca{
+    margin-left: 25vw;
+    font-size: 1.5vw;
+}
+.busca input{
+    border-radius: 10px;
+    height: 2vw;
+    font-size: 1.5vw;
+}
 

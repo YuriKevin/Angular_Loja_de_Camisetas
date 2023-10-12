@@ -8,8 +8,8 @@ import { CamisetaVenda } from './camisetavenda';
   providedIn: 'root'
 })
 export class VendaService {
-  //private apiURL = "http://localhost:8080/";
-  private apiURL = "https://camisetas.up.railway.app/";
+  private apiURL = "http://localhost:8080/";
+  //private apiURL = "https://camisetas.up.railway.app/";
 
   
   httpOptions = {
@@ -72,7 +72,13 @@ export class VendaService {
     }
 
     delete(id:number){
-      return this.httpClient.delete(this.apiURL + '/vendas/' + id, this.httpOptions)
+      return this.httpClient.delete(this.apiURL + 'vendas/' + id, this.httpOptions)
+      .pipe(
+        catchError(this.errorHandler)
+      )
+    }
+    createManagement(id:number){
+      return this.httpClient.post(this.apiURL + 'vendas/cliente/' + id, this.httpOptions)
       .pipe(
         catchError(this.errorHandler)
       )

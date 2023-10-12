@@ -10,10 +10,13 @@ import {ClienteService} from '../cliente.service';
 })
 export class ManagementClienteComponent implements OnInit {
   clientes: Cliente[] = [];
+  clientesFiltrados: Cliente[] = [];
+  valorBusca!: string;
   constructor(public clienteService: ClienteService) { }
   ngOnInit(): void {
     this.clienteService.getClientes().subscribe((data: Cliente[])=>{
     this.clientes = data;
+    this.clientesFiltrados = this.clientes;
     })
     }
     deleteCliente(id: number): void {
@@ -21,9 +24,18 @@ export class ManagementClienteComponent implements OnInit {
         
         this.clienteService.delete(id).subscribe(() => {
           this.clientes = this.clientes.filter(cliente => cliente.id !== id);
-          
+          this.clientesFiltrados = this.clientes;
         });
       }
     }
-
+    busca() {
+      let word = this.valorBusca;
+      this.clientesFiltrados =[];
+          this.clientes.forEach(cliente => {
+            if (cliente.nome.toLowerCase().includes(word)) {
+              this.clientesFiltrados.push(cliente);
+            }
+          });
+      
+    }
 }

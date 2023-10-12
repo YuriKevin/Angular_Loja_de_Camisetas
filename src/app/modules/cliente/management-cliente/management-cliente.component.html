@@ -1,5 +1,11 @@
 <app-header></app-header>
 <main>
+    <div class="pesquisa">
+        <label class="busca">Digite o nome do cliente:
+            <input type="text"  [(ngModel)]="valorBusca" (keyup.enter)="busca()">
+            <button (click)="busca()">Buscar</button>
+        </label>
+    </div>
     <div class="modulos">
         <a [routerLink]="['/management']">
             <button class="update">Camisetas</button>
@@ -11,10 +17,11 @@
             <button class="update">Vendas</button>
         </a>
     </div>
-    <div class="card" *ngFor="let cliente of clientes">
+    <img [routerLink]="['/clientes/create/']" class="create" src="../../../../assets/images/botao_add.png" alt="" >
+    <div class="card" *ngFor="let cliente of clientesFiltrados">
         <div class="infos">
             <h3>{{ cliente.nome }}</h3>
-            <h4>{{ cliente.cpf }}</h4>
+            <h4>CPF: {{ cliente.cpf }}</h4>
             <a [routerLink]="['/clientes/details', cliente.id]">
                 <button>Compras realizadas</button>
             </a>

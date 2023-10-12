@@ -1,6 +1,16 @@
 <app-header></app-header>
 <main>
-    <div class="card" *ngFor="let camiseta of camisetas">
+  <div class="filtro">
+    <label for="opcoes">Selecione uma opção:</label>
+    <select id="opcoes" [(ngModel)]="opcaoSelecionada" name="opcaoSelecionada" (change)="selecaoAlterada()">
+      <option value="Todas">Todas</option>
+      <option value="Home">Home</option>
+      <option value="Away">Away</option>
+      <option value="Fan">Fan</option>
+      <option value="Special">Special Edition</option>
+    </select>
+  </div>
+    <div class="card" *ngFor="let camiseta of camisetasFiltradas">
       <a [routerLink]="['/details', camiseta.id]">
         <img [src]="camiseta.imagem" alt="{{ camiseta.clube }}">
       </a>

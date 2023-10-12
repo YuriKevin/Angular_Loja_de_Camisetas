@@ -1,0 +1,33 @@
+<app-header></app-header>
+<body>
+    <main>
+    <div class="principal">
+        <h1>Novo Cliente</h1>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="atributos">
+                <label for="nome">Nome</label>
+                <input 
+                    formControlName="nome"
+                    id="nome" 
+                    type="text">
+                <div *ngIf="f['nome'].touched && f['nome'].invalid" class="alert">
+                    <div *ngIf="f['nome'].errors?.['required']">*</div>
+                </div>
+            </div>
+            <div class="atributos">
+                <label for="cpf">CPF:</label>
+                <input 
+                    formControlName="cpf"
+                    id="cpf" 
+                    type="text">
+                <div *ngIf="f['cpf'].touched && f['cpf'].invalid" class="alert">
+                    <div *ngIf="f['cpf'].errors?.['required']">*</div>
+                </div>
+            </div>
+            <button type="submit" [disabled]="!form.valid">Adicionar</button>
+        </form>
+    </div>
+
+    </main>
+</body>
+<app-footer class="footer"></app-footer>

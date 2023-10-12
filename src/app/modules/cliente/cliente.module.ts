@@ -7,19 +7,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditClienteComponent } from './edit-cliente/edit-cliente.component';
 import { DetailsClienteComponent } from './details-cliente/details-cliente.component';
+import { CreateClienteComponent } from './create-cliente/create-cliente.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     ManagementClienteComponent,
     EditClienteComponent,
     DetailsClienteComponent,
+    CreateClienteComponent
   ],
   imports: [
     CommonModule,
     ClienteRoutingModule,
     CoreModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
 
   ]
 })

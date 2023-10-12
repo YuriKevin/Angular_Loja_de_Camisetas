@@ -8,10 +8,13 @@ import {VendaService} from '../venda.service';
 })
 export class ManagementVendasComponent implements OnInit{
   vendas: Venda[] = [];
+  vendasFiltradas: Venda[] = [];
+  valorBusca!: number;
   constructor(public vendaService: VendaService) { }
   ngOnInit(): void {
     this.vendaService.getVendas().subscribe((data: Venda[])=>{
     this.vendas = data;
+    this.vendasFiltradas = this.vendas;
     })
     }
     deleteVenda(id: number): void {
@@ -21,5 +24,15 @@ export class ManagementVendasComponent implements OnInit{
           this.vendas = this.vendas.filter(venda => venda.id !== id);
         });
       }
+    }
+    busca() {
+      let word = this.valorBusca;
+      this.vendasFiltradas =[];
+          this.vendas.forEach(venda => {
+            if (venda.id === word) {
+              this.vendasFiltradas.push(venda);
+            }
+          });
+      
     }
 }

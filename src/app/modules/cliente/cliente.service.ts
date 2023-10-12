@@ -9,8 +9,8 @@ import { Cliente } from 'src/app/modules/cliente/cliente';
 })
 export class ClienteService {
 
-  //private apiURL = "http://localhost:8080/";
-  private apiURL = "https://camisetas.up.railway.app/";
+  private apiURL = "http://localhost:8080/";
+  //private apiURL = "https://camisetas.up.railway.app/";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -36,6 +36,15 @@ export class ClienteService {
         catchError(this.errorHandler)
       )
     }
+
+    create(cliente:Cliente):  Observable<any> {
+
+      return this.httpClient.post(this.apiURL + 'clientes/', JSON.stringify(cliente), this.httpOptions)
+  
+      .pipe(
+        catchError(this.errorHandler)
+      )
+    }  
 
     update(cliente:Cliente): Observable<any> {
 

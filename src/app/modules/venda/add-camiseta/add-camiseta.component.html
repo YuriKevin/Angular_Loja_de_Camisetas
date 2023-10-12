@@ -10,6 +10,18 @@
             <a [routerLink]="['/vendas/', venda.id, 'add_camiseta/', camiseta.id]">
                 <button (click)="addCamisetaToVenda(camiseta)">Adicionar Camiseta</button>
             </a>
+            <div *ngIf="mostrarQuantidade">
+              <div class = "quadrado">
+              <label for="quantidade">Quantidade:</label>
+              <input
+                id="quantidade"
+                [(ngModel)]="quantidade"
+                type="number"
+                placeholder="1"
+                max="{{ camiseta.quantidade }}"
+              >
+              </div>
+            </div>
     </div>
     <button class="carrinho">
       <img src="../../../../assets/images/carrinho-de-compras.png" alt="Carrinho">

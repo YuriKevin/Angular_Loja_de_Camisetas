@@ -5,6 +5,7 @@ main{
     justify-content: flex-start;
     width: 100%;
     margin-bottom: 4vw;
+    font-family: 'Lexend', sans-serif;
 }
 .card:hover {
     transform: scale(1.1); /* Aumenta o tamanho em 10% ao passar o mouse */
@@ -24,7 +25,7 @@ main{
         margin-left: 5vw;
         margin-bottom: 8vw;
         font-size: 1.2vw;
-        font-family: 'Lexend', sans-serif;
+        
         margin: 3vw;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         /*5px: Define o deslocamento horizontal da sombra.
@@ -75,7 +76,6 @@ main{
     .card {
       width: 40%; /* Dois cartões por linha */
       height: auto; /* Ajuste a altura automaticamente para manter a proporção */
-      font-family: 'Lexend', sans-serif;
       border-radius: 10%;
       margin-left: 5vw; /* Espaçamento menor entre os cartões */
       margin-bottom:5vw; /* Espaçamento menor entre os cartões */
@@ -119,4 +119,9 @@ main{
     
       }
   }
-    
+.filtro{
+    width: 100%;
+}
+.filtro > *{
+    margin-left:1vw;
+}

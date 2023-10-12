@@ -4,6 +4,7 @@ main{
     width: 100%;
     margin-bottom: 4vw;
     align-items: center;
+    font-family: 'Lexend', sans-serif;
 }
 .create{
     right: 5vw;
@@ -31,7 +32,7 @@ main{
 }
 .card{
     margin-left: 10vw;
-    font-family: 'Lexend', sans-serif;
+    
     font-size: 1vw;
     display: inline-flex;
     height: 12vw;
@@ -85,7 +86,6 @@ button{
     }
     .card{
         margin-left: 5vw;
-        font-family: 'Lexend', sans-serif;
         font-size: 3vw;
         display: inline-block;
         height: fit-content;
@@ -145,3 +145,17 @@ button{
         width: 15vw;
     }
     }
+    .pesquisa{
+        width: 100%;
+        justify-content: center;
+    }
+    .busca{
+        margin-left: 25vw;
+        font-size: 1.5vw;
+    }
+    .busca input{
+        border-radius: 10px;
+        height: 2vw;
+        font-size: 1.5vw;
+    }
+

@@ -1,0 +1,23 @@
+<app-header></app-header>
+<body>
+    <main>
+    <div class="principal">
+        <h1>Nova Venda</h1>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="atributos">
+                <label for="nome">ID do cliente:</label>
+                <input 
+                    formControlName="id"
+                    id="id" 
+                    type="number">
+                <div *ngIf="f['id'].touched && f['id'].invalid" class="alert">
+                    <div *ngIf="f['id'].errors?.['required']">*</div>
+                </div>
+            </div>
+            <button type="submit" [disabled]="!form.valid">Adicionar</button>
+        </form>
+    </div>
+
+    </main>
+</body>
+<app-footer class="footer"></app-footer>

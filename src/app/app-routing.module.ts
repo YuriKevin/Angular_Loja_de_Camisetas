@@ -13,6 +13,8 @@ import { ManagementVendasComponent } from './modules/venda/management-vendas/man
 import { DetailsVendaComponent } from './modules/venda/details-venda/details-venda.component';
 import { EditVendasComponent } from './modules/venda/edit-vendas/edit-vendas.component';
 import { AddCamisetaComponent } from './modules/venda/add-camiseta/add-camiseta.component';
+import { CreateClienteComponent } from './modules/cliente/create-cliente/create-cliente.component';
+import { CreateVendaComponent } from './modules/venda/create-venda/create-venda.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -22,9 +24,11 @@ const routes: Routes = [
   { path: 'edit/:id', component: EditComponent},
   { path: 'search/:nome', component: SearchComponent},
   { path: 'clientes', component: ManagementClienteComponent},
+  { path: 'clientes/create', component: CreateClienteComponent},
   { path: 'clientes/edit/:id', component: EditClienteComponent},
   { path: 'clientes/details/:id', component: DetailsClienteComponent},
   { path: 'vendas', component: ManagementVendasComponent},
+  { path: 'vendas/create', component: CreateVendaComponent},
   { path: 'vendas/details/:id', component: DetailsVendaComponent},
   { path: 'vendas/edit/:id', component: EditVendasComponent},
   { path: 'vendas/:id/add_camiseta', component: AddCamisetaComponent},

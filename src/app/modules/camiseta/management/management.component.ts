@@ -9,13 +9,15 @@ import { Camiseta } from '../camiseta';
 })
 export class ManagementComponent implements OnInit {
   camisetas: Camiseta[] = [];
+  camisetasFiltradas: Camiseta[] = [];
+  valorBusca!: string;
 
   constructor(public camisetaService: CamisetaService) { }
 
   ngOnInit(): void {
     this.camisetaService.getCamisetas().subscribe((data: Camiseta[])=>{
     this.camisetas = data;
-    console.log(this.camisetas);
+    this.camisetasFiltradas = this.camisetas;
     })
     }
     deleteCamiseta(id: number): void {
@@ -26,6 +28,16 @@ export class ManagementComponent implements OnInit {
           
         });
       }
+    }
+    busca() {
+      let word = this.valorBusca;
+      this.camisetasFiltradas =[];
+          this.camisetas.forEach(camiseta => {
+            if (camiseta.clube.toLowerCase().includes(word)) {
+              this.camisetasFiltradas.push(camiseta);
+            }
+          });
+      
     }
 
 }

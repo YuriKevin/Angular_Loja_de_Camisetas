@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsVendaComponent } from './details-venda/details-venda.component';
 import { EditVendasComponent } from './edit-vendas/edit-vendas.component';
 import { AddCamisetaComponent } from './add-camiseta/add-camiseta.component';
+import { CreateVendaComponent } from './create-venda/create-venda.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { AddCamisetaComponent } from './add-camiseta/add-camiseta.component';
     ManagementVendasComponent,
     DetailsVendaComponent,
     EditVendasComponent,
-    AddCamisetaComponent
+    AddCamisetaComponent,
+    CreateVendaComponent
   ],
   imports: [
     CommonModule,
