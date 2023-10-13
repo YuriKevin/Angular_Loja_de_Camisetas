@@ -1,4 +1,5 @@
 <app-header></app-header>
+<button class="voltar" [routerLink]="['']">Voltar</button>
 <main *ngIf="camiseta">
     <div class="card">
       <img [src]="camiseta.imagem" alt="{{ camiseta.clube }}">
@@ -6,12 +7,22 @@
         <h3>{{ camiseta.clube }}</h3>
         <h4>{{ camiseta.ano }}</h4>
         <h5>R$ {{ camiseta.valor }}</h5>
-        <button class="add">
+        <label for="quantidade">Quantidade desejada:</label>
+        <input
+          id="quantidade"
+          [(ngModel)]="quantidade"
+          type="number"
+          placeholder="1"
+          max="{{ this.camiseta.quantidade }}"
+        >
+        <button class="add" (click)="addCamisetaCarrinho()" [routerLink]="['/shopping_cart']">
           <h1>Adicionar ao carrinho</h1>
          </button>
+         
       </div>
+      
     </div>
-    <button class="carrinho">
+    <button class="carrinho" [routerLink]="['/shopping_cart']">
       <img src="../../../../assets/images/carrinho-de-compras.png" alt="Carrinho">
     </button>
   </main>

@@ -64,7 +64,7 @@ export class VendaService {
 
     }
     AtualizaCamisetasVenda(camiseta:CamisetaVenda){
-      return this.httpClient.put(this.apiURL + '/vendas/remove_camiseta', JSON.stringify(camiseta), this.httpOptions)
+      return this.httpClient.put(this.apiURL + '/vendas/atualiza_camiseta', JSON.stringify(camiseta), this.httpOptions)
       .pipe(
         catchError(this.errorHandler)
       )

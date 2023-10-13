@@ -18,7 +18,7 @@
       <h4>{{ camiseta.ano }}</h4>
       <h5>R$ {{ camiseta.valor }}</h5>
     </div>
-    <button class="carrinho">
+    <button class="carrinho" [routerLink]="['/shopping_cart']">
       <img src="../../../../assets/images/carrinho-de-compras.png" alt="Carrinho">
     </button>
   </main>

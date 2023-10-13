@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CamisetaService } from '../camiseta.service';
 import { Camiseta } from '../camiseta';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CamisetaVenda } from '../../venda/camisetavenda';
 
 
 @Component({
@@ -12,9 +13,24 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DetailsComponent implements OnInit {
   id!: number;
   camiseta!: Camiseta;
+  camisetaVenda!: CamisetaVenda;
+  quantidade: number = 1;
 
   constructor(private route: ActivatedRoute, private router: Router, public camisetaService: CamisetaService) { 
- 
+    this.camisetaVenda = {
+      id: 0,
+      camiseta: {
+        id:0,
+        clube: "",
+        imagem: "",
+        ano:0,
+        quantidade:0,
+        valor:0
+      },
+      vendaId: 0,
+      quantidade: 0,
+      valor: 0,
+    };
   }
   
   ngOnInit(): void {
@@ -26,7 +42,6 @@ export class DetailsComponent implements OnInit {
 
        this.camisetaService.find(this.id).subscribe((data: Camiseta)=>{
         this.camiseta = data;
-        console.log(this.camiseta);
         })
     }
     else{
@@ -36,6 +51,14 @@ export class DetailsComponent implements OnInit {
   
 //&& typeof this.id === 'number'
 
+  addCamisetaCarrinho() {
+    this.camisetaVenda.camiseta = this.camiseta;
+    this.camisetaVenda.quantidade = this.quantidade;
+    this.camisetaVenda.valor = this.camiseta.valor;
+    console.log(this.camisetaVenda);
+    this.camisetaService.addCamisetaCarrinho(this.camisetaVenda);
+
+  }
 
 
 

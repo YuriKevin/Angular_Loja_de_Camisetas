@@ -1,0 +1,38 @@
+<app-header></app-header>
+<main>
+<h1 class="titulo">Seu carrinho</h1>
+<h2 class="titulo">Valor do carrinho R$ {{valorCompra}}</h2>
+<div class="card" *ngFor="let camiseta of camisetas">
+    <a [routerLink]="['/details', camiseta.camiseta.id]">
+      <img [src]="camiseta.camiseta.imagem" alt="{{ camiseta.camiseta.clube }}">
+    </a>
+    <h3>{{ camiseta.camiseta.clube }}</h3>
+    <h4>{{ camiseta.camiseta.ano }}</h4>
+    <h5>R$ {{ camiseta.camiseta.valor }}</h5>
+    <h3>Quantidade: {{ camiseta.quantidade }}</h3>
+    <button (click)="quantidadeCamisetaCarrinho(camiseta)">Mudar Quantidade</button>
+    <button (click)="removeCamisetaCarrinho(camiseta)">Remover</button>
+  </div>
+</main>
+<div class="mostrar" *ngIf="atualizar">
+    <div class="adicionar">
+      <button class="close" (click)="fechar()">Fechar</button>
+          <img [src]="this.camisetaVenda.camiseta.imagem" alt="{{ this.camisetaVenda.camiseta.clube }}">
+        <h3>{{ this.camisetaVenda.camiseta.clube }}</h3>
+        <h4>{{ this.camisetaVenda.camiseta.ano }}</h4>
+        <h5>R$ {{ this.camisetaVenda.camiseta.valor }}</h5>    
+
+        <div class = "quadrado">
+        <label for="quantidade">Quantidade:</label>
+        <input
+          id="quantidade"
+          [(ngModel)]="quantidade"
+          type="number"
+          placeholder="1"
+          max="{{ this.camisetaVenda.camiseta.quantidade }}"
+        >
+        <button (click)="atualizaCamisetaCarrinho()">Atualizar quantidade</button>
+      </div>
+    </div>
+  </div>
+<app-footer></app-footer>

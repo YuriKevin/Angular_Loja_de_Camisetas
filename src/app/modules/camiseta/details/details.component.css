@@ -151,3 +151,16 @@ main{
     position: absolute;
     bottom: 0px;
 }
+.voltar{
+ background-color: #F4483C;
+ color: white;
+ width: 10vw;
+ height: 4vw;
+ font-size: 2vw;
+ border-radius: 1vw;
+ border-color: #F4483C;
+}
+#quantidade{
+    margin-bottom: 2vw;
+    margin-top: 1vw;
+}

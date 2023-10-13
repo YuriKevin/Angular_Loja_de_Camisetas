@@ -17,6 +17,9 @@ export class EditVendasComponent implements OnInit{
   id!: number;
   venda: Venda = {} as Venda;
   form!: FormGroup;
+  quantidade!: number;
+  atualizar: boolean = false;
+  camisetaVenda!: CamisetaVenda;
 
   constructor(
     public vendaService: VendaService,
@@ -47,9 +50,6 @@ export class EditVendasComponent implements OnInit{
    
 
     });
-    for (let camiseta of this.venda.camisetaVendas) {
-      this.form.addControl(`quantidade_${camiseta.id}`, new FormControl(camiseta.quantidade));
-    }
   }
 
  
@@ -61,7 +61,7 @@ export class EditVendasComponent implements OnInit{
   
 
     
-  submit(){
+  atualizaCompra(){
     console.log(this.form.value);
     this.venda.dia_venda = this.form.value.data_compra;
     this.venda.valor = this.form.value.valor;
@@ -75,13 +75,31 @@ export class EditVendasComponent implements OnInit{
         
     })
   }
-  AtualizaCamisetasVenda(camiseta: CamisetaVenda) {
-    camiseta.vendaId= this.venda.id;
-    console.log(camiseta.quantidade);
+  removerCamiseta(camiseta:CamisetaVenda){
+    camiseta.quantidade = 0;
     this.vendaService.AtualizaCamisetasVenda(camiseta).subscribe(res => {
+      this.router.navigateByUrl('/vendas/edit/'+ this.venda.id);
+    })
+  }
+  quantidadeCamiseta(camiseta:CamisetaVenda){
+    this.camisetaVenda = camiseta;
+    this.atualizar=true;
+
+
+
+  }
+  AtualizaCamisetasVenda() {
+    this.atualizar=false;
+    this.camisetaVenda.vendaId= this.venda.id;
+    this.camisetaVenda.quantidade = this.quantidade;
+    console.log(this.camisetaVenda.quantidade);
+    this.vendaService.AtualizaCamisetasVenda(this.camisetaVenda).subscribe(res => {
     this.router.navigateByUrl('/vendas/edit/'+ this.venda.id);
   })
     
   }
+  fechar(){
+    this.atualizar=false;
+   }
 
 }

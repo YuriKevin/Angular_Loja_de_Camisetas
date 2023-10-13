@@ -6,25 +6,32 @@
       </a>
       <h3>{{ camiseta.clube }}</h3>
       <h4>{{ camiseta.ano }}</h4>
-      <h5>R$ {{ camiseta.valor }}</h5>
-            <a [routerLink]="['/vendas/', venda.id, 'add_camiseta/', camiseta.id]">
-                <button (click)="addCamisetaToVenda(camiseta)">Adicionar Camiseta</button>
-            </a>
-            <div *ngIf="mostrarQuantidade">
-              <div class = "quadrado">
-              <label for="quantidade">Quantidade:</label>
-              <input
-                id="quantidade"
-                [(ngModel)]="quantidade"
-                type="number"
-                placeholder="1"
-                max="{{ camiseta.quantidade }}"
-              >
-              </div>
-            </div>
+      <h5>R$ {{ camiseta.valor }}</h5>    
+      <button (click)="addCamisetaToVenda(camiseta)">Adicionar Camiseta</button>    
     </div>
     <button class="carrinho">
       <img src="../../../../assets/images/carrinho-de-compras.png" alt="Carrinho">
     </button>
   </main>
+  <div class="mostrar" *ngIf="adicionar">
+    <div class="adicionar">
+      <button class="close" (click)="fechar()">Fechar</button>
+          <img [src]="camiseta.camiseta.imagem" alt="{{ camiseta.camiseta.clube }}">
+        <h3>{{ camiseta.camiseta.clube }}</h3>
+        <h4>{{ camiseta.camiseta.ano }}</h4>
+        <h5>R$ {{ camiseta.camiseta.valor }}</h5>    
+
+        <div class = "quadrado">
+        <label for="quantidade">Quantidade:</label>
+        <input
+          id="quantidade"
+          [(ngModel)]="quantidade"
+          type="number"
+          placeholder="1"
+          max="{{ this.camiseta.camiseta.quantidade }}"
+        >
+        <button (click)="completaraddCamisetaToVenda()">Adicionar Camiseta</button>
+      </div>
+    </div>
+  </div>
 <app-footer></app-footer>

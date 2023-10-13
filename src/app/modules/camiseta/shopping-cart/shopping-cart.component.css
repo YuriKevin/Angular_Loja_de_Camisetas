@@ -1,37 +1,21 @@
-.remove{
-    background-color: #F4483C;
+.card{
+    height: fit-content;
 }
-.flex{
-    display: flex;
+.titulo{
+    width: 100%;
+    margin-left: 25vw;
 }
-.camisetas{
-    border-radius: 10px;
-    margin-left: 1vw;
-    font-size: 1vw;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    margin-bottom: 2vw;
-    margin-right: 1vw;
-}
-button{
+.card button{
     background-color: #F4483C;
     color: white;
-    width: 20vw;
-    height:3vw;
-    border-radius: 10px;
+    width: 8vw;
+    height: 3vw;
     margin-bottom: 2vw;
-    margin-top: 2vw;
-    margin-left: 0vw;
-    font-size: 2vw;
-
+    font-size: 1vw;
+    border-radius: 2vw;
+    display: block;
+    margin-left: 4vw;
 }
-input{
-    width: 10vw;
-    font-size: 2vw;
-}
-label{
-    font-size: 2vw;
-}
-
 .mostrar {
     position: fixed; /* Define a posição fixa */
     top: 0; /* A partir do topo */

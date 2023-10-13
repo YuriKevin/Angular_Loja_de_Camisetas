@@ -1,0 +1,69 @@
+
+.mostrar {
+    position: fixed; /* Define a posição fixa */
+    top: 0; /* A partir do topo */
+    left: 0; /* A partir da esquerda */
+    width: 100%; /* Largura de 100% da janela */
+    height: 100%; /* Altura de 100% da janela */
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo (use rgba para torná-la semi-transparente) */
+    z-index: 9999; /* Coloca a div acima de outros elementos usando um alto z-index */
+    display: flex; /* Use um layout flex para centralizar o conteúdo verticalmente e horizontalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    font-family: 'Lexend', sans-serif;
+  }
+@media (min-width: 768px) {
+    button{
+        height: 3vw;
+        width: 10vw;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 1vw;
+        margin-left: 1vw;
+        background-color: #F4483C;
+    }
+}
+@media (max-width: 767px) {
+    button{
+        height: 8vw;
+        width: 42vw;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 5vw;
+        margin-left: 10vw;
+        background-color: #F4483C;
+    }
+
+
+}
+.carrinho{
+    background-color: white;
+}
+.adicionar{
+    background-color: white;
+    width: 35%;
+    height: auto;
+    border-radius: 20px;
+    
+}
+.adicionar img{
+    width: 30vw;
+    height: fit-content;
+}
+.adicionar > *{
+    margin-left: 3vw;
+}
+.adicionar button {
+    margin-bottom: 2vw;
+    height: 3vw;
+}
+.adicionar input{
+    width: 5vw;
+    margin-left: 1vw;
+}
+.close{
+    display: block;
+    margin-top: 1vw;
+}

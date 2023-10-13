@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   opcaoSelecionada!: string;
   camisetas: Camiseta[] = [];
   camisetasFiltradas: Camiseta[] = [];
+  
 
   constructor(public camisetaService: CamisetaService) { 
     this.opcaoSelecionada = 'Todas';
@@ -78,5 +79,6 @@ export class HomeComponent implements OnInit {
           this.camisetasFiltradas = this.camisetas;
       }
     }
+
    
 }

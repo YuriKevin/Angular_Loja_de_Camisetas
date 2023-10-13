@@ -19,6 +19,7 @@ export class AddCamisetaComponent implements OnInit{
   camisetas!: Camiseta[];
   mostrarQuantidade: boolean = false;
   quantidade!: number;
+  adicionar: boolean = false;
 
   constructor(
     public vendaService: VendaService,
@@ -48,17 +49,23 @@ export class AddCamisetaComponent implements OnInit{
 
     }
     addCamisetaToVenda(camiseta: Camiseta) {
-      console.log(camiseta.quantidade);
+      this.adicionar=true;
       this.camiseta.camiseta = camiseta;
       this.camiseta.valor = this.camiseta.camiseta.valor;
       this.camiseta.vendaId = this.venda.id;
-      this.camiseta.quantidade = camiseta.quantidade;
-      this.vendaService.addCamiseta(this.camiseta).subscribe(res => {
-      this.router.navigateByUrl('/vendas/edit/'+ this.venda.id);
-    })
+      
       
     }
-    
+    completaraddCamisetaToVenda(){
+        this.camiseta.quantidade = this.quantidade;
+        this.vendaService.addCamiseta(this.camiseta).subscribe(res => {
+        this.router.navigateByUrl('/vendas/edit/'+ this.venda.id);
+      })
+
+    }
+    fechar(){
+     this.adicionar=false;
+    }
     
 
   }

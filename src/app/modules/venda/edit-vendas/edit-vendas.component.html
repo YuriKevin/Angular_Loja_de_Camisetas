@@ -4,7 +4,7 @@
         <div class="edit">
             <div class="principal">
                 <h1>Atualizar Venda</h1>
-                <form [formGroup]="form" (ngSubmit)="submit()">
+                <form [formGroup]="form">
                         <h1>Nome: {{ this.venda.cliente.nome }}</h1>
                         <h1>CPF: {{ this.venda.cliente.cpf }}</h1>
                         <h1>Valor da compra: {{ this.venda.valor }}</h1>
@@ -31,7 +31,7 @@
                             <div *ngIf="f['data_compra'].errors?.['required']">*</div>
                         </div>
                     </div>
-                    <button type="submit" [disabled]="!form.valid">Atualizar</button>
+                    <button (click)="atualizaCompra()" [disabled]="!form.valid">Atualizar</button>
                    
                     <button [routerLink]="['/vendas/'+venda.id+'/add_camiseta']">Adicionar Camiseta</button>
                             
@@ -41,11 +41,9 @@
                             <div class="infos_camisetas">
                                 <h4>{{ camiseta.camiseta.clube }}</h4>
                                 <h5>R$ {{ camiseta.valor }}</h5>
-                                <div class="quantidade">
-                                    <label for="quantidade">Quantidade:</label>
-                                    <input type="number" id="quantidade" formControlName="quantidade" name="quantidade" placeholder="{{camiseta.quantidade}}">
-                                </div>
-                                <button class="remove" (click)="AtualizaCamisetasVenda(camiseta)">Remover</button>
+                                <h4>Quantidade: {{camiseta.quantidade}}</h4>
+                                <button class="remove" (click)="quantidadeCamiseta(camiseta)">Quantidade</button>
+                                <button class="remove" (click)="removerCamiseta(camiseta)">Remover</button>
                             </div>
                         </div>
                     </div>      
@@ -54,4 +52,25 @@
         </div>
     </main>
 </body>
+<div class="mostrar" *ngIf="atualizar">
+    <div class="adicionar">
+      <button class="close" (click)="fechar()">Fechar</button>
+          <img [src]="this.camisetaVenda.camiseta.imagem" alt="{{ this.camisetaVenda.camiseta.clube }}">
+        <h3>{{ this.camisetaVenda.camiseta.clube }}</h3>
+        <h4>{{ this.camisetaVenda.camiseta.ano }}</h4>
+        <h5>R$ {{ this.camisetaVenda.camiseta.valor }}</h5>    
+
+        <div class = "quadrado">
+        <label for="quantidade">Quantidade:</label>
+        <input
+          id="quantidade"
+          [(ngModel)]="quantidade"
+          type="number"
+          placeholder="{{this.camisetaVenda.quantidade}}"
+          max="{{ this.camisetaVenda.camiseta.quantidade }}"
+        >
+        <button (click)="AtualizaCamisetasVenda()">Atualizar quantidade</button>
+      </div>
+    </div>
+  </div>
 <app-footer></app-footer>

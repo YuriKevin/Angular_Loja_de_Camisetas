@@ -11,6 +11,7 @@ import { EditComponent } from './edit/edit.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { CoreModule } from 'src/app/core/core.module';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CoreModule } from 'src/app/core/core.module';
     ManagementComponent,
     CreateComponent,
     EditComponent,
-    SearchComponent
+    SearchComponent,
+    ShoppingCartComponent
   ],
   imports: [
     CommonModule,

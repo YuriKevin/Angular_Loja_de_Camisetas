@@ -15,6 +15,7 @@ import { EditVendasComponent } from './modules/venda/edit-vendas/edit-vendas.com
 import { AddCamisetaComponent } from './modules/venda/add-camiseta/add-camiseta.component';
 import { CreateClienteComponent } from './modules/cliente/create-cliente/create-cliente.component';
 import { CreateVendaComponent } from './modules/venda/create-venda/create-venda.component';
+import { ShoppingCartComponent } from './modules/camiseta/shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'vendas/details/:id', component: DetailsVendaComponent},
   { path: 'vendas/edit/:id', component: EditVendasComponent},
   { path: 'vendas/:id/add_camiseta', component: AddCamisetaComponent},
+  { path: 'shopping_cart', component: ShoppingCartComponent},
 ];
 
 
