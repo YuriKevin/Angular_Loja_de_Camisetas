@@ -20,6 +20,7 @@ export class EditVendasComponent implements OnInit{
   quantidade!: number;
   atualizar: boolean = false;
   camisetaVenda!: CamisetaVenda;
+  carregar:boolean = true;
 
   constructor(
     public vendaService: VendaService,
@@ -37,6 +38,7 @@ export class EditVendasComponent implements OnInit{
       
       this.vendaService.find(this.id).subscribe((data: Venda)=>{
       this.venda = data;});
+      this.carregar = false;
       
     }
     else{
@@ -62,13 +64,17 @@ export class EditVendasComponent implements OnInit{
 
     
   atualizaCompra(){
+    this.carregar = true;
+
     console.log(this.form.value);
+
     this.venda.dia_venda = this.form.value.data_compra;
     this.venda.valor = this.form.value.valor;
 
     
 
       this.vendaService.update(this.venda).subscribe(res => {
+        this.carregar = false;
         alert('Venda atualizada com sucesso!');
         this.vendaService.find(this.id).subscribe((data: Venda)=>{
         this.venda = data;});
@@ -76,25 +82,38 @@ export class EditVendasComponent implements OnInit{
     })
   }
   removerCamiseta(camiseta:CamisetaVenda){
+    this.carregar = true;
     camiseta.quantidade = 0;
     this.vendaService.AtualizaCamisetasVenda(camiseta).subscribe(res => {
-      this.router.navigateByUrl('/vendas/edit/'+ this.venda.id);
+      alert('Venda atualizada com sucesso!');
+      this.vendaService.find(this.id).subscribe((data: Venda)=>{
+      this.venda = data;});
+      this.carregar = false;
     })
   }
   quantidadeCamiseta(camiseta:CamisetaVenda){
+    this.carregar = true;
     this.camisetaVenda = camiseta;
     this.atualizar=true;
+    this.carregar = false;
 
 
 
   }
   AtualizaCamisetasVenda() {
+    this.carregar = true;
     this.atualizar=false;
     this.camisetaVenda.vendaId= this.venda.id;
     this.camisetaVenda.quantidade = this.quantidade;
     console.log(this.camisetaVenda.quantidade);
     this.vendaService.AtualizaCamisetasVenda(this.camisetaVenda).subscribe(res => {
-    this.router.navigateByUrl('/vendas/edit/'+ this.venda.id);
+
+      alert('Venda atualizada com sucesso!');
+      this.vendaService.find(this.id).subscribe((data: Venda)=>{
+      this.venda = data;
+      this.carregar = false;
+    });
+
   })
     
   }

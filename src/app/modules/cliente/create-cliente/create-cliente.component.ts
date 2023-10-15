@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class CreateClienteComponent  implements OnInit{
   form!: FormGroup;
   cliente!: Cliente;
+  carregar:boolean = true;
 
   constructor(
     public clienteService: ClienteService,
@@ -23,6 +24,7 @@ export class CreateClienteComponent  implements OnInit{
       nome: new FormControl('', [Validators.required]),
       cpf: new FormControl('', [Validators.required])
       });
+      this.carregar = false;
       }
 
       get f(){
@@ -30,13 +32,13 @@ export class CreateClienteComponent  implements OnInit{
       }
 
       submit(){
-        
+        this.carregar = true;
           //this.cliente.nome= this.form.get('nome')?.value,
           //this.cliente.cpf= this.form.get('cpf')?.value,
         
         console.log(this.form.value);
         this.clienteService.create(this.form.value).subscribe(res => {
-
+          this.carregar = false;
              alert('Camiseta criada com sucesso!');
              this.router.navigateByUrl('clientes/details/'+res.id);
         })

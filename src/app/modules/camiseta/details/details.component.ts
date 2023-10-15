@@ -15,6 +15,8 @@ export class DetailsComponent implements OnInit {
   camiseta!: Camiseta;
   camisetaVenda!: CamisetaVenda;
   quantidade: number = 1;
+  carregar:boolean = true;
+
 
   constructor(private route: ActivatedRoute, private router: Router, public camisetaService: CamisetaService) { 
     this.camisetaVenda = {
@@ -42,7 +44,10 @@ export class DetailsComponent implements OnInit {
 
        this.camisetaService.find(this.id).subscribe((data: Camiseta)=>{
         this.camiseta = data;
+        this.carregar=false;
+
         })
+       
     }
     else{
       this.router.navigateByUrl('');

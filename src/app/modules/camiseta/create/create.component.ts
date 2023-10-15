@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class CreateComponent implements OnInit{
   form!: FormGroup;
+  carregar:boolean = true;
 
   constructor(
     public camisetaService: CamisetaService,
@@ -25,6 +26,7 @@ export class CreateComponent implements OnInit{
       valor: new FormControl('', Validators.required),
       imagem: new FormControl('', Validators.required)
       });
+      this.carregar=false;
       }
 
       get f(){
@@ -32,9 +34,10 @@ export class CreateComponent implements OnInit{
       }
 
       submit(){
+        this.carregar=true;
         console.log(this.form.value);
         this.camisetaService.create(this.form.value).subscribe(res => {
-
+          this.carregar=false;
              alert('Camiseta criada com sucesso!');
              this.router.navigateByUrl('details/'+res.id), { target: '_blank' };
         })

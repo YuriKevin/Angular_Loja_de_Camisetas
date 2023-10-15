@@ -14,6 +14,7 @@ export class DetailsClienteComponent implements OnInit{
   id!: number;
   cliente: Cliente = {} as Cliente;
   vendas!: Venda[];
+  carregar:boolean = true;
 
   constructor(private route: ActivatedRoute, private router: Router, public clienteService: ClienteService, public vendaService: VendaService) { 
     
@@ -34,7 +35,7 @@ export class DetailsClienteComponent implements OnInit{
           this.vendas = data;
           console.log(this.vendas);
           })
-        
+      this.carregar = false;
     }
     else{
       this.router.navigateByUrl('');

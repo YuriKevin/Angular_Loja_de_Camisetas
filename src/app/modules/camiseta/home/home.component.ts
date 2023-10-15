@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   opcaoSelecionada!: string;
   camisetas: Camiseta[] = [];
   camisetasFiltradas: Camiseta[] = [];
+  carregar:boolean = true;
   
 
   constructor(public camisetaService: CamisetaService) { 
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit {
     this.camisetaService.getCamisetas().subscribe((data: Camiseta[])=>{
     this.camisetas = data;
     this.camisetasFiltradas = this.camisetas;
+    this.carregar=false;
     
     })
     }

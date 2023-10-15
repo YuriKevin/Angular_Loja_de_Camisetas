@@ -16,6 +16,7 @@ export class EditComponent implements OnInit {
   camiseta: Camiseta = {} as Camiseta;
   form!: FormGroup;
   imagem!: string;
+  carregar:boolean = true;
 
 
   constructor(
@@ -33,6 +34,7 @@ export class EditComponent implements OnInit {
       this.camiseta.id = this.id;
       this.camisetaService.find(this.id).subscribe((data: Camiseta)=>{
       this.camiseta = data;
+      this.carregar=false;
 
 
       });
@@ -56,6 +58,7 @@ export class EditComponent implements OnInit {
   }
     
   submit(){
+    this.carregar=true;
     console.log(this.form.value);
     this.camiseta.clube = this.form.value.clube;
     this.camiseta.ano = this.form.value.ano;
@@ -63,6 +66,7 @@ export class EditComponent implements OnInit {
     this.camiseta.valor = this.form.value.valor;
     this.camiseta.imagem = this.form.value.imagem;
       this.camisetaService.update(this.camiseta).subscribe(res => {
+        this.carregar=false;
         console.log('Camiseta atualizada com sucesso!');
         this.router.navigateByUrl('details/'+this.camiseta.id), { target: '_blank' };
     })

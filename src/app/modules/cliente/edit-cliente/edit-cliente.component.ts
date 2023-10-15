@@ -13,6 +13,7 @@ export class EditClienteComponent implements OnInit{
   id!: number;
   cliente: Cliente = {} as Cliente;
   form!: FormGroup;
+  carregar:boolean = true;
 
   constructor(
     public clienteService: ClienteService,
@@ -29,6 +30,7 @@ export class EditClienteComponent implements OnInit{
       this.cliente.id = this.id;
       this.clienteService.find(this.id).subscribe((data: Cliente)=>{
       this.cliente = data;
+      this.carregar = false;
 
       });
     }
@@ -39,7 +41,6 @@ export class EditClienteComponent implements OnInit{
     this.form = new FormGroup({
       nome: new FormControl('', [Validators.required]),
       cpf: new FormControl('', [Validators.required]),
-      vendaIds: new FormControl('', [Validators.required]),
     });
   }
 
@@ -50,12 +51,15 @@ export class EditClienteComponent implements OnInit{
   
     
   submit(){
+    this.carregar = true;
     console.log(this.form.value);
     this.cliente.nome = this.form.value.nome;
     this.cliente.cpf = this.form.value.cpf;
       this.clienteService.update(this.cliente).subscribe(res => {
+        this.carregar = false;
         console.log('Cliente atualizado com sucesso!');
         this.router.navigateByUrl('clientes/details/'+this.cliente.id);
+
     })
   }
 }

@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SearchComponent implements OnInit {
   camisetas: Camiseta[] = [];
   nome!:string;
+  carregar:boolean = true;
 
   constructor(public camisetaService: CamisetaService, private router:Router, private route: ActivatedRoute) { }
 
@@ -24,6 +25,7 @@ export class SearchComponent implements OnInit {
         this.camisetaService.findByClub(this.nome).subscribe((data: Camiseta[]) => {
           this.camisetas = data;
           console.log(this.camisetas);
+          this.carregar = false;
         });
       } else {
         this.router.navigateByUrl('');

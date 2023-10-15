@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class CreateVendaComponent implements OnInit{
   form!: FormGroup;
   id!: number;
+  carregar:boolean = true;
 
   constructor(
     public vendaService: VendaService,
@@ -21,6 +22,7 @@ export class CreateVendaComponent implements OnInit{
       this.form = new FormGroup({
       id: new FormControl('', [Validators.required])
       });
+      this.carregar = false;
       }
 
       get f(){
@@ -28,8 +30,10 @@ export class CreateVendaComponent implements OnInit{
       }
 
       submit(){
+        this.carregar = true;
         this.id= this.form.get('id')!.value;
         this.vendaService.createManagement(this.id).subscribe(res => {
+          this.carregar = false;
              alert('Camiseta criada com sucesso!');
              this.router.navigateByUrl('vendas/edit/'+res);
         })

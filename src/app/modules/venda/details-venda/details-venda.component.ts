@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DetailsVendaComponent implements OnInit{
   id!:number;
   venda!: Venda;
+  carregar:boolean = true;
 
   constructor(private route: ActivatedRoute, private router: Router, public vendaService: VendaService) { 
     
@@ -20,6 +21,7 @@ export class DetailsVendaComponent implements OnInit{
     this.vendaService.find(this.id).subscribe((data: Venda)=>{
     this.venda = data;
     console.log(this.venda);
+    this.carregar = false;
     })
     }
 

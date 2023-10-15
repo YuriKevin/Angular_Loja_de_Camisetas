@@ -11,6 +11,7 @@ export class ManagementComponent implements OnInit {
   camisetas: Camiseta[] = [];
   camisetasFiltradas: Camiseta[] = [];
   valorBusca!: string;
+  carregar:boolean = true;
 
   constructor(public camisetaService: CamisetaService) { }
 
@@ -18,23 +19,29 @@ export class ManagementComponent implements OnInit {
     this.camisetaService.getCamisetas().subscribe((data: Camiseta[])=>{
     this.camisetas = data;
     this.camisetasFiltradas = this.camisetas;
+    this.carregar=false;
     })
     }
     deleteCamiseta(id: number): void {
       if (confirm('Tem certeza que deseja excluir esta camiseta?')) {
-       
+        this.carregar=true;
         this.camisetaService.delete(id).subscribe(() => {
-          this.camisetas = this.camisetas.filter(camiseta => camiseta.id !== id);
-          
-        });
+        const index = this.camisetas.findIndex(camiseta => camiseta.id === id);
+        if (index !== -1) {
+          this.camisetas.splice(index, 1); // Remove a camiseta do array pelo índice
+        }
+        this.carregar = false;
+      })
       }
     }
     busca() {
+      this.carregar=true;
       let word = this.valorBusca;
       this.camisetasFiltradas =[];
           this.camisetas.forEach(camiseta => {
             if (camiseta.clube.toLowerCase().includes(word)) {
               this.camisetasFiltradas.push(camiseta);
+              this.carregar=false;
             }
           });
       

@@ -12,6 +12,7 @@ a{
 }
 @media (min-width: 768px) {
 header {
+    height: 6vw;
     top: 0;
     left: 0;
     width: 100%;
@@ -67,6 +68,7 @@ h3{
 }
 @media (max-width: 767px) {
 header {
+    height: 33vw;
     top: 0;
     left: 0;
     width: 100%;
