@@ -1,8 +1,8 @@
 <app-header></app-header>
 <app-loading *ngIf="carregar"></app-loading>
-<main>
-<h1 class="titulo">Seu carrinho</h1>
-<h2 class="titulo">Valor do carrinho R$ {{valorCompra}}</h2>
+<main *ngIf="notEmpty">
+<button class="voltar" [routerLink]="['']">Voltar</button>
+<h1 class="titulo">Seu carrinho:</h1>
 <div class="card" *ngFor="let camiseta of camisetas">
     <a [routerLink]="['/details', camiseta.camiseta.id]">
       <img [src]="camiseta.camiseta.imagem" alt="{{ camiseta.camiseta.clube }}">
@@ -14,6 +14,8 @@
     <button (click)="quantidadeCamisetaCarrinho(camiseta)">Mudar Quantidade</button>
     <button (click)="removeCamisetaCarrinho(camiseta)">Remover</button>
   </div>
+  <h2 class="titulo">Valor do carrinho: <h2 class="price">R$ {{valorCompra}}</h2></h2>
+  <button class="payment" [routerLink]="['/buy']">Realizar pagamento</button>
 </main>
 <div class="mostrar" *ngIf="atualizar">
     <div class="adicionar">
@@ -36,4 +38,8 @@
       </div>
     </div>
   </div>
+  <main *ngIf="!notEmpty">
+    <button class="voltar" [routerLink]="['']">Voltar</button>
+    <h1 class="alerta">Seu carrinho está vazio :(</h1>
+  </main>
 <app-footer></app-footer>

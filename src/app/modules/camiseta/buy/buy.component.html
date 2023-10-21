@@ -1,0 +1,36 @@
+<app-header></app-header>
+<app-loading *ngIf="carregar"></app-loading>
+<main>
+    <div class="container">
+        <div class="input" *ngIf="!nome || !cliente">
+            <label for="cpfInput">Insira seu CPF:</label>
+            <input type="text" id="cpfInput" placeholder="Digite seu CPF" [(ngModel)]="cpf" (ngModelChange)="onCpfChange()" [maxlength]="11">
+
+        </div>
+        <div class="input" *ngIf="!nome || !cliente">
+            <label for="cpfInput">Redigite seu CPF:</label>
+            <input type="text" id="cpfInput" placeholder="Digite seu CPF" [(ngModel)]="cpf2" (ngModelChange)="onCpfChange()" [maxlength]="11">
+            <p *ngIf="this.naoCoincide">CPF's não coincidem</p>
+        </div>
+        <div *ngIf="inputNome && !cliente" class="input">
+            <label for="nomeInput">Insira seu nome completo:</label>
+            <input type="text" id="nomeInput" placeholder="Digite seu nome" [(ngModel)]="nome">
+        </div>
+        <button (click)="cadastrarCliente()" *ngIf="nome && cpf && cadastrar">Cadastrar</button>
+        <h3 class="nome" *ngIf="cliente">Seja bem-vindo! {{this.cliente.nome}}</h3>
+    
+    <h3>Camisetas:</h3>
+    <div class="card" *ngFor="let camiseta of camisetas">
+        <img [src]="camiseta.camiseta.imagem" alt="{{ camiseta.camiseta.clube }}">
+        <div class="infos">
+            <h3>{{ camiseta.camiseta.clube }}</h3>
+            <h4>{{ camiseta.camiseta.ano }}</h4>
+            <h4>R$ {{ camiseta.camiseta.valor }}</h4>
+            <h4>Quantidade: {{ camiseta.quantidade }}</h4>
+        </div>
+    </div>
+    <h3 class="titulo">Valor total: <h3 class="payment">R$ {{this.valorCompra}}</h3></h3>
+    <button class="green" (click)="efetuarCompra()"  [disabled]="!cliente">Efetuar Compra</button>
+</div>
+</main>
+<app-footer></app-footer>

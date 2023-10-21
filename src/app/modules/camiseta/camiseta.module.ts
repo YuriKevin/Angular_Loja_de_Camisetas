@@ -12,6 +12,7 @@ import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { CoreModule } from 'src/app/core/core.module';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { BuyComponent } from './buy/buy.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     CreateComponent,
     EditComponent,
     SearchComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    BuyComponent
   ],
   imports: [
     CommonModule,

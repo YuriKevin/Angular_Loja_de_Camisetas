@@ -1,12 +1,11 @@
 .mostrar {
-    margin-top: 6vw;
     position: fixed; /* Define a posição fixa */
     top: 0; /* A partir do topo */
     left: 0; /* A partir da esquerda */
     width: 100%; /* Largura de 100% da janela */
     height: 100%; /* Altura de 100% da janela */
     background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo (use rgba para torná-la semi-transparente) */
-    z-index: 9999; /* Coloca a div acima de outros elementos usando um alto z-index */
+    z-index: 1000; /* Coloca a div acima de outros elementos usando um alto z-index */
     display: flex; /* Use um layout flex para centralizar o conteúdo verticalmente e horizontalmente */
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */

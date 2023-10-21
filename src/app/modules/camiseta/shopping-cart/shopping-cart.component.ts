@@ -15,6 +15,7 @@ export class ShoppingCartComponent implements OnInit{
   camisetaVenda!: CamisetaVenda;
   quantidade!: number;
   carregar:boolean = true;
+  notEmpty:boolean = false;
 
   constructor(private camisetaService: CamisetaService){
     this.camisetas = camisetaService.getCamisetasCarrinho();
@@ -24,13 +25,20 @@ export class ShoppingCartComponent implements OnInit{
   
   ngOnInit(): void {
     this.carregar = false;
+    if(this.camisetas.length > 0){
+      this.notEmpty = true;
+    }
     
     }
     removeCamisetaCarrinho(camiseta:CamisetaVenda){
       this.carregar = true;
       this.camisetaService.removeCamisetaCarrinho(camiseta);
+      if(this.camisetas.length <= 0){
+        this.notEmpty = false;
+      }
       this.valorCompra = this.camisetaService.valorCarrinho();
       this.carregar = false;
+
     }
     quantidadeCamisetaCarrinho(camiseta:CamisetaVenda){
       this.carregar = true;
@@ -41,9 +49,20 @@ export class ShoppingCartComponent implements OnInit{
     atualizaCamisetaCarrinho(){
       this.carregar = true;
       this.camisetaVenda.quantidade = this.quantidade;
-      this.atualizar = false;
-      this.camisetaService.atualizaCamisetaCarrinho(this.camisetaVenda);
-      this.valorCompra = this.camisetaService.valorCarrinho();
+      if(this.camisetaVenda.quantidade == 0){
+        this.camisetaService.removeCamisetaCarrinho(this.camisetaVenda);
+        if(this.camisetas.length <= 0){
+          this.notEmpty = false;
+        }
+        this.atualizar = false;
+        this.valorCompra = this.camisetaService.valorCarrinho();
+      }
+      else{
+        this.atualizar = false;
+        this.camisetaService.atualizaCamisetaCarrinho(this.camisetaVenda);
+        this.valorCompra = this.camisetaService.valorCarrinho();
+        
+      }
       this.carregar = false;
     }
     fechar(){

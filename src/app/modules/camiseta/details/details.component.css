@@ -74,7 +74,8 @@ main{
     cursor: pointer;
 }
 .add{
-    background-color: #ffffff;
+    background-color: #1f796c;
+    color: white;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra do carrinho */
     width: 15vw;
@@ -138,7 +139,7 @@ main{
     transition: transform 0.3s ease; /* Transição suave apenas para a propriedade de transformação */
 }
 .add{
-    background-color: #ffffff;
+    background-color: #1f796c;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra do carrinho */
     width: 60vw;

@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+main{
+    display: block;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 2vw;
+    font-family: 'Lexend', sans-serif;
+
+}
+.container{
+    display: block;
+    align-items: center;
+    margin: auto;
+    width: 70%;
+}
+input{
+    margin-top: 2vw;
+    margin-left: 1vw;
+    
+}
+.payment{
+    color: #1f796c;
+}
+.green{
+    background-color: #1f796c;
+}

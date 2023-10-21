@@ -32,9 +32,9 @@ export class CreateVendaComponent implements OnInit{
       submit(){
         this.carregar = true;
         this.id= this.form.get('id')!.value;
-        this.vendaService.createManagement(this.id).subscribe(res => {
+        this.vendaService.create(this.id).subscribe(res => {
           this.carregar = false;
-             alert('Camiseta criada com sucesso!');
+             alert('Venda criada com sucesso!');
              this.router.navigateByUrl('vendas/edit/'+res);
         })
       }

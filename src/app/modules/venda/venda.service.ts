@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { tap, catchError, Observable, throwError } from 'rxjs';
 import { Venda } from './venda';
 import { CamisetaVenda } from './camisetavenda';
 @Injectable({
@@ -77,8 +76,16 @@ export class VendaService {
         catchError(this.errorHandler)
       )
     }
-    createManagement(id:number){
+
+    create(id:number){
       return this.httpClient.post(this.apiURL + 'vendas/cliente/' + id, this.httpOptions)
+      .pipe(
+        catchError(this.errorHandler)
+      )
+    }
+
+    save(venda:Venda){
+      return this.httpClient.post(this.apiURL + 'vendas/', JSON.stringify(venda), this.httpOptions)
       .pipe(
         catchError(this.errorHandler)
       )

@@ -106,12 +106,16 @@ export class EditVendasComponent implements OnInit{
     this.camisetaVenda.vendaId= this.venda.id;
     this.camisetaVenda.quantidade = this.quantidade;
     console.log(this.camisetaVenda.quantidade);
+    if(this.camisetaVenda.quantidade==0){
+     this.camisetaVenda.quantidade = 1;
+    }
+    console.log(this.camisetaVenda.quantidade);
     this.vendaService.AtualizaCamisetasVenda(this.camisetaVenda).subscribe(res => {
 
       alert('Venda atualizada com sucesso!');
       this.vendaService.find(this.id).subscribe((data: Venda)=>{
       this.venda = data;
-      this.carregar = false;
+      //this.carregar = false;
     });
 
   })

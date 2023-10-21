@@ -36,6 +36,13 @@ export class ClienteService {
         catchError(this.errorHandler)
       )
     }
+    
+    findByCPF(cpf:string): Observable<any> {
+      return this.httpClient.get(this.apiURL + 'clientes/find?cpf=' + cpf)
+      .pipe(
+        catchError(this.errorHandler)
+      )
+    }
 
     create(cliente:Cliente):  Observable<any> {
 
