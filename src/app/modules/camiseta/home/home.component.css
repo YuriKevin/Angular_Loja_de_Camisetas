@@ -76,7 +76,7 @@ main{
     .card {
       width: 40%; /* Dois cartões por linha */
       height: auto; /* Ajuste a altura automaticamente para manter a proporção */
-      border-radius: 10%;
+      border-radius: 20px;
       margin-left: 5vw; /* Espaçamento menor entre os cartões */
       margin-bottom:5vw; /* Espaçamento menor entre os cartões */
       font-size: 1vw; /* Tamanho da fonte menor */
@@ -118,10 +118,84 @@ main{
         height: 10vw;
     
       }
+      .filtro{
+        margin-bottom: 7vw;
+      }
   }
 .filtro{
     width: 100%;
 }
 .filtro > *{
     margin-left:1vw;
+}
+.home_picture{
+    margin: auto;
+    height: 40vw;
+    width: 70vw;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: auto;
+    margin-bottom: 2vw;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.imagens{
+    display: flex;
+    margin: auto;
+    width: 100%;
+}
+.imagens button{
+    width: 5vw;
+    height: 5vw;
+    margin:auto;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    background-color: white;
+    border: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.titulo{
+    margin:auto;
+    margin-bottom: 1vw;
+    display: flex;
+    align-items: center;
+}
+.escudo{
+    margin-left: 2vw;
+    height: 5vw;
+    width: auto;
+}
+.faixa_vermelha{
+    width: 100%;
+    background: linear-gradient(45deg, #F4483C, #FF6A60, #F4483C);
+    height: 2vw;
+    margin-bottom: 2vw;
+}
+.comprar{
+    width: 20vw;
+    height: 4vw;
+    background: linear-gradient(45deg, #F4483C, #000000, #F4483C, #000000,  #F4483C, #000000);
+    font-size: 2vw;
+    color: white;
+    font-family: 'Lexend', sans-serif;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.comprar img{
+    height: 3vw;
+    margin-right: 2vw;
+}
+.right{
+    width: 3vw;
+    height: auto;
+    transform: rotate(90deg); 
+    
+}
+.left{
+    width: 3vw;
+    height: auto;
+    transform: rotate(-90deg); 
+
 }

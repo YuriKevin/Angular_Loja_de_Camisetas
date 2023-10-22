@@ -82,7 +82,19 @@ main{
     height: 3vw;
     font-size: 0.5vw;
 }
-
+.voltar{
+    background-color: #F4483C;
+    color: white;
+    width: 10vw;
+    height: 4vw;
+    font-size: 2vw;
+    border-radius: 1vw;
+    border-color: #F4483C;
+    margin-left: 2vw;
+   }
+   input{
+    width: 4vw;
+   }
 }
 @media (max-width: 767px) {
     .card {
@@ -145,22 +157,32 @@ main{
     width: 60vw;
     height: 15vw;
     font-size: 2vw;
+    margin-top: 5vw;
 }
+.voltar{
+    background-color: #F4483C;
+    color: white;
+    width: 25vw;
+    height: 10vw;
+    font-size: 4vw;
+    border-radius: 3vw;
+    border-color: #F4483C;
+    margin-left: 2vw;
+   }
+   input{
+    width: 8vw;
+   }
+   label{
+    font-size: 4vw;
+    margin-right: 4vw;
+   }
 }
 .footer{
     width: 100%;
     position: absolute;
     bottom: 0px;
 }
-.voltar{
- background-color: #F4483C;
- color: white;
- width: 10vw;
- height: 4vw;
- font-size: 2vw;
- border-radius: 1vw;
- border-color: #F4483C;
-}
+
 #quantidade{
     margin-bottom: 2vw;
     margin-top: 1vw;

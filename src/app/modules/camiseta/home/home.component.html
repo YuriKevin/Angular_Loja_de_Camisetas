@@ -1,19 +1,30 @@
 <app-header></app-header>
 <main>
+  <div class="titulo">
+    <h3>Confira a coleção Manchester City</h3>
+    <img class="escudo" src="../../../../assets/images/escudo_manchester_city.png" alt="">
+  </div>
+  <div class="imagens">
+    <button (click)="mostrarImagemAnterior()"><img class="left" src="../../../../assets/images/arrow.png" alt=""></button>
+    <img class="home_picture" [src]="imagens[imagemAtualIndex]" alt="Imagem">
+    <button (click)="mostrarProximaImagem()"><img class="right" src="../../../../assets/images/arrow.png" alt=""></button>
+  </div>
+  <button [routerLink]="['/search', 'manchester city']" class="titulo comprar"> <img class="escudo" src="../../../../assets/images/escudo_manchester_city.png" alt="">Coleção</button>
+  <div class="faixa_vermelha"></div>
+  <h3 class="titulo">Nossas camisas</h3>
   <div class="filtro">
-    <label for="opcoes">Selecione uma opção:</label>
+    <label for="opcoes">Filtro:</label>
     <select id="opcoes" [(ngModel)]="opcaoSelecionada" name="opcaoSelecionada" (change)="selecaoAlterada()">
       <option value="Todas">Todas</option>
       <option value="Home">Home</option>
       <option value="Away">Away</option>
       <option value="Fan">Fan</option>
+      <option value="Goalkeeper">Goalkeeper</option>
       <option value="Special">Special Edition</option>
     </select>
   </div>
-    <div class="card" *ngFor="let camiseta of camisetasFiltradas">
-      <a [routerLink]="['/details', camiseta.id]">
-        <img [src]="camiseta.imagem" alt="{{ camiseta.clube }}">
-      </a>
+    <div [routerLink]="['/details', camiseta.id]" class="card" *ngFor="let camiseta of camisetasFiltradas">
+      <img  [src]="camiseta.imagem" alt="{{ camiseta.clube }}">
       <h3>{{ camiseta.clube }}</h3>
       <h4>{{ camiseta.ano }}</h4>
       <h5>R$ {{ camiseta.valor }}</h5>

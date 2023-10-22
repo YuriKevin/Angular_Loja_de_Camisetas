@@ -25,3 +25,55 @@ input{
 .green{
     background-color: #1f796c;
 }
+.aprovado {
+    position: fixed; /* Define a posição fixa */
+    top: 0; /* A partir do topo */
+    left: 0; /* A partir da esquerda */
+    width: 100%; /* Largura de 100% da janela */
+    height: 100%; /* Altura de 100% da janela */
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo (use rgba para torná-la semi-transparente) */
+    z-index: 1000; /* Coloca a div acima de outros elementos usando um alto z-index */
+    display: block; /* Use um layout flex para centralizar o conteúdo verticalmente e horizontalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    font-family: 'Lexend', sans-serif;
+  }
+  .quadrado{
+    margin-left: 35vw;
+    width: 30vw;
+    height: 25vw;
+    background-color: white;
+    border-radius: 40px;
+    animation: splash 2s ease-in-out; /* Defina o nome da animação, duração e função de temporização */
+    animation-fill-mode: forwards; /* Mantenha o último quadro da animação após a conclusão */
+    opacity: 0; /* Inicialmente invisível */
+  }
+  @keyframes splash {
+    0% {
+      opacity: 0; /* Inicialmente invisível */
+      transform: scale(0.5); /* Inicialmente pequeno */
+    }
+    100% {
+      opacity: 1; /* Totalmente visível */
+      transform: scale(1); /* Tamanho normal */
+    }
+  }
+  .quadrado img{
+    width: 15vw;
+    height: fit-content;
+    margin-left: 7vw;
+  }
+.quadrado h1{
+    font-size: 2vw;
+    margin-left: 10vw;
+
+}
+
+.aprovado button{
+    margin-top: 25vw;
+    margin-left: 45vw;
+    animation: splash 3s ease-in-out; /* Defina o nome da animação, duração e função de temporização */
+    animation-fill-mode: forwards; /* Mantenha o último quadro da animação após a conclusão */
+    opacity: 0; /* Inicialmente invisível */
+
+}

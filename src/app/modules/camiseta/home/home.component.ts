@@ -12,10 +12,21 @@ export class HomeComponent implements OnInit {
   camisetas: Camiseta[] = [];
   camisetasFiltradas: Camiseta[] = [];
   carregar:boolean = true;
+
+  imagens:string[] = [];
+  imagemAtualIndex: number = 0;
+
+
+  
   
 
   constructor(public camisetaService: CamisetaService) { 
     this.opcaoSelecionada = 'Todas';
+    this.imagens = [
+      '../../../../assets/images/home_picture.jpeg',
+      '../../../../assets/images/home_picture2.jpeg',
+      '../../../../assets/images/home_picture3.jpeg',
+    ];
   }
 
   
@@ -26,7 +37,16 @@ export class HomeComponent implements OnInit {
     this.camisetasFiltradas = this.camisetas;
     this.carregar=false;
     
+    
     })
+    }
+    
+    mostrarProximaImagem() {
+      this.imagemAtualIndex = (this.imagemAtualIndex + 1) % this.imagens.length;
+    }
+    
+    mostrarImagemAnterior() {
+      this.imagemAtualIndex = (this.imagemAtualIndex - 1 + this.imagens.length) % this.imagens.length;
     }
 
     selecaoAlterada() {
@@ -61,6 +81,16 @@ export class HomeComponent implements OnInit {
           this.camisetasFiltradas =[];
           this.camisetas.forEach(camiseta => {
             if (camiseta.clube.toLowerCase().includes('fan')) {
+              this.camisetasFiltradas.push(camiseta);
+            }
+          });
+
+          break;
+
+          case 'Goalkeeper':
+          this.camisetasFiltradas =[];
+          this.camisetas.forEach(camiseta => {
+            if (camiseta.clube.toLowerCase().includes('goalkeeper')) {
               this.camisetasFiltradas.push(camiseta);
             }
           });

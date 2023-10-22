@@ -4,6 +4,7 @@
 .titulo{
     width: 100%;
     margin-left: 25vw;
+    margin-bottom: 2vw;
 }
 .card button{
     background-color: #F4483C;
@@ -104,8 +105,7 @@ h2{
     color: #1f796c;
    }
    .payment{
-    
-    margin: auto;
+    margin-left: 25vw;
     margin-top: 2vw;
     background-color: #1f796c;
     color: white;

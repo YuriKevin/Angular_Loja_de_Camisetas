@@ -24,6 +24,7 @@ export class BuyComponent implements OnInit{
   valorCompra!:number;
   cadastrar: boolean = false;
   naoCoincide: boolean = false;
+  aprovado: boolean = false;
 
   constructor(
     public camisetaService: CamisetaService, 
@@ -75,30 +76,35 @@ export class BuyComponent implements OnInit{
   }
 
   cadastrarCliente(){
+    this.carregar=true;
     this.cliente = {} as Cliente;
     this.cliente.nome = this.nome;
     this.cliente.cpf = this.cpf;
     this.clienteService.create(this.cliente).subscribe((data: Cliente)=>{
       this.cliente = data;
       this.cadastrar = false;
+      this.carregar=false;
       })
       
   }
 
   efetuarCompra(){
+    this.carregar=true;
     this.venda = {} as Venda
     this.venda.camisetaVendas = this.camisetas;
-    
- 
-      this.venda.cliente = this.cliente;
+    this.venda.cliente = this.cliente;
 
     
     console.log(this.venda);
     this.vendaService.save(this.venda).subscribe((res)=>{
       
-      alert("Venda efetuada com sucesso");
+      if (res.camisetaVendas) {
+        this.aprovado = true;
+        this.camisetaService.limpaCarrinho();
+      }
    
-
+     this.carregar=false;
     })
   }
+
 }

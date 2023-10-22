@@ -84,11 +84,16 @@ export class VendaService {
       )
     }
 
-    save(venda:Venda){
+    save(venda:Venda): Observable<any>{
       return this.httpClient.post(this.apiURL + 'vendas/', JSON.stringify(venda), this.httpOptions)
       .pipe(
-        catchError(this.errorHandler)
-      )
+        catchError((error: any) => {
+            const mensagemDeErro = error.error.message;
+            alert("Erro: " + mensagemDeErro);
+
+          return ('Ocorreu um erro. Por favor, tente novamente mais tarde.');
+        })
+      );
     }
 
     errorHandler(error:any) {

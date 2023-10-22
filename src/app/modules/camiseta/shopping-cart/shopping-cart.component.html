@@ -7,12 +7,16 @@
     <a [routerLink]="['/details', camiseta.camiseta.id]">
       <img [src]="camiseta.camiseta.imagem" alt="{{ camiseta.camiseta.clube }}">
     </a>
-    <h3>{{ camiseta.camiseta.clube }}</h3>
-    <h4>{{ camiseta.camiseta.ano }}</h4>
-    <h5>R$ {{ camiseta.camiseta.valor }}</h5>
-    <h3>Quantidade: {{ camiseta.quantidade }}</h3>
-    <button (click)="quantidadeCamisetaCarrinho(camiseta)">Mudar Quantidade</button>
-    <button (click)="removeCamisetaCarrinho(camiseta)">Remover</button>
+    <div class="infos">
+      <h3>{{ camiseta.camiseta.clube }}</h3>
+      <h4>{{ camiseta.camiseta.ano }}</h4>
+      <h5>R$ {{ camiseta.camiseta.valor }}</h5>
+      <h3>Quantidade: {{ camiseta.quantidade }}</h3>
+    </div>
+    <div class="buttons">
+      <button (click)="quantidadeCamisetaCarrinho(camiseta)">Mudar Quantidade</button>
+      <button (click)="removeCamisetaCarrinho(camiseta)">Remover</button>
+    </div>
   </div>
   <h2 class="titulo">Valor do carrinho: <h2 class="price">R$ {{valorCompra}}</h2></h2>
   <button class="payment" [routerLink]="['/buy']">Realizar pagamento</button>

@@ -16,7 +16,7 @@
     width: 10vw;
     height: 10vw;
     height: fit-content;
-    border-radius: 50%;
+    border-radius: 40px;
 
 }
 @media (max-width: 767px) {

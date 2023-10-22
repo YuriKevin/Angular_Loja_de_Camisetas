@@ -28,12 +28,8 @@
             <h4>Quantidade: {{ camiseta.quantidade }}</h4>
         </div>
         <div class="buttons">
-            <a [routerLink]="['/details', camiseta.id]">
-                <button>Visualizar</button>
-            </a>
-            <a [routerLink]="['/edit', camiseta.id]">
-                <button>Atualizar</button>
-            </a>
+                <button [routerLink]="['/details', camiseta.id]">Visualizar</button>
+                <button [routerLink]="['/edit', camiseta.id]">Atualizar</button>
             <button (click)="deleteCamiseta(camiseta.id)">Deletar</button>
         </div>
     </div>

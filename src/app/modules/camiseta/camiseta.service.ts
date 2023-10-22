@@ -128,4 +128,8 @@ export class CamisetaService {
     });
     return valor;
   }
+
+  limpaCarrinho(){
+    this.carrinho = [];
+  }
 }
