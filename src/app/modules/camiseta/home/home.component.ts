@@ -16,7 +16,45 @@ export class HomeComponent implements OnInit {
   imagens:string[] = [];
   imagemAtualIndex: number = 0;
 
+  paises = [
+  { nome: 'Seleções', imagem: '../../../../assets/images/selecoes.png', nomeBusca: 'Seleção' },
+  { nome: 'Alemanha', imagem: '../../../../assets/images/alemanha.png', nomeBusca: 'Alemanha' },
+  { nome: 'Arábia', imagem: '../../../../assets/images/arabia.png', nomeBusca: 'Arabia' },
+  { nome: 'Brasil', imagem: '../../../../assets/images/brasil.png', nomeBusca: 'Brasil' },
+  { nome: 'Espanha', imagem: '../../../../assets/images/espanha.png', nomeBusca: 'Espanha' },
+  { nome: 'França', imagem: '../../../../assets/images/franca.png', nomeBusca: 'França' },
+  { nome: 'Inglaterra', imagem: '../../../../assets/images/inglaterra.png', nomeBusca: 'Inglaterra' },
+  { nome: 'Itália', imagem: '../../../../assets/images/italia.png', nomeBusca: 'Italia' },
+  { nome: 'Portugal', imagem: '../../../../assets/images/portugal.png', nomeBusca: 'Portugal' }
+  ];
 
+  indicePaises = 0;
+  contadorPaises = 0
+  passadorEsquerda = false;
+  passadorDireita = true;
+
+  addContadorPaises() {
+    this.indicePaises += 1;
+    if(this.indicePaises==this.paises.length-5){
+      this.passadorDireita = false;
+    }
+    else{
+      this.passadorDireita = true;
+    }
+    this.passadorEsquerda = true;
+   
+  }
+  removeContadorPaises() {
+    this.indicePaises -= 1;
+    if(this.indicePaises==0){
+      this.passadorEsquerda = false;
+    }
+    else{
+      this.passadorEsquerda = true;
+    }
+    this.passadorDireita = true;
+   
+  }
   
   
 

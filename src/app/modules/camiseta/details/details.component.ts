@@ -24,6 +24,7 @@ export class DetailsComponent implements OnInit {
       camiseta: {
         id:0,
         clube: "",
+        pais: "",
         imagem: "",
         ano:0,
         quantidade:0,

@@ -17,6 +17,17 @@
                 </div>
             </div>
             <div class="atributos">
+                <label for="clube">País - Continente:</label>
+                <input 
+                    formControlName="pais"
+                    id="pais" 
+                    type="text" 
+                    placeholder="ex: Brasil - America">
+                <div *ngIf="f['pais'].touched && f['pais'].invalid" class="alert">
+                    <div *ngIf="f['pais'].errors?.['required']">*</div>
+                </div>
+            </div>
+            <div class="atributos">
                 <label for="ano">Ano:</label>
                 <input 
                     formControlName="ano"

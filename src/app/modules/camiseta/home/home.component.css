@@ -163,15 +163,20 @@ main{
     align-items: center;
 }
 .escudo{
-    margin-left: 2vw;
     height: 5vw;
     width: auto;
+    margin-left: 1vw;
 }
 .faixa_vermelha{
     width: 100%;
-    background: linear-gradient(45deg, #F4483C, #FF6A60, #F4483C);
-    height: 2vw;
+    height: 10vw;
+    margin-top: 2vw;
     margin-bottom: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .comprar{
     width: 20vw;
@@ -198,4 +203,41 @@ main{
     height: auto;
     transform: rotate(-90deg); 
 
+}
+.circle{
+    align-items: center;
+    height: 8vw;
+    width: 10vw;
+}
+.circle >  *{
+    margin: auto;
+    margin-left: 2vw;
+}
+.circle img{
+    width: 5vw;
+
+    
+}
+.agrupa{
+
+  width: fit-content;
+}
+
+
+.faixa_vermelha button{
+    background-color: white;
+    border: none;
+    width: 5vw;
+    height: 5vw;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    background-color: white;
+    border: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.margem{
+    margin-left: 1vw;
+    margin-right: 1vw;
+    width: 7vw;
 }

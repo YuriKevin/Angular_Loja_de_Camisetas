@@ -17,6 +17,8 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
+      
+      if (params.has('nome')) {
       this.nome = params.get('nome') || '';
 
       if (this.nome !== '') {
@@ -30,6 +32,21 @@ export class SearchComponent implements OnInit {
       } else {
         this.router.navigateByUrl('');
       }
+    }
+    else if (params.has('pais')) {
+      this.nome = params.get('pais') || '';
+      if (this.nome !== '') {
+        console.log(this.nome);
+
+        this.camisetaService.findByPais(this.nome).subscribe((data: Camiseta[]) => {
+          this.camisetas = data;
+          console.log(this.camisetas);
+          this.carregar = false;
+        });
+      } else {
+        this.router.navigateByUrl('');
+      }
+    }
     });
     
     }

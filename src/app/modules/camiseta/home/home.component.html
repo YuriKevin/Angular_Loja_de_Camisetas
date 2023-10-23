@@ -10,7 +10,20 @@
     <button (click)="mostrarProximaImagem()"><img class="right" src="../../../../assets/images/arrow.png" alt=""></button>
   </div>
   <button [routerLink]="['/search', 'manchester city']" class="titulo comprar"> <img class="escudo" src="../../../../assets/images/escudo_manchester_city.png" alt="">Coleção</button>
-  <div class="faixa_vermelha"></div>
+  <div class="faixa_vermelha">
+    <div class="margem">
+      <button [disabled]="!passadorEsquerda"*ngIf="passadorEsquerda" (click)="removeContadorPaises()"><img class="left" src="../../../../assets/images/arrow.png" alt=""></button>
+    </div>
+    <div class="agrupa" *ngFor="let pais of paises.slice(indicePaises, indicePaises + 5)">
+      <div [routerLink]="['/search2/', pais.nomeBusca]" class="circle">
+        <img src="{{ pais.imagem }}" alt="{{ pais.nome }}">
+        <h4>{{ pais.nome }}</h4>
+      </div>
+    </div>
+    <div class="margem">
+      <button [disabled]="!passadorDireita" *ngIf="passadorDireita" (click)="addContadorPaises()"><img class="right" src="../../../../assets/images/arrow.png" alt=""></button>
+    </div>
+  </div>
   <h3 class="titulo">Nossas camisas</h3>
   <div class="filtro">
     <label for="opcoes">Filtro:</label>

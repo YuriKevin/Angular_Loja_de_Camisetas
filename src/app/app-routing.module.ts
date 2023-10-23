@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'create', component: CreateComponent},
   { path: 'edit/:id', component: EditComponent},
   { path: 'search/:nome', component: SearchComponent},
+  { path: 'search2/:pais', component: SearchComponent},
   { path: 'clientes', component: ManagementClienteComponent},
   { path: 'clientes/create', component: CreateClienteComponent},
   { path: 'clientes/edit/:id', component: EditClienteComponent},

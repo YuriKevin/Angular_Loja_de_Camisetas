@@ -52,6 +52,17 @@ export class CamisetaService {
         );
     }
 
+    findByPais(nome:string): Observable<Camiseta[]> {
+      // A URL da API é construída a partir da base (apiURL) e do endpoint específico
+      const url = this.apiURL + 'camisetas/find2?pais='+ nome;
+  
+      
+      return this.httpClient.get<Camiseta[]>(url, this.httpOptions)
+        .pipe(
+          catchError(this.errorHandler)
+        );
+    }
+
     create(camiseta:Camiseta):  Observable<any> {
 
       return this.httpClient.post(this.apiURL + 'camisetas/', JSON.stringify(camiseta), this.httpOptions)

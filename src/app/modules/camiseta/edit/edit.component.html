@@ -20,6 +20,18 @@
                         </div>
                     </div>
                     <div class="atributos">
+                        <label for="pais">País - Continente:</label>
+                        <input 
+                            formControlName="pais"
+                            id="pais" 
+                            type="text" 
+                            [(ngModel)]="camiseta.pais"
+                            placeholder="ex: Brasil - America">
+                        <div *ngIf="f['pais'].touched && f['pais'].invalid" class="alert">
+                            <div *ngIf="f['pais'].errors?.['required']">*</div>
+                        </div>
+                    </div>
+                    <div class="atributos">
                         <label for="ano">Ano:</label>
                         <input 
                             formControlName="ano"
