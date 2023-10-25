@@ -70,7 +70,7 @@ input{
 }
 
 .aprovado button{
-    margin-top: 25vw;
+    margin-top: 10vw;
     margin-left: 45vw;
     animation: splash 3s ease-in-out; /* Defina o nome da animação, duração e função de temporização */
     animation-fill-mode: forwards; /* Mantenha o último quadro da animação após a conclusão */

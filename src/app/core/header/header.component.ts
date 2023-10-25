@@ -7,10 +7,21 @@ import {Router } from '@angular/router';
 })
 export class HeaderComponent {
   search!: string;
+  menu: boolean = false;
+
   constructor(private router: Router) { }
   navigateToSearch() {
     if (this.search.trim() !== '') {
       this.router.navigate(['/search', this.search]);
+    }
+  }
+
+  openMenu(){
+    if(!this.menu){
+      this.menu = true;
+    }
+    else{
+      this.menu = false;
     }
   }
 }

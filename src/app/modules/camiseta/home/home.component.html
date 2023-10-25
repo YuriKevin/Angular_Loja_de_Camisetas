@@ -5,23 +5,23 @@
     <img class="escudo" src="../../../../assets/images/escudo_manchester_city.png" alt="">
   </div>
   <div class="imagens">
-    <button (click)="mostrarImagemAnterior()"><img class="left" src="../../../../assets/images/arrow.png" alt=""></button>
+    <button class="hover" (click)="mostrarImagemAnterior()"><img class="left" src="../../../../assets/images/arrow.png" alt=""></button>
     <img class="home_picture" [src]="imagens[imagemAtualIndex]" alt="Imagem">
-    <button (click)="mostrarProximaImagem()"><img class="right" src="../../../../assets/images/arrow.png" alt=""></button>
+    <button class="hover" (click)="mostrarProximaImagem()"><img class="right" src="../../../../assets/images/arrow.png" alt=""></button>
   </div>
-  <button [routerLink]="['/search', 'manchester city']" class="titulo comprar"> <img class="escudo" src="../../../../assets/images/escudo_manchester_city.png" alt="">Coleção</button>
+  <button [routerLink]="['/search', 'manchester city']" class="titulo comprar hover"> <img class="escudo" src="../../../../assets/images/escudo_manchester_city.png" alt="">Coleção</button>
   <div class="faixa_vermelha">
     <div class="margem">
-      <button [disabled]="!passadorEsquerda"*ngIf="passadorEsquerda" (click)="removeContadorPaises()"><img class="left" src="../../../../assets/images/arrow.png" alt=""></button>
+      <button class="hover" [disabled]="!passadorEsquerda"  (click)="removeContadorPaises()"><img class="left" src="../../../../assets/images/arrow.png" alt=""></button>
     </div>
-    <div class="agrupa" *ngFor="let pais of paises.slice(indicePaises, indicePaises + 5)">
+    <div class="agrupa hover" *ngFor="let pais of paises.slice(indicePaises, indicePaises + 5)">
       <div [routerLink]="['/search2/', pais.nomeBusca]" class="circle">
         <img src="{{ pais.imagem }}" alt="{{ pais.nome }}">
-        <h4>{{ pais.nome }}</h4>
       </div>
+      <h4>{{ pais.nome }}</h4>
     </div>
     <div class="margem">
-      <button [disabled]="!passadorDireita" *ngIf="passadorDireita" (click)="addContadorPaises()"><img class="right" src="../../../../assets/images/arrow.png" alt=""></button>
+      <button class="hover" [disabled]="!passadorDireita" (click)="addContadorPaises()"><img class="right" src="../../../../assets/images/arrow.png" alt=""></button>
     </div>
   </div>
   <h3 class="titulo">Nossas camisas</h3>
@@ -36,13 +36,13 @@
       <option value="Special">Special Edition</option>
     </select>
   </div>
-    <div [routerLink]="['/details', camiseta.id]" class="card" *ngFor="let camiseta of camisetasFiltradas">
+    <div [routerLink]="['/details', camiseta.id]" class="card hover" *ngFor="let camiseta of camisetasFiltradas">
       <img  [src]="camiseta.imagem" alt="{{ camiseta.clube }}">
       <h3>{{ camiseta.clube }}</h3>
       <h4>{{ camiseta.ano }}</h4>
       <h5>R$ {{ camiseta.valor }}</h5>
     </div>
-    <button class="carrinho" [routerLink]="['/shopping_cart']">
+    <button class="carrinho hover" [routerLink]="['/shopping_cart']">
       <img src="../../../../assets/images/carrinho-de-compras.png" alt="Carrinho">
     </button>
   </main>

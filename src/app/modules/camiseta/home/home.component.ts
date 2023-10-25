@@ -17,15 +17,15 @@ export class HomeComponent implements OnInit {
   imagemAtualIndex: number = 0;
 
   paises = [
-  { nome: 'Seleções', imagem: '../../../../assets/images/selecoes.png', nomeBusca: 'Seleção' },
-  { nome: 'Alemanha', imagem: '../../../../assets/images/alemanha.png', nomeBusca: 'Alemanha' },
-  { nome: 'Arábia', imagem: '../../../../assets/images/arabia.png', nomeBusca: 'Arabia' },
-  { nome: 'Brasil', imagem: '../../../../assets/images/brasil.png', nomeBusca: 'Brasil' },
-  { nome: 'Espanha', imagem: '../../../../assets/images/espanha.png', nomeBusca: 'Espanha' },
-  { nome: 'França', imagem: '../../../../assets/images/franca.png', nomeBusca: 'França' },
-  { nome: 'Inglaterra', imagem: '../../../../assets/images/inglaterra.png', nomeBusca: 'Inglaterra' },
-  { nome: 'Itália', imagem: '../../../../assets/images/italia.png', nomeBusca: 'Italia' },
-  { nome: 'Portugal', imagem: '../../../../assets/images/portugal.png', nomeBusca: 'Portugal' }
+  { nome: 'Seleções', imagem: '../../../../assets/images/neymar_home.png', nomeBusca: 'Seleção' },
+  { nome: 'Europa', imagem: '../../../../assets/images/lautaro_home.png', nomeBusca: 'Europa' },
+  { nome: 'Espanhol', imagem: '../../../../assets/images/bellingham_home.png', nomeBusca: 'Espanha' },
+  { nome: 'Inglês', imagem: '../../../../assets/images/bruno_home.png', nomeBusca: 'Inglaterra' },
+  { nome: 'Brasileirão', imagem: '../../../../assets/images/suarez_home.png', nomeBusca: 'Brasil' },
+  { nome: 'Francês', imagem: '../../../../assets/images/mbappe_home.png', nomeBusca: 'França' },
+  { nome: 'Sauditão', imagem: '../../../../assets/images/cr7_home.png', nomeBusca: 'arabia saudita' },
+  { nome: 'Italiano', imagem: '../../../../assets/images/rafael_home.png', nomeBusca: 'Italia' },
+  { nome: 'Alemão', imagem: '../../../../assets/images/kimmich_home.png', nomeBusca: 'Alemanha' }
   ];
 
   indicePaises = 0;

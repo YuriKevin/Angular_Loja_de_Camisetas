@@ -7,14 +7,13 @@ main{
     margin-bottom: 4vw;
     font-family: 'Lexend', sans-serif;
 }
-.card:hover {
-    transform: scale(1.1); /* Aumenta o tamanho em 10% ao passar o mouse */
-    transition: transform 0.3s ease; /* Transição suave apenas para a propriedade de transformação */
-}
-.carrinho:hover {
+.hover:hover {
     transform: scale(1.1); /* Aumenta o tamanho em 10% ao passar o mouse */
     transition: transform 0.3s ease; /* Transição suave apenas para a propriedade de transformação */
     cursor: pointer;
+}
+.agrupa:hover{
+    color: #F4483C;
 }
 @media (min-width: 768px) {
     .card {
@@ -169,7 +168,7 @@ main{
 }
 .faixa_vermelha{
     width: 100%;
-    height: 10vw;
+    height: fit-content;
     margin-top: 2vw;
     margin-bottom: 2vw;
     display: flex;
@@ -210,16 +209,18 @@ main{
     width: 10vw;
 }
 .circle >  *{
-    margin: auto;
-    margin-left: 2vw;
+    
 }
 .circle img{
-    width: 5vw;
-
+    width: 8vw;
+    margin-top: 1vw;
+    
+}
+.agrupa h4{
+    margin-left: 2vw;
     
 }
 .agrupa{
-
   width: fit-content;
 }
 
@@ -240,4 +241,7 @@ main{
     margin-left: 1vw;
     margin-right: 1vw;
     width: 7vw;
+}
+.carrinho{
+    background-color: #fff;
 }

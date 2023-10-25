@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
+main{
+    font-family: 'Lexend', sans-serif;
+}
+.compra{
+    border: 1px solid black;
+    margin: auto;
+    width: 30vw;
+    margin-bottom: 2vw;
+    border-radius: 10px;
+    border-color: #1ba25a;
+}
+.pedido{
+    margin-left: 30vw;
+    width: fit-content;
+    align-items: center;
+}
+.pedido h1{
+    margin-left: 4vw;
+}
+label h3{
+    margin-left: 7vw;
+}
+input{
+    margin-left: 10.5vw;
+    border-radius: 5px;
+    height: 2vw;
+    font-size: 1.5vw;
+    width: 8vw;
+}
+button{
+    display: block;
+    height: 3vw;
+    width: 8vw;
+    font-size: 1.5vw;
+    background-color: #1ba25a;
+    border-radius: 5px;
+    border-color: none;
+    margin-left: 10.8vw;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+
+}
+.card{
+    margin-left: 2vw;
+    display: block;
+}

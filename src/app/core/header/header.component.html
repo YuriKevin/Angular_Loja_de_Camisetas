@@ -1,22 +1,36 @@
 <header>
-    <div class="principal">
-        <div class="broke-line">
-                <h1 [routerLink]="['']" >Camisetas</h1>
-                <div class="search">
-                    <input type="text" placeholder="Digite o nome do clube..." [(ngModel)]="search" (keyup.enter)="navigateToSearch()">
-                    <a [routerLink]="['/search/nome', search]">
-                        <img src="../../../assets/images/botao_pesquisa.png" alt="">
-                    </a>
-                </div>
-        </div>
-        <div class="broke-line">
-            <h3>Português (BR)</h3>
-            <button class="config">
-                <a [routerLink]="['/management']">
-                    <img src="../../../assets/images/botao_configuracoes.png" alt="">
-                 </a>
-            </button>
+    <div class="sale"><h4>20% off em todo o site!</h4></div>
+    <div class="menu" (click)="openMenu()">
+        <img src="../../../assets/images/menu.png" alt="">
+        <h3>Menu</h3>
+    </div>
+    <div class="rastreio" [routerLink]="['/tracking']">
+        <img src="../../../assets/images/truck.png" alt="rastreio">
+        <h3>Rastreio</h3>
+    </div>
+    <h1 [routerLink]="['']">Camisetas</h1>
+    <div class="search">
+        <input type="text" placeholder="Digite o nome do clube..." [(ngModel)]="search" (keyup.enter)="navigateToSearch()">
+        <img [routerLink]="['/search/nome', search]" src="../../../assets/images/botao_pesquisa.png" alt="">
+    </div>
+    <div class="imagem">
+        <img  [routerLink]="['/management']" src="../../../assets/images/botao_configuracoes.png" alt="">
+    </div>
+    <div class="background" *ngIf="menu">
+        <button (click)="openMenu()">Fechar</button>
+        <div class="openMenu" >
+            <ul>
+                <li><img src="../../../assets/images/desconto.png" alt=""><h4>Descontos</h4></li>
+                <li><img src="../../../assets/images/novo.png" alt=""><h4>Últimos lançamentos</h4></li>
+                <li><img src="../../../assets/images/brasil.png" alt=""><h4>Brasileirão</h4></li>
+                <li><img src="../../../assets/images/camisa.png" alt=""><h4>Seleções</h4></li>
+                <li><img src="../../../assets/images/franca.png" alt=""><h4>Francês</h4></li>
+                <li><img src="../../../assets/images/italia.png" alt=""><h4>Série A</h4></li>
+                <li><img src="../../../assets/images/inglaterra.png" alt=""><h4>Premier League</h4></li>
+                <li><img src="../../../assets/images/espanha.png" alt=""><h4>La Liga</h4></li>
+                <li><img src="../../../assets/images/arabia.png" alt=""><h4>Sauditão</h4></li>
+            </ul>
         </div>
     </div>
-    </header>
+</header>
     

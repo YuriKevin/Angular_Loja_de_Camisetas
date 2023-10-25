@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { CoreModule } from 'src/app/core/core.module';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { BuyComponent } from './buy/buy.component';
+import { TrackingComponent } from './tracking/tracking.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { BuyComponent } from './buy/buy.component';
     EditComponent,
     SearchComponent,
     ShoppingCartComponent,
-    BuyComponent
+    BuyComponent,
+    TrackingComponent
   ],
   imports: [
     CommonModule,

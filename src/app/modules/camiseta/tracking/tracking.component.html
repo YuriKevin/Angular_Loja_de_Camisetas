@@ -1,0 +1,23 @@
+<app-header></app-header>
+<main>
+    <div class="compra">
+        <label>
+            <h3>Digite o número da compra:</h3>
+            <input type="number" placeholder="" [(ngModel)]="id">
+        </label>
+        <button (click)="enviar()">Enviar</button>
+    </div>
+    <div class="pedido" *ngIf="this.venda">
+        <h1>Seu pedido já está a caminho!</h1>
+        <div class="card" *ngFor="let camiseta of camisetas">
+            <img [src]="camiseta.camiseta.imagem" alt="{{ camiseta.camiseta.clube }}">
+            <div class="infos">
+                <h3>{{ camiseta.camiseta.clube }}</h3>
+                <h4>{{ camiseta.camiseta.ano }}</h4>
+                <h4>R$ {{ camiseta.valor }}</h4>
+                <h4>Quantidade: {{ camiseta.quantidade }}</h4>
+            </div>
+        </div>
+    </div>
+</main>
+<app-footer></app-footer>
