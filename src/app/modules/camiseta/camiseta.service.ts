@@ -11,8 +11,8 @@ import { CamisetaVenda } from '../venda/camisetavenda';
   providedIn: 'root'
 })
 export class CamisetaService {
-  //private apiURL = "http://localhost:8080/";
-  private apiURL = "https://springcamiseta-production.up.railway.app/";
+  private apiURL = "http://localhost:8080/";
+  //private apiURL = "https://springcamiseta-production.up.railway.app/";
   public carrinho: CamisetaVenda[] = [];
 
   httpOptions = {
