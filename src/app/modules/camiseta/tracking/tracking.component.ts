@@ -7,7 +7,7 @@ import { CamisetaVenda } from '../../venda/camisetavenda';
 @Component({
   selector: 'app-tracking',
   templateUrl: './tracking.component.html',
-  styleUrls: ['../management/management.component.css','./tracking.component.css']
+  styleUrls: ['../home/home.component.css','./tracking.component.css']
 })
 export class TrackingComponent implements OnInit{
   venda!: Venda;

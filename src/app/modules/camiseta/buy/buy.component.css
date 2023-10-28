@@ -1,13 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
-main{
-    display: block;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 100%;
-    margin-top: 2vw;
-    font-family: 'Lexend', sans-serif;
 
-}
 .container{
     display: block;
     align-items: center;
@@ -17,6 +8,8 @@ main{
 input{
     margin-top: 2vw;
     margin-left: 1vw;
+    border-radius: 10pc;
+    width: 30vw;
     
 }
 .payment{
@@ -24,6 +17,11 @@ input{
 }
 .green{
     background-color: #1f796c;
+    color: white;
+    width: 25vw;
+    height: 5vw;
+    font-size: 2vw;
+    border-radius: 3vw;
 }
 .aprovado {
     position: fixed; /* Define a posição fixa */
@@ -69,11 +67,89 @@ input{
 
 }
 
+
 .aprovado button{
     margin-top: 10vw;
-    margin-left: 45vw;
+    margin-left: 35vw;
     animation: splash 3s ease-in-out; /* Defina o nome da animação, duração e função de temporização */
     animation-fill-mode: forwards; /* Mantenha o último quadro da animação após a conclusão */
     opacity: 0; /* Inicialmente invisível */
+
+}
+.voltar{
+  margin-right: 70%;
+  margin-bottom: 3vw;
+  background-color: #F4483C;
+  color: white;
+  width: 15vw;
+  height: 5vw;
+  font-size: 2vw;
+  border-radius: 3vw;
+  border-color: #F4483C;
+  margin-left: 2vw;
+ }
+ .cadastrar_btn{
+  background-color: #1f796c;
+  border-color: #1f796c;
+  margin-top: 2vw;
+ }
+ .input{
+  margin-bottom: 2vw;
+ }
+@media (max-width: 767px) {
+  .voltar{
+    width: 25vw;
+    height: 10vw;
+    font-size: 4vw;
+    border-radius: 3vw;
+   }
+   .card{
+    width: 90%;
+   }
+   input{
+    display: block;
+    border-radius: 3vw;
+    width: 50vw;
+   }
+   label{
+    font-size: 4vw;
+   }
+   .green{
+    width: 50vw;
+    height: 10vw;
+    font-size: 5vw;
+   }
+   main h3{
+    font-size: 5vw;
+   }
+   .quadrado{
+    margin-left: 15vw;
+    width: 70vw;
+    height: 45vw;
+    background-color: white;
+    border-radius: 40px;
+    animation: splash 2s ease-in-out; /* Defina o nome da animação, duração e função de temporização */
+    animation-fill-mode: forwards; /* Mantenha o último quadro da animação após a conclusão */
+    opacity: 0; /* Inicialmente invisível */
+  }
+  .quadrado img{
+    width: 30vw;
+    height: fit-content;
+    margin-left: 20vw;
+    margin-bottom: wvw;
+  }
+.quadrado h1{
+    font-size: 5vw;
+    margin-left: 8vw;
+
+}
+.aprovado button{
+  margin-top: 30vw;
+  margin-left: 15vw;
+  animation: splash 1s ease-in-out; /* Defina o nome da animação, duração e função de temporização */
+  animation-fill-mode: forwards; /* Mantenha o último quadro da animação após a conclusão */
+
+
+}
 
 }

@@ -22,7 +22,19 @@ main{
     transition: transform 0.3s ease;
     cursor: pointer;
 }
-
+.pesquisa{
+    width: 100%;
+    justify-content: center;
+}
+.busca{
+    margin-left: 25vw;
+    font-size: 1.5vw;
+}
+.busca input{
+    border-radius: 10px;
+    height: 2vw;
+    font-size: 1.5vw;
+}
 @media (min-width: 768px) {
 .modulos{
     display:flex;
@@ -64,15 +76,11 @@ button{
     margin-left: 1vw;
     background-color: #F4483C;
 }
-
-
-
-
 }
 @media (max-width: 767px) {
     .modulos{
         display:flex;
-        margin-top: 1vw;
+        margin-top: 3vw;
         margin-bottom: 3vw;
         margin-left: 2vw;
     }
@@ -90,6 +98,7 @@ button{
         display: inline-block;
         height: fit-content;
         width: fit-content;
+        min-width: 70%;
         align-items: center;
         margin-bottom: 4vw;
         border-radius: 30px;
@@ -144,18 +153,24 @@ button{
         top: 60vw;
         width: 15vw;
     }
-    }
-    .pesquisa{
-        width: 100%;
-        justify-content: center;
-    }
     .busca{
-        margin-left: 25vw;
-        font-size: 1.5vw;
+        font-size: 3vw;
+        margin-left: 1vw;
+        
     }
     .busca input{
-        border-radius: 10px;
-        height: 2vw;
-        font-size: 1.5vw;
+        height: 5vw;
+        width: 30vw;
+        
     }
+    .busca button{
+        background-color: #F4483C;
+        height: 6vw;
+        width: 15vw;
+        margin-left: 1vw;
+        font-size: 3vw;
+        border-radius: 2vw;
+    }
+    }
+   
 

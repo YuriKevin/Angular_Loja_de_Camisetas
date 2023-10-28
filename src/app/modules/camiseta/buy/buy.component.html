@@ -13,11 +13,11 @@
             <input type="text" id="cpfInput" placeholder="Digite seu CPF" [(ngModel)]="cpf2" (ngModelChange)="onCpfChange()" [maxlength]="11">
             <p *ngIf="naoCoincide">CPF's não coincidem</p>
         </div>
-        <div *ngIf="inputNome && !cliente" class="input">
+        <div class="input" *ngIf="inputNome && !cliente" >
             <label for="nomeInput">Insira seu nome completo:</label>
             <input type="text" id="nomeInput" placeholder="Digite seu nome" [(ngModel)]="nome">
         </div>
-        <button (click)="cadastrarCliente()" *ngIf="nome && cpf && cadastrar && !naoCoincide">Cadastrar</button>
+        <button class="voltar cadastrar_btn" (click)="cadastrarCliente()" *ngIf="nome && cpf && cadastrar && !naoCoincide">Cadastrar</button>
         <h3 class="nome" *ngIf="cliente">Seja bem-vindo! {{this.cliente.nome}}</h3>
     
     <h3>Camisetas:</h3>
@@ -26,11 +26,11 @@
         <div class="infos">
             <h3>{{ camiseta.camiseta.clube }}</h3>
             <h4>{{ camiseta.camiseta.ano }}</h4>
-            <h4>R$ {{ camiseta.camiseta.valor }}</h4>
-            <h4>Quantidade: {{ camiseta.quantidade }}</h4>
+            <h5>R$ {{ camiseta.camiseta.valor }}</h5>
+            <h3>Quantidade: {{ camiseta.quantidade }}</h3>
         </div>
     </div>
-    <h3 class="titulo">Valor total: <h3 class="payment">R$ {{this.valorCompra}}</h3></h3>
+    <h3>Valor total: R$ {{this.valorCompra}}</h3>
     <button class="green" (click)="efetuarCompra()"  [disabled]="!cliente">Efetuar Compra</button>
 </div>
 <div class="aprovado" *ngIf="aprovado">

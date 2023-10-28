@@ -39,7 +39,8 @@ input{
 button{
     border-radius: 10px;
     border: 2px solid black;
-    height: 2vw;
+    height: 4vw;
+    font-size: 2vw;
     width:20vw;
     margin-top: 2vw;
     margin-bottom: 2vw;
@@ -52,4 +53,30 @@ button{
     width: 100%;
     position: absolute;
     bottom: 0px;
+}
+@media (max-width: 767px) {
+    h1{
+        font-size: 5vw;
+    }
+    .atributos > *{
+        display: block;
+        font-size: 3vw;
+    }
+    input{
+        width: 90%;
+        height: 7vw;
+        margin-top: 1vw;
+        
+    }
+    button{
+        width: 30vw;
+        height: 10vw;
+        margin-left: 18%;
+        font-size: 4vw;
+    }
+    .footer{
+        width: 100%;
+        position:relative;
+        bottom: 0px;
+    }
 }

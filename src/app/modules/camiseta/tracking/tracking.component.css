@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
 
-main{
-    font-family: 'Lexend', sans-serif;
-}
 .compra{
     border: 1px solid black;
     margin: auto;
@@ -12,12 +9,15 @@ main{
     border-color: #1ba25a;
 }
 .pedido{
-    margin-left: 30vw;
+    margin-left: 25vw;
     width: fit-content;
     align-items: center;
+
+    
 }
 .pedido h1{
     margin-left: 4vw;
+    font-size: 3vw;
 }
 label h3{
     margin-left: 7vw;
@@ -43,8 +43,11 @@ button{
 
 }
 .card{
-    margin-left: 2vw;
-    display: block;
+    height: fit-content;
+    margin-left: 15vw;
+}
+.card h4{
+    color: black;
 }
 @media (max-width: 767px) {
   .compra{
@@ -68,9 +71,17 @@ input{
     width: 28.5vw;
 }
 .pedido{
-    margin-left: 10vw;
+    margin-left:auto;
     width: fit-content;
     align-items: center;
     font-size: 5vw;
+    
+}
+.pedido h1{
+    font-size: 5vw;
+}
+.card{
+    width: 90%;
+    margin-left: 5vw;
 }
 }

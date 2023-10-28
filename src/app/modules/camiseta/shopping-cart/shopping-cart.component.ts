@@ -6,7 +6,7 @@ import { CamisetaVenda } from '../../venda/camisetavenda';
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',
-  styleUrls: ['../management/management.component.css','./shopping-cart.component.css']
+  styleUrls: ['../home/home.component.css','./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit{
   camisetas: CamisetaVenda[] = [];

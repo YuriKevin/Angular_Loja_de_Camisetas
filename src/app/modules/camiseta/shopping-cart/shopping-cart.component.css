@@ -5,6 +5,10 @@
     width: 100%;
     margin-left: 25vw;
     margin-bottom: 2vw;
+    
+}
+.titulo h2{
+    margin-left: 1vw;
 }
 .card button{
     background-color: #F4483C;
@@ -105,7 +109,33 @@ h2{
     margin-left: 1vw;
    }
    @media (max-width: 767px) {
+    main h2{
+        font-size: 5vw;
+        margin-left: 3vw;
+    }
+    .voltar{
+        width: 20vw;
+        height: 8vw;
+        font-size: 4vw;
+        border-radius: 1vw;
+        border-color: #F4483C;
+       }
+       h1{
+        font-size: 4vw;
+    }
+    .card button{
+        width: 30vw;
+        height: 8vw;
+        font-size: 3vw;
+        margin-left: 0vw;
 
-
+    }
+    .payment{
+        width: 40vw;
+        height: 15vw;
+        border-radius: 5vw;
+        font-size: 4vw;
+        margin-left: 3vw;
+    }
 
 }

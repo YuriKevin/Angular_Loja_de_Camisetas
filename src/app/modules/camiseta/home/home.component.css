@@ -18,7 +18,7 @@ main{
 @media (min-width: 768px) {
     .card {
         width: 18vw;
-        height: 27vw;
+        height: fit-content;
         font-family: 'Lexend', sans-serif;
         border-radius: 10%;
         margin-left: 5vw;
@@ -162,7 +162,7 @@ main{
     
 }
 .agrupa h4{
-    margin-left: 2vw;
+    margin-left: 0vw;
     font-size: 2vw;
     
 }
@@ -194,7 +194,7 @@ main{
 @media (max-width: 767px) {
     .card {
       width: 40%; /* Dois cartões por linha */
-      height: auto; /* Ajuste a altura automaticamente para manter a proporção */
+      height: fit-content; /* Ajuste a altura automaticamente para manter a proporção */
       border-radius: 20px;
       margin-left: 5vw; /* Espaçamento menor entre os cartões */
       margin-bottom:5vw; /* Espaçamento menor entre os cartões */
@@ -270,13 +270,14 @@ main{
         height: 30vw;
       }
       .margem button{
-        width: 7vw;
-        height: 6vw;
+        width: 5vw;
+        height: 5vw;
+        border-radius: 10px;
       
        
       }
       .margem button img{
-        width: 5vw;
+        width: 3.5vw;
         height: auto;
       }
     

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
-  styleUrls: ['../management/management.component.css','./buy.component.css']
+  styleUrls: ['../home/home.component.css','./buy.component.css']
 })
 export class BuyComponent implements OnInit{
   cpf!:string;
