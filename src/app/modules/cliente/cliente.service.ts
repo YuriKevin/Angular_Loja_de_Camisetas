@@ -9,8 +9,8 @@ import { Cliente } from 'src/app/modules/cliente/cliente';
 })
 export class ClienteService {
 
-  //private apiURL = "http://localhost:8080/";
-  private apiURL = "https://springcamiseta-production.up.railway.app/";
+  private apiURL = "http://localhost:8080/";
+  //private apiURL = "https://springcamiseta-production.up.railway.app/";
 
   httpOptions = {
     headers: new HttpHeaders({
