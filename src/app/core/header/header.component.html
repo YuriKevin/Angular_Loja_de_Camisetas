@@ -8,10 +8,12 @@
         <img src="../../../assets/images/truck.png" alt="rastreio">
         <h3>Rastreio</h3>
     </div>
+    <div class="logo_search">
     <h1 [routerLink]="['']">Camisetas</h1>
     <div class="search">
         <input type="text" placeholder="Digite o nome do clube..." [(ngModel)]="search" (keyup.enter)="navigateToSearch()">
         <img [routerLink]="['/search/nome', search]" src="../../../assets/images/botao_pesquisa.png" alt="">
+    </div>
     </div>
     <div class="imagem">
         <img  [routerLink]="['/management']" src="../../../assets/images/botao_configuracoes.png" alt="">

@@ -24,14 +24,8 @@ main{
         margin-left: 5vw;
         margin-bottom: 8vw;
         font-size: 1.2vw;
-        
         margin: 3vw;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        /*5px: Define o deslocamento horizontal da sombra.
-        5px: Define o deslocamento vertical da sombra.
-        10px: Define o desfoque da sombra (quanto maior o valor, mais difusa é a sombra).
-        rgba(0, 0, 0, 0.5): Define a cor da sombra. Neste caso, é uma sombra preta semi-transparente.
-        */
     }
     .card img{
         width: 15vw;
@@ -71,56 +65,7 @@ main{
 
 }
 
-@media (max-width: 767px) {
-    .card {
-      width: 40%; /* Dois cartões por linha */
-      height: auto; /* Ajuste a altura automaticamente para manter a proporção */
-      border-radius: 20px;
-      margin-left: 5vw; /* Espaçamento menor entre os cartões */
-      margin-bottom:5vw; /* Espaçamento menor entre os cartões */
-      font-size: 1vw; /* Tamanho da fonte menor */
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    }
-  
-    .card img {
-      width: 80%; /* Redimensiona a imagem para se ajustar melhor a dois cartões por linha */
-      height: auto; /* Ajuste a altura automaticamente para manter a proporção */
-      margin-top: 3vw;
-    }
-    .card h3{
-        font-size: 4vw;
-    }
-    .card h4{
-        font-size: 4vw;
-        color: gray;
-    }
-    .card h5{
-        font-size: 4vw;
-        color: #1f796c;
-    }
-    .card > * {
-        margin-left: 3vw; /* Defina a margem desejada à esquerda para os elementos filhos do .card */
-    }
-     .carrinho {
 
-        position: fixed; /* Torna o carrinho um elemento fixo */
-        bottom: 7vw; /* Define a distância do topo da tela (ajuste conforme necessário) */
-        right: 1vw; /* Define a distância da direita da tela (ajuste conforme necessário) */
-        width: 20vw; /* Define a largura do carrinho (ajuste conforme necessário) */
-        height: 20vw;
-        border-radius: 20px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra do carrinho */
-        z-index: 999; /* Define a ordem de empilhamento (z-index) para que fique acima de outros elementos */
-      }
-      .carrinho img{
-        width: 10vw;
-        height: 10vw;
-    
-      }
-      .filtro{
-        margin-bottom: 7vw;
-      }
-  }
 .filtro{
     width: 100%;
 }
@@ -218,6 +163,7 @@ main{
 }
 .agrupa h4{
     margin-left: 2vw;
+    font-size: 2vw;
     
 }
 .agrupa{
@@ -245,3 +191,114 @@ main{
 .carrinho{
     background-color: #fff;
 }
+@media (max-width: 767px) {
+    .card {
+      width: 40%; /* Dois cartões por linha */
+      height: auto; /* Ajuste a altura automaticamente para manter a proporção */
+      border-radius: 20px;
+      margin-left: 5vw; /* Espaçamento menor entre os cartões */
+      margin-bottom:5vw; /* Espaçamento menor entre os cartões */
+      font-size: 1vw; /* Tamanho da fonte menor */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+  
+    .card img {
+      width: 80%; /* Redimensiona a imagem para se ajustar melhor a dois cartões por linha */
+      height: auto; /* Ajuste a altura automaticamente para manter a proporção */
+      margin-top: 3vw;
+    }
+    .card h3{
+        font-size: 4vw;
+    }
+    .card h4{
+        font-size: 4vw;
+        color: gray;
+    }
+    .card h5{
+        font-size: 4vw;
+        color: #1f796c;
+    }
+    .card > * {
+        margin-left: 3vw; /* Defina a margem desejada à esquerda para os elementos filhos do .card */
+    }
+     .carrinho {
+
+        position: fixed; /* Torna o carrinho um elemento fixo */
+        bottom: 7vw; /* Define a distância do topo da tela (ajuste conforme necessário) */
+        right: 1vw; /* Define a distância da direita da tela (ajuste conforme necessário) */
+        width: 20vw; /* Define a largura do carrinho (ajuste conforme necessário) */
+        height: 20vw;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra do carrinho */
+        z-index: 999; /* Define a ordem de empilhamento (z-index) para que fique acima de outros elementos */
+      }
+      .carrinho img{
+        width: 10vw;
+        height: 10vw;
+    
+      }
+      .filtro{
+        margin-bottom: 7vw;
+      }
+      .titulo h3{
+        font-size: 4.5vw;
+      }
+      .titulo img{
+        width: 7vw;
+        height: auto;
+      }
+      .imagens img{
+        width: 95%;
+      }
+      .imagens button{
+        width: 9vw;
+        height: 7vw;
+        border-radius: 10px;
+      }
+      .imagens button img{
+        width: 5vw;
+        height: auto;
+        margin-left: 0vw;
+        margin-right: 0vw;
+      }
+      .colecao{
+        width: 30vw;
+        height: auto;
+        font-size: 3vw;
+      }
+      .faixa_vermelha{
+        height: 30vw;
+      }
+      .margem button{
+        width: 7vw;
+        height: 6vw;
+      
+       
+      }
+      .margem button img{
+        width: 5vw;
+        height: auto;
+      }
+    
+    .circle{
+        align-items: center;
+        height: 8vw;
+        width: 14vw;
+    }
+    .circle img{
+        width: 13vw;
+        margin-top: 1vw;
+        
+    }
+    .agrupa h4{
+        margin-top: 6vw;
+        margin-left: 2vw;
+        font-size: 2.5vw;
+        
+        
+    }
+    .home_titulo{
+        font-size: 4vw;
+    }
+
+  }

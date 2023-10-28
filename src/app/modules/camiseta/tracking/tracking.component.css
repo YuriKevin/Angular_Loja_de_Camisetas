@@ -46,3 +46,31 @@ button{
     margin-left: 2vw;
     display: block;
 }
+@media (max-width: 767px) {
+  .compra{
+    width: 80%;
+    font-size: 5vw;
+  }
+  button{
+    height: 10vw;
+    width: 30vw;
+    font-size: 4vw;
+    border-radius: 5px;
+    border-color: none;
+    margin-left: 25vw;
+
+}
+input{
+    margin-left: 25vw;
+    border-radius: 5px;
+    height: 6vw;
+    font-size: 4vw;
+    width: 28.5vw;
+}
+.pedido{
+    margin-left: 10vw;
+    width: fit-content;
+    align-items: center;
+    font-size: 5vw;
+}
+}

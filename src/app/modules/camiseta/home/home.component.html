@@ -9,7 +9,7 @@
     <img class="home_picture" [src]="imagens[imagemAtualIndex]" alt="Imagem">
     <button class="hover" (click)="mostrarProximaImagem()"><img class="right" src="../../../../assets/images/arrow.png" alt=""></button>
   </div>
-  <button [routerLink]="['/search', 'manchester city']" class="titulo comprar hover"> <img class="escudo" src="../../../../assets/images/escudo_manchester_city.png" alt="">Coleção</button>
+  <button [routerLink]="['/search', 'manchester city']" class="colecao titulo comprar hover"> <img class="escudo" src="../../../../assets/images/escudo_manchester_city.png" alt="">Coleção</button>
   <div class="faixa_vermelha">
     <div class="margem">
       <button class="hover" [disabled]="!passadorEsquerda"  (click)="removeContadorPaises()"><img class="left" src="../../../../assets/images/arrow.png" alt=""></button>
@@ -24,7 +24,7 @@
       <button class="hover" [disabled]="!passadorDireita" (click)="addContadorPaises()"><img class="right" src="../../../../assets/images/arrow.png" alt=""></button>
     </div>
   </div>
-  <h3 class="titulo">Nossas camisas</h3>
+  <h3 class="titulo home_titulo">Nossas camisas</h3>
   <div class="filtro">
     <label for="opcoes">Filtro:</label>
     <select id="opcoes" [(ngModel)]="opcaoSelecionada" name="opcaoSelecionada" (change)="selecaoAlterada()">

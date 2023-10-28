@@ -68,20 +68,7 @@
         background-color: #F4483C;
     }
 }
-@media (max-width: 767px) {
-    button{
-        height: 8vw;
-        width: 42vw;
-        color: white;
-        border-radius: 10px;
-        cursor: pointer;
-        font-size: 5vw;
-        margin-left: 10vw;
-        background-color: #F4483C;
-    }
 
-
-}
 h1{
     margin: auto;
     font-size: 2vw;
@@ -117,3 +104,8 @@ h2{
     margin-top:3vw;
     margin-left: 1vw;
    }
+   @media (max-width: 767px) {
+
+
+
+}

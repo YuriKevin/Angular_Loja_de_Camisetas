@@ -20,9 +20,6 @@
 
 }
 @media (max-width: 767px) {
-    .mostrar {
-        margin-top: 33vw;
-    }
     .loading{
         width: 30vw;
         height: fit-content;
