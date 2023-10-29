@@ -5,14 +5,14 @@
     <img class="escudo" src="../../../../assets/images/escudo_manchester_city.png" alt="">
   </div>
   <div class="imagens">
-    <button class="hover" (click)="mostrarImagemAnterior()"><img class="left" src="../../../../assets/images/arrow.png" alt=""></button>
+    <button class="hover" (click)="mostrarImagemAnterior()"><img class="left" src="../../../../assets/images/botao_proximo.png" alt=""></button>
     <img class="home_picture" [src]="imagens[imagemAtualIndex]" alt="Imagem">
-    <button class="hover" (click)="mostrarProximaImagem()"><img class="right" src="../../../../assets/images/arrow.png" alt=""></button>
+    <button class="hover" (click)="mostrarProximaImagem()"><img class="right" src="../../../../assets/images/botao_proximo.png" alt=""></button>
   </div>
   <button [routerLink]="['/search', 'manchester city']" class="colecao titulo comprar hover"> <img class="escudo" src="../../../../assets/images/escudo_manchester_city.png" alt="">Coleção</button>
   <div class="faixa_vermelha">
     <div class="margem">
-      <button class="hover" [disabled]="!passadorEsquerda"  (click)="removeContadorPaises()"><img class="left" src="../../../../assets/images/arrow.png" alt=""></button>
+      <button class="hover" [disabled]="!passadorEsquerda"  (click)="removeContadorPaises()"><img class="left" src="../../../../assets/images/botao_proximo.png" alt=""></button>
     </div>
     <div class="agrupa hover" *ngFor="let pais of paises.slice(indicePaises, indicePaises + 5)">
       <div [routerLink]="['/search2/', pais.nomeBusca]" class="circle">
@@ -21,7 +21,7 @@
       <h4>{{ pais.nome }}</h4>
     </div>
     <div class="margem">
-      <button class="hover" [disabled]="!passadorDireita" (click)="addContadorPaises()"><img class="right" src="../../../../assets/images/arrow.png" alt=""></button>
+      <button class="hover" [disabled]="!passadorDireita" (click)="addContadorPaises()"><img class="right" src="../../../../assets/images/botao_proximo.png" alt=""></button>
     </div>
   </div>
   <h3 class="titulo home_titulo">Nossas camisas</h3>

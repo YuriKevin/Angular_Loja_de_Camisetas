@@ -2,29 +2,27 @@
 <app-loading *ngIf="carregar"></app-loading>
 <main>
     <div class="infos">
+        <h3>Informações do cliente:</h3>
         <h3>Nome: {{ cliente.nome }}</h3>
-        <h4>CPF: {{ cliente.cpf }}</h4>
+        <h3>CPF: {{ cliente.cpf }}</h3>
     </div>
         <div *ngFor="let venda of vendas">
-            <div class="card">
+            <div class="venda">
                 <div class="venda_infos">
-                    <h4>Valor total da compra: <h5>R$ {{ venda.valor }}</h5></h4>
-                    <h4>Data: {{ venda.dia_venda }}</h4>
-                    <h4>Camisetas:</h4>
+                    <h3>Número da compra: {{this.venda.id}}</h3>
+                    <h3>Valor total da compra: <h5>R$ {{ venda.valor }}</h5></h3>
+                    <h3>Data: {{ venda.dia_venda }}</h3>
+                    <h3>Camisetas:</h3>
                 </div>
                 <div class="flex">
-                    <div class="camisetas" *ngFor="let camiseta of venda.camisetaVendas">
+                    <div class="card" *ngFor="let camiseta of venda.camisetaVendas">
                         <img [src]="camiseta.camiseta.imagem" alt="{{ camiseta.camiseta.clube }}">
-                        <div class="infos_camisetas">
-                            <h4>{{ camiseta.camiseta.clube }}</h4>
+                            <h3>{{ camiseta.camiseta.clube }}</h3>
                             <h5>R$ {{ camiseta.valor }}</h5>
-                            <h4>Quantidade: {{ camiseta.quantidade }}</h4>
-                        </div>
+                            <h3>Quantidade: {{ camiseta.quantidade }}</h3>
                     </div>
                 </div>
-                <a [routerLink]="['/vendas/edit', venda.id]">
-                    <button>Atualizar</button>
-                </a>
+                <button [routerLink]="['/vendas/edit', venda.id]">Atualizar</button>
             </div>
         </div>
   </main>

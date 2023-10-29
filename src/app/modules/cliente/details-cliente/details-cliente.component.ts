@@ -8,7 +8,7 @@ import { VendaService } from '../../venda/venda.service';
 @Component({
   selector: 'app-details-cliente',
   templateUrl: './details-cliente.component.html',
-  styleUrls: ['./details-cliente.component.css']
+  styleUrls: ['../../camiseta/home/home.component.css','./details-cliente.component.css']
 })
 export class DetailsClienteComponent implements OnInit{
   id!: number;

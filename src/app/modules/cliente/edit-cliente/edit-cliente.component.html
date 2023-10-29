@@ -2,7 +2,7 @@
 <app-loading *ngIf="carregar"></app-loading>
 <body>
     <main>
-        <div class="edit">
+        
             <div class="principal">
                 <h1>Atualizar cliente</h1>
                 <form [formGroup]="form" (ngSubmit)="submit()">
@@ -31,7 +31,7 @@
                     <button type="submit" [disabled]="!form.valid">Atualizar</button>
                 </form>
             </div>
-        </div>
+       
     </main>
 </body>
 <app-footer class="footer"></app-footer>

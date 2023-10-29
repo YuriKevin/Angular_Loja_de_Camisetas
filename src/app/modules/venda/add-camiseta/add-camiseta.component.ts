@@ -63,6 +63,9 @@ export class AddCamisetaComponent implements OnInit{
     completaraddCamisetaToVenda(){
       this.carregar = true;
         this.camiseta.quantidade = this.quantidade;
+        if(!this.camiseta.quantidade || this.camiseta.quantidade<=0){
+          this.camiseta.quantidade =1;
+        }
         this.vendaService.addCamiseta(this.camiseta).subscribe(res => {
         this.router.navigateByUrl('/vendas/edit/'+ this.venda.id);
       })

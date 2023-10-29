@@ -37,15 +37,13 @@
                     <button [routerLink]="['/vendas/'+venda.id+'/add_camiseta']">Adicionar Camiseta</button>
                             
                     <div class="flex">
-                        <div class="camisetas" *ngFor="let camiseta of venda.camisetaVendas">
+                        <div class="card" *ngFor="let camiseta of venda.camisetaVendas">
                             <img [src]="camiseta.camiseta.imagem" alt="{{ camiseta.camiseta.clube }}">
-                            <div class="infos_camisetas">
                                 <h4>{{ camiseta.camiseta.clube }}</h4>
                                 <h5>R$ {{ camiseta.valor }}</h5>
                                 <h4>Quantidade: {{camiseta.quantidade}}</h4>
-                                <button class="remove" (click)="quantidadeCamiseta(camiseta)">Quantidade</button>
-                                <button class="remove" (click)="removerCamiseta(camiseta)">Remover</button>
-                            </div>
+                                <button (click)="quantidadeCamiseta(camiseta)">Quantidade</button>
+                                <button (click)="removerCamiseta(camiseta)">Remover</button>
                         </div>
                     </div>      
                 </form>

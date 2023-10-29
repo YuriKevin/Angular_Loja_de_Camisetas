@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-details-venda',
   templateUrl: './details-venda.component.html',
-  styleUrls: ['./details-venda.component.css']
+  styleUrls: ['../../camiseta/home/home.component.css','../../cliente/details-cliente/details-cliente.component.css','./details-venda.component.css']
 })
 export class DetailsVendaComponent implements OnInit{
   id!:number;

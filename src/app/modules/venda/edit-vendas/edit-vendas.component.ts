@@ -10,7 +10,7 @@ import { CamisetaVenda } from '../camisetavenda';
 @Component({
   selector: 'app-edit-vendas',
   templateUrl: './edit-vendas.component.html',
-  styleUrls: ['../details-venda/details-venda.component.css', './edit-vendas.component.css']
+  styleUrls: ['../../camiseta/edit/edit.component.css','../../camiseta/home/home.component.css','../../cliente/details-cliente/details-cliente.component.css', './edit-vendas.component.css']
 })
 export class EditVendasComponent implements OnInit{
 

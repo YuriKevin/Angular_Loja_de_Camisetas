@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-venda',
   templateUrl: './create-venda.component.html',
-  styleUrls: ['../../camiseta/create/create.component.css','./create-venda.component.css']
+  styleUrls: ['../../camiseta/edit/edit.component.css','./create-venda.component.css']
 })
 export class CreateVendaComponent implements OnInit{
   form!: FormGroup;

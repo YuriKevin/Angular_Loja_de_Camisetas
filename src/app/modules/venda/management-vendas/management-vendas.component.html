@@ -24,14 +24,11 @@
             <h3>Número da compra: {{ venda.id }}</h3>
             <h3>{{ venda.cliente.nome }}</h3>
             <h4>{{ venda.cliente.cpf }}</h4>
-            <a [routerLink]="['/vendas/details', venda.id]">
-                <button>Camisetas adquiridas</button>
-            </a>
+                
         </div>
         <div class="buttons">
-            <a [routerLink]="['/vendas/edit', venda.id]">
-                <button>Atualizar</button>
-            </a>
+            <button [routerLink]="['/vendas/details', venda.id]">Visualizar</button>
+            <button [routerLink]="['/vendas/edit', venda.id]">Atualizar</button>
             <button (click)="deleteVenda(venda.id)">Deletar</button>
         </div>
     </div>

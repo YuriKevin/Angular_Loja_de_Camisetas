@@ -20,7 +20,7 @@ main{
         width: 18vw;
         height: fit-content;
         font-family: 'Lexend', sans-serif;
-        border-radius: 10%;
+        border-radius: 10px;
         margin-left: 5vw;
         margin-bottom: 8vw;
         font-size: 1.2vw;
@@ -139,13 +139,12 @@ main{
 .right{
     width: 3vw;
     height: auto;
-    transform: rotate(90deg); 
     
 }
 .left{
     width: 3vw;
     height: auto;
-    transform: rotate(-90deg); 
+    transform: rotate(-180deg);
 
 }
 .circle{
@@ -270,9 +269,13 @@ main{
         height: 30vw;
       }
       .margem button{
-        width: 5vw;
-        height: 5vw;
+        width: auto;
+        height: auto;
         border-radius: 10px;
+        margin-left: 0vw;
+        margin-right: 0vw;
+        padding: 1vw;
+        
       
        
       }
