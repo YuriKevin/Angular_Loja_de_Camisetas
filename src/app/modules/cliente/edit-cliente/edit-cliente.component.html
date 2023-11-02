@@ -14,7 +14,7 @@
                             type="text" 
                             [(ngModel)]="cliente.nome">
                         <div *ngIf="f['nome'].touched && f['nome'].invalid" class="alert">
-                            <div *ngIf="f['nome'].errors?.['required']">*</div>
+                            <div *ngIf="f['nome'].errors?.['required']">(Preencha o campo acima)</div>
                         </div>
                     </div>
                     <div class="atributos">
@@ -25,7 +25,7 @@
                             [(ngModel)]="cliente.cpf"
                             type="text">
                         <div *ngIf="f['cpf'].touched && f['cpf'].invalid" class="alert">
-                            <div *ngIf="f['cpf'].errors?.['required']">*</div>
+                            <div *ngIf="f['cpf'].errors?.['required']">(Preencha o campo acima)</div>
                         </div>
                     </div>
                     <button type="submit" [disabled]="!form.valid">Atualizar</button>

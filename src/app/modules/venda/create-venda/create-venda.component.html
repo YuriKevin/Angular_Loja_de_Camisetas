@@ -12,7 +12,7 @@
                     id="id" 
                     type="number">
                 <div *ngIf="f['id'].touched && f['id'].invalid" class="alert">
-                    <div *ngIf="f['id'].errors?.['required']">*</div>
+                    <div *ngIf="f['id'].errors?.['required']">(Preencha o campo acima)</div>
                 </div>
             </div>
             <button type="submit" [disabled]="!form.valid">Adicionar</button>

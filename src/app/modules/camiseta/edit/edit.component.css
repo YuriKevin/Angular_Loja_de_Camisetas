@@ -80,3 +80,6 @@ button{
         bottom: 0px;
     }
 }
+.alert{
+    color: red;
+}

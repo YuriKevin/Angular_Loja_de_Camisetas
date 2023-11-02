@@ -49,7 +49,12 @@ export class ClienteService {
       return this.httpClient.post(this.apiURL + 'clientes/', JSON.stringify(cliente), this.httpOptions)
   
       .pipe(
-        catchError(this.errorHandler)
+        catchError((error: any) => {
+          const mensagemDeErro = error.error.message;
+          alert("Erro: " + mensagemDeErro);
+
+        return ('Ocorreu um erro. Por favor, tente novamente mais tarde.');
+      })
       )
     }  
 

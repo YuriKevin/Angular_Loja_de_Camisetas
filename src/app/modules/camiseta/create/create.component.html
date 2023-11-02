@@ -13,7 +13,7 @@
                     type="text" 
                     placeholder="ex: Barcelona - Home">
                 <div *ngIf="f['clube'].touched && f['clube'].invalid" class="alert">
-                    <div *ngIf="f['clube'].errors?.['required']">*</div>
+                    <div *ngIf="f['clube'].errors?.['required']">(Preencha o campo acima)</div>
                 </div>
             </div>
             <div class="atributos">
@@ -24,7 +24,7 @@
                     type="text" 
                     placeholder="ex: Brasil - America">
                 <div *ngIf="f['pais'].touched && f['pais'].invalid" class="alert">
-                    <div *ngIf="f['pais'].errors?.['required']">*</div>
+                    <div *ngIf="f['pais'].errors?.['required']">(Preencha o campo acima)</div>
                 </div>
             </div>
             <div class="atributos">
@@ -34,7 +34,7 @@
                     id="number" 
                     type="text">
                 <div *ngIf="f['ano'].touched && f['ano'].invalid" class="alert">
-                    <div *ngIf="f['ano'].errors?.['required']">*</div>
+                    <div *ngIf="f['ano'].errors?.['required']">(Preencha o campo acima)</div>
                 </div>
             </div>
             <div class="atributos">
@@ -44,7 +44,7 @@
                     id="quantidade" 
                     type="number">
                 <div *ngIf="f['quantidade'].touched && f['quantidade'].invalid" class="alert">
-                    <div *ngIf="f['quantidade'].errors?.['required']">*</div>
+                    <div *ngIf="f['quantidade'].errors?.['required']">(Preencha o campo acima)</div>
                 </div>
             </div>
             <div class="atributos">
@@ -54,7 +54,7 @@
                     id="valor" 
                     type="number" >
                 <div *ngIf="f['valor'].touched && f['valor'].invalid" class="alert">
-                    <div *ngIf="f['valor'].errors?.['required']">*</div>
+                    <div *ngIf="f['valor'].errors?.['required']">(Preencha o campo acima)</div>
                 </div>
             </div>
             <div class="atributos">
@@ -64,7 +64,7 @@
                     id="imagem" 
                     type="text">
                 <div *ngIf="f['imagem'].touched && f['imagem'].invalid" class="alert">
-                    <div *ngIf="f['imagem'].errors?.['required']">*</div>
+                    <div *ngIf="f['imagem'].errors?.['required']">(Preencha o campo acima)</div>
                 </div>
                 <div *ngIf="f['imagem'].touched && f['imagem'].valid" class="alert">
                     <div *ngIf="f['imagem'].errors?.['required']"><img src="" alt=""></div>

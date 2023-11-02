@@ -39,6 +39,7 @@ export class CreateClienteComponent  implements OnInit{
         console.log(this.form.value);
         this.clienteService.create(this.form.value).subscribe(res => {
           this.carregar = false;
+          
              alert('Camiseta criada com sucesso!');
              this.router.navigateByUrl('clientes/details/'+res.id);
         })
