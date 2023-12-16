@@ -7,12 +7,12 @@ main{
     margin-bottom: 4vw;
 }
 .card:hover {
-    transform: scale(1.1); /* Aumenta o tamanho em 10% ao passar o mouse */
-    transition: transform 0.3s ease; /* Transição suave apenas para a propriedade de transformação */
+    transform: scale(1.1); 
+    transition: transform 0.3s ease; 
 }
 .carrinho:hover {
-    transform: scale(1.1); /* Aumenta o tamanho em 10% ao passar o mouse */
-    transition: transform 0.3s ease; /* Transição suave apenas para a propriedade de transformação */
+    transform: scale(1.1); 
+    transition: transform 0.3s ease; 
     cursor: pointer;
 }
 @media (min-width: 768px) {
@@ -27,11 +27,6 @@ main{
         font-family: 'Lexend', sans-serif;
         margin: 3vw;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        /*5px: Define o deslocamento horizontal da sombra.
-        5px: Define o deslocamento vertical da sombra.
-        10px: Define o desfoque da sombra (quanto maior o valor, mais difusa é a sombra).
-        rgba(0, 0, 0, 0.5): Define a cor da sombra. Neste caso, é uma sombra preta semi-transparente.
-        */
     }
     .card img{
         width: 15vw;

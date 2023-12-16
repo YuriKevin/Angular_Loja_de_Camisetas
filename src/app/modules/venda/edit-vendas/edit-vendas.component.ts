@@ -96,9 +96,6 @@ export class EditVendasComponent implements OnInit{
     this.camisetaVenda = camiseta;
     this.atualizar=true;
     this.carregar = false;
-
-
-
   }
   AtualizaCamisetasVenda() {
     this.carregar = true;
@@ -115,7 +112,6 @@ export class EditVendasComponent implements OnInit{
       alert('Venda atualizada com sucesso!');
       this.vendaService.find(this.id).subscribe((data: Venda)=>{
       this.venda = data;
-      //this.carregar = false;
     });
 
   })

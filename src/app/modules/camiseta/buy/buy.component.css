@@ -40,16 +40,16 @@ input{
     cursor: pointer;
 }
 .aprovado {
-    position: fixed; /* Define a posição fixa */
-    top: 0; /* A partir do topo */
-    left: 0; /* A partir da esquerda */
-    width: 100%; /* Largura de 100% da janela */
-    height: 100%; /* Altura de 100% da janela */
-    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo (use rgba para torná-la semi-transparente) */
-    z-index: 1000; /* Coloca a div acima de outros elementos usando um alto z-index */
-    display: block; /* Use um layout flex para centralizar o conteúdo verticalmente e horizontalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1000; 
+    display: block; 
+    justify-content: center; 
+    align-items: center; 
     font-family: 'Lexend', sans-serif;
   }
   .quadrado{
@@ -58,18 +58,18 @@ input{
     height: 25vw;
     background-color: white;
     border-radius: 40px;
-    animation: splash 2s ease-in-out; /* Defina o nome da animação, duração e função de temporização */
-    animation-fill-mode: forwards; /* Mantenha o último quadro da animação após a conclusão */
-    opacity: 0; /* Inicialmente invisível */
+    animation: splash 2s ease-in-out; 
+    animation-fill-mode: forwards; 
+    opacity: 0; 
   }
   @keyframes splash {
     0% {
-      opacity: 0; /* Inicialmente invisível */
-      transform: scale(0.5); /* Inicialmente pequeno */
+      opacity: 0; 
+      transform: scale(0.5); 
     }
     100% {
-      opacity: 1; /* Totalmente visível */
-      transform: scale(1); /* Tamanho normal */
+      opacity: 1; 
+      transform: scale(1); 
     }
   }
   .quadrado img{
@@ -87,9 +87,9 @@ input{
 .aprovado button{
     margin-top: 10vw;
     margin-left: 35vw;
-    animation: splash 3s ease-in-out; /* Defina o nome da animação, duração e função de temporização */
-    animation-fill-mode: forwards; /* Mantenha o último quadro da animação após a conclusão */
-    opacity: 0; /* Inicialmente invisível */
+    animation: splash 3s ease-in-out; 
+    animation-fill-mode: forwards; 
+    opacity: 0; 
 
 }
 .voltar{
@@ -429,16 +429,16 @@ background-color: #acaeae;
 }
 
 .back{
-  position: fixed; /* Define a posição fixa */
-    top: 0; /* A partir do topo */
-    left: 0; /* A partir da esquerda */
-    width: 100%; /* Largura de 100% da janela */
-    height: 100%; /* Altura de 100% da janela */
-    background-color: rgb(255, 255, 255); /* Cor de fundo (use rgba para torná-la semi-transparente) */
-    z-index: 1000; /* Coloca a div acima de outros elementos usando um alto z-index */
-    display: flex; /* Use um layout flex para centralizar o conteúdo verticalmente e horizontalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+  position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgb(255, 255, 255); 
+    z-index: 1000; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
     font-family: 'Lexend', sans-serif;
 }
 .pagamento{

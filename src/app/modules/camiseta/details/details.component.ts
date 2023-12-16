@@ -55,7 +55,6 @@ export class DetailsComponent implements OnInit {
     }
   }
   
-//&& typeof this.id === 'number'
 
   addCamisetaCarrinho() {
     this.camisetaVenda.camiseta = this.camiseta;

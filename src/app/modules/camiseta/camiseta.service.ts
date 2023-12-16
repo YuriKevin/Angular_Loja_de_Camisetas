@@ -11,8 +11,8 @@ import { CamisetaVenda } from '../venda/camisetavenda';
   providedIn: 'root'
 })
 export class CamisetaService {
-  private apiURL = "https://springcamisetas-production.up.railway.app/";
-  //private apiURL = "https://springcamiseta-production.up.railway.app/";
+  private apiURL = "localhost:8080/";
+
   public carrinho: CamisetaVenda[] = [];
 
   httpOptions = {
@@ -24,7 +24,6 @@ export class CamisetaService {
   constructor(private httpClient: HttpClient) { }
 
   getCamisetas(): Observable<Camiseta[]> {
-    // A URL da API é construída a partir da base (apiURL) e do endpoint específico
     const url = this.apiURL + 'camisetas';
 
     
@@ -42,7 +41,6 @@ export class CamisetaService {
 
     }
     findByClub(nome:string): Observable<Camiseta[]> {
-      // A URL da API é construída a partir da base (apiURL) e do endpoint específico
       const url = this.apiURL + 'camisetas/find?nome='+ nome;
   
       
@@ -53,7 +51,6 @@ export class CamisetaService {
     }
 
     findByPais(nome:string): Observable<Camiseta[]> {
-      // A URL da API é construída a partir da base (apiURL) e do endpoint específico
       const url = this.apiURL + 'camisetas/find2?pais='+ nome;
   
       
@@ -102,11 +99,9 @@ export class CamisetaService {
    addCamisetaCarrinho(camiseta: CamisetaVenda) {
     const index = this.carrinho.findIndex(camisetaCarrinho => camisetaCarrinho.camiseta.id === camiseta.camiseta.id);
     if (index !== -1) {
-      // Camiseta já existe no carrinho, então vamos substituir
       this.carrinho[index].quantidade += camiseta.quantidade;
       console.log('Camiseta encontrada e atualizada no carrinho.');
     } else {
-      // Camiseta não está no carrinho, então você pode adicioná-la
       this.carrinho.push(camiseta);
       console.log('Camiseta adicionada ao carrinho.');
     }

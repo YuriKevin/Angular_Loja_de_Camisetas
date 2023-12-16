@@ -8,8 +8,8 @@ main{
     font-family: 'Lexend', sans-serif;
 }
 .hover:hover {
-    transform: scale(1.1); /* Aumenta o tamanho em 10% ao passar o mouse */
-    transition: transform 0.3s ease; /* Transição suave apenas para a propriedade de transformação */
+    transform: scale(1.1);
+    transition: transform 0.3s ease; 
     cursor: pointer;
 }
 .agrupa:hover{
@@ -44,18 +44,18 @@ main{
         color: #1f796c;
     }
     .card > * {
-        margin-left: 1vw; /* Defina a margem desejada à esquerda para os elementos filhos do .card */
+        margin-left: 1vw; 
     }
 
     .carrinho {
-        position: fixed; /* Torna o carrinho um elemento fixo */
-        bottom: 2vw; /* Define a distância do topo da tela (ajuste conforme necessário) */
-        right: 1vw; /* Define a distância da direita da tela (ajuste conforme necessário) */
-        width: 10vw; /* Define a largura do carrinho (ajuste conforme necessário) */
+        position: fixed; 
+        bottom: 2vw; 
+        right: 1vw; 
+        width: 10vw; 
         height: 10vw;
         border-radius: 20px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra do carrinho */
-        z-index: 999; /* Define a ordem de empilhamento (z-index) para que fique acima de outros elementos */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+        z-index: 999; 
       }
       .carrinho img{
         width: 5vw;
@@ -192,18 +192,18 @@ main{
 }
 @media (max-width: 767px) {
     .card {
-      width: 40%; /* Dois cartões por linha */
-      height: fit-content; /* Ajuste a altura automaticamente para manter a proporção */
+      width: 40%; 
+      height: fit-content; 
       border-radius: 20px;
-      margin-left: 5vw; /* Espaçamento menor entre os cartões */
-      margin-bottom:5vw; /* Espaçamento menor entre os cartões */
-      font-size: 1vw; /* Tamanho da fonte menor */
+      margin-left: 5vw; 
+      margin-bottom:5vw; 
+      font-size: 1vw; 
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     }
   
     .card img {
-      width: 80%; /* Redimensiona a imagem para se ajustar melhor a dois cartões por linha */
-      height: auto; /* Ajuste a altura automaticamente para manter a proporção */
+      width: 80%; 
+      height: auto; 
       margin-top: 3vw;
     }
     .card h3{
@@ -218,18 +218,18 @@ main{
         color: #1f796c;
     }
     .card > * {
-        margin-left: 3vw; /* Defina a margem desejada à esquerda para os elementos filhos do .card */
+        margin-left: 3vw; 
     }
      .carrinho {
 
-        position: fixed; /* Torna o carrinho um elemento fixo */
-        bottom: 7vw; /* Define a distância do topo da tela (ajuste conforme necessário) */
-        right: 1vw; /* Define a distância da direita da tela (ajuste conforme necessário) */
-        width: 20vw; /* Define a largura do carrinho (ajuste conforme necessário) */
+        position: fixed; 
+        bottom: 7vw;
+        right: 1vw; 
+        width: 20vw; 
         height: 20vw;
         border-radius: 20px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra do carrinho */
-        z-index: 999; /* Define a ordem de empilhamento (z-index) para que fique acima de outros elementos */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+        z-index: 999; 
       }
       .carrinho img{
         width: 10vw;

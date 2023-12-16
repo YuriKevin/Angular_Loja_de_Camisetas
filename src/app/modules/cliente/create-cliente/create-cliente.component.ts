@@ -33,8 +33,6 @@ export class CreateClienteComponent  implements OnInit{
 
       submit(){
         this.carregar = true;
-          //this.cliente.nome= this.form.get('nome')?.value,
-          //this.cliente.cpf= this.form.get('cpf')?.value,
         
         console.log(this.form.value);
         this.clienteService.create(this.form.value).subscribe(res => {

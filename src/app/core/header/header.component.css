@@ -65,7 +65,7 @@ header h1{
 }
 .background button{
     position: fixed;
-    top: 1vw; /* A partir do topo */
+    top: 1vw; 
     left: 35vw; 
     width: 10vw;
     height: 4vw;
@@ -81,7 +81,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Ajuste o valor conforme necessário para garantir que o cabeçalho esteja acima de outros elementos */
+    z-index: 1000; 
     margin-bottom: 2vw;
     border-radius: 30px;
 }
@@ -106,8 +106,7 @@ input{
     font-size: 1.5vw;
 }
 input:focus {
-    outline: none; /* Remove a borda de foco padrão */
-    /* Outros estilos que você deseja aplicar quando o input é clicado */
+    outline: none; 
 }
 img{
     width: 3vw;
@@ -131,7 +130,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Ajuste o valor conforme necessário para garantir que o cabeçalho esteja acima de outros elementos */
+    z-index: 1000; 
     font-family: 'Lexend', sans-serif;
     margin-bottom: 5vw;
 }
@@ -147,7 +146,7 @@ header {
         font-size: 4vw;
     }
     input:focus {
-        outline: none; /* Remove a borda de foco padrão */
+        outline: none; 
     }
     img{
         width: 12vw;

@@ -7,8 +7,7 @@ import { CamisetaVenda } from './camisetavenda';
   providedIn: 'root'
 })
 export class VendaService {
-  private apiURL = "https://springcamisetas-production.up.railway.app/";
-  //private apiURL = "https://springcamiseta-production.up.railway.app/";
+  private apiURL = "localhost:8080/";
 
   
   httpOptions = {
