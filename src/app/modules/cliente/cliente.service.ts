@@ -9,7 +9,7 @@ import { Cliente } from 'src/app/modules/cliente/cliente';
 })
 export class ClienteService {
 
-  private apiURL = "http://localhost:8080/";
+  private apiURL = "https://springcamisetas-production.up.railway.app/";
   //private apiURL = "https://springcamiseta-production.up.railway.app/";
 
   httpOptions = {
