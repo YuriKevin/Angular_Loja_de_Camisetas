@@ -7,7 +7,7 @@ import { CamisetaVenda } from './camisetavenda';
   providedIn: 'root'
 })
 export class VendaService {
-  private apiURL = "localhost:8080/";
+  private apiURL = "http://localhost:8080/";
 
   
   httpOptions = {

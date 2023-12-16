@@ -11,7 +11,7 @@ import { CamisetaVenda } from '../venda/camisetavenda';
   providedIn: 'root'
 })
 export class CamisetaService {
-  private apiURL = "localhost:8080/";
+  private apiURL = "http://localhost:8080/";
 
   public carrinho: CamisetaVenda[] = [];
 
