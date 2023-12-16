@@ -27,23 +27,10 @@ header h1{
     display: block;
     margin-bottom: 1vw;
 }
-.menu{
-    position: absolute;
-    top: 5vw;
-    left: 2vw;
-    height: 4vw;
-    display: flex;
-    background-color: #fff;
-    color: #F4483C;
- 
-}
-.menu img{
-    border-radius: 10px;
-    margin-right: 1vw;
-}
+
 .rastreio{
     position: absolute;
-    top: 8vw;
+    top: 3.5vw;
     left: 2vw;
     display: flex;
     color: #F4483C;
@@ -66,50 +53,6 @@ header h1{
     margin: auto;
     margin-top: 0.5vw;
     margin-left: 45vw;
-}
-.openMenu{
-    position: absolute;
-    width: auto;
-    height: auto;
-    top: 7vw;
-    left: 35vw;
-    background-color: #F4483C;
-    font-size: 2vw;
-    border-radius: 20px;
-    
-
-}
-.openMenu ul{
-    padding: 1vw;
-    margin: 1vw;
-    color: #000000;
-    background-color: #fff;
-    border-radius: 10px;
-    list-style: none;
-    align-items: center;
-    justify-content: center;
-
-}
-.openMenu ul img{
-    margin-right: 1vw;
-    margin-left: 1vw;
-    margin-top:0.2vw;
-}
-.openMenu li{
-    margin-left: 1vw;
-    margin-right: 1vw;
-    margin-top: 0.5vw;
-    margin-bottom: 0.5vw;
-    display: flex;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    height: 4vw;
-    border-radius: 10px;
-    
-}
-.openMenu h4{
-    margin-top:0.2vw;
-    margin-right: 1vw;
-    
 }
 .background{
     position: fixed;
@@ -218,26 +161,10 @@ header {
         width: 55%;
         
     }
-    .menu{
-        position: absolute;
-        top: 14vw;
-        left: 2vw;
-        height: 4vw;
-        display: flex;
-        background-color: #fff;
-        color: #F4483C;
-        font-size: 0vw;
-     
-    }
-    .menu img{
-        border-radius: 10px;
-        margin-right: 1vw;
-        width: 10vw;
-        height: auto;
-    }
+
     .rastreio{
         position: absolute;
-        top: 25vw;
+        top: 14vw;
         left: 2vw;
         display: flex;
         color: #F4483C;

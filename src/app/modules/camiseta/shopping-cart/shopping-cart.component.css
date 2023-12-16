@@ -5,7 +5,6 @@
     width: 100%;
     margin-left: 25vw;
     margin-bottom: 2vw;
-    
 }
 .titulo h2{
     margin-left: 1vw;
@@ -60,7 +59,21 @@
     display: block;
     margin-top: 1vw;
 }
-@media (min-width: 768px) {
+.voltar{
+    margin-right: 70%;
+    margin-bottom: 3vw;
+    background-color: #F4483C;
+    color: white;
+    width: 10vw;
+    height: 5vw;
+    font-size: 2vw;
+    border-radius: 3vw;
+    border-color: #F4483C;
+    margin-left: 2vw;
+   }
+   .voltar img{
+    height: 90%;
+   }
     button{
         height: 3vw;
         width: 10vw;
@@ -71,8 +84,6 @@
         margin-left: 1vw;
         background-color: #F4483C;
     }
-}
-
 h1{
     margin: auto;
     font-size: 2vw;

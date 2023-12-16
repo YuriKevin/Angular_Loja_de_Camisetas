@@ -1,12 +1,13 @@
 <app-header></app-header>
 <app-loading *ngIf="carregar"></app-loading>
 <main>
-<button class="voltar" [routerLink]="['/shopping_cart']">Voltar</button>
+    <div class="voltarWidth">
+        <button class="voltar" [routerLink]="['/shopping_cart']"><img src="../../../../assets/images/voltar.png" alt=""></button>
+    </div>
     <div class="container">
         <div class="input" *ngIf="!nome || !cliente">
             <label for="cpfInput">Insira seu CPF:</label>
             <input type="text" id="cpfInput" placeholder="Digite seu CPF" [(ngModel)]="cpf" (ngModelChange)="onCpfChange()" [maxlength]="11">
-
         </div>
         <div class="input" *ngIf="!nome || !cliente">
             <label for="cpfInput">Redigite seu CPF:</label>
@@ -17,28 +18,199 @@
             <label for="nomeInput">Insira seu nome completo:</label>
             <input type="text" id="nomeInput" placeholder="Digite seu nome" [(ngModel)]="nome">
         </div>
+        <h5 *ngIf="nome && cpf && cadastrar && !naoCoincide">Ao clicar em cadastrar você concorda com os <a href="">termos de uso do site</a>.</h5>
         <button class="voltar cadastrar_btn" (click)="cadastrarCliente()" *ngIf="nome && cpf && cadastrar && !naoCoincide">Cadastrar</button>
         <h3 class="nome" *ngIf="cliente">Seja bem-vindo! {{this.cliente.nome}}</h3>
     
     <h3>Camisetas:</h3>
-    <div class="card" *ngFor="let camiseta of camisetas">
-        <img [src]="camiseta.camiseta.imagem" alt="{{ camiseta.camiseta.clube }}">
-        <div class="infos">
-            <h3>{{ camiseta.camiseta.clube }}</h3>
-            <h4>{{ camiseta.camiseta.ano }}</h4>
-            <h5>R$ {{ camiseta.camiseta.valor }}</h5>
-            <h3>Quantidade: {{ camiseta.quantidade }}</h3>
+    <div class="flex">
+        <div class="card" *ngFor="let camiseta of camisetas">
+            <img [src]="camiseta.camiseta.imagem" alt="{{ camiseta.camiseta.clube }}">
+            <div class="infos">
+                <h3>{{ camiseta.camiseta.clube }}</h3>
+                <h4>{{ camiseta.camiseta.ano }}</h4>
+                <h5>R$ {{ camiseta.camiseta.valor }}</h5>
+                <h3>Quantidade: {{ camiseta.quantidade }}</h3>
+            </div>
         </div>
     </div>
     <h3>Valor total: R$ {{this.valorCompra}}</h3>
+    <div class="opcoes-pagamento">
+        <div [class.selecionado]="opcaoPagamento === 'boleto'" (click)="opcCompra('boleto')">
+            <img src="../../../../assets/images/boleto.png" alt="Boleto">
+            <h1>Boleto</h1>
+        </div>
+        <div [class.selecionado]="opcaoPagamento === 'cartao'" (click)="opcCompra('cartao')">
+            <img src="../../../../assets/images/cartao.png" alt="Cartão">
+            <h1>Cartão</h1>
+        </div>
+        <div [class.selecionado]="opcaoPagamento === 'pix'" (click)="opcCompra('pix')">
+            <img src="../../../../assets/images/pix.png" alt="Pix">
+            <h1>Pix</h1>
+        </div>
+    </div>
     <button class="green" (click)="efetuarCompra()"  [disabled]="!cliente">Efetuar Compra</button>
 </div>
-<div class="aprovado" *ngIf="aprovado">
-        <button class="green" [routerLink]="['']">Voltar para o site</button>
-    <div class="quadrado">
-        <h1>Pagamento aprovado!</h1>
-        <img src="../../../../assets/images/correct.png" alt="validado">
-    </div>
-</div>
+
 </main>
 <app-footer></app-footer>
+
+<div *ngIf="cartao"class="back back2">
+<div>
+    <div  class="pagamentoCartao">
+       <div class="faixaBranca"></div>
+       <div class="dados">
+            <h1>Número do cartão:</h1>
+            <div class="dados3">
+                <input type="number" name="" id="input1" placeholder="0000" class="inputMedio" [maxLength]="11" (input)="verificarTamanho($event, 'input2')" [(ngModel)]="num1Cartao">
+                <input type="number" name="" id="input2" placeholder="0000" class="inputMedio" [maxLength]="11" (input)="verificarTamanho($event, 'input3')" [(ngModel)]="num2Cartao">
+                <input type="number" name="" id="input3" placeholder="0000" class="inputMedio" [maxLength]="11" (input)="verificarTamanho($event, 'input4')" [(ngModel)]="num3Cartao">
+                <input type="number" name="" id="input4" placeholder="0000" class="inputMedio" [maxLength]="11" (input)="verificarTamanho($event, '')" [(ngModel)]="finalCartao">
+            </div>
+       </div>
+       <div class="dados dados2">
+        <div>
+            <h1>Data de validade:</h1>
+            <label for="mes">Mês:</label>
+            <select id="mes">
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            <label class="ano" for="ano">Ano:</label>
+            <select id="ano">
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+            </select>
+        </div>
+        <div class="cvv">
+            <h1>CVV:</h1>
+            <input type="number" name="" id="" class="inputCurto" placeholder="000" [(ngModel)]="cvvCartao" [maxLength]="3">
+        </div>
+       </div>
+       <div class="dados">
+        <h1>Nome do titular:</h1>
+        <input type="text" name="" id="" class="inputLongo" placeholder="EX: Yuri Kevin Araujo" [(ngModel)]="nomeCartao" [maxLength]="25">
+    </div>
+    </div>
+    <button class="cartao-btn" (click)="opcCompra('cartao')">Confirmar</button>
+    </div>
+</div>
+
+
+
+<div class="back" *ngIf="meioPagamento">
+<div *ngIf="boleto" class="pagamento">
+    <div class="tituloPagamento">
+        <div>
+            <h1>Camisetas</h1>
+        </div>
+    <h1>{{gerarNumeroAleatorio(12345678910, 9876543211)}} - {{gerarNumeroAleatorio(12345678910, 9876543211)}}.{{gerarNumeroAleatorio(12345678910, 9876543211)}}.{{gerarNumeroAleatorio(12345678910, 9876543211)}}</h1>
+    </div>
+    <div class="cem">
+        <h1>PAGÁVEL EM QUALQUER AGÊNCIA BRASILEIRA</h1>
+    </div>
+    <div>
+        <div class="setenta">
+            <h1>Data de emissão: </h1>
+            <h1> {{this.data}}</h1>
+        </div>
+        <div class="trinta">
+            <h1>Vencimento:</h1>
+            <h1>2 dias úteis após a emissão.</h1>
+        </div>
+    </div>
+    <div>
+        <div class="instrucoes">
+            <div>
+                <h1>Instruções (texto de responsabilidade do cedente)</h1>
+                <h1>Vencimento após 2 dias úteis a partir da data de emissão.</h1>
+                <h1>Não receber após o vencimento.</h1>
+            </div>
+        </div>
+        <div class="hcem">
+            <div>
+                <div class="trinta2">
+                    <h1>Valor: R$ {{this.valorCompra}}</h1>
+                </div>
+                <div class="trinta2">
+                    <h1>(-)Desconto/abatimentos:</h1>
+                </div>
+                <div class="trinta2">
+                    <h1>(-)Outras deduções:</h1>
+                </div>
+                <div class="trinta2">
+                    <h1>(-)Multa:</h1>
+                </div>
+                <div class="trinta2">
+                    <h1>(-)Outros acréscimos:</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="codigodebarras">
+        <img src="../../../../assets/images/codigodebarras.png" alt="código de barras">
+        <img src="../../../../assets/images/codigodebarras.png" alt="código de barras">
+        <img src="../../../../assets/images/codigodebarras.png" alt="código de barras">
+    </div>
+</div>
+
+
+
+<div *ngIf="cartao" class="pagamentoNoCartao">
+    <h1>Pagamento aprovado!</h1>
+    <div class="pagamentoCartao">
+        <div class="faixaBranca"></div>
+        <div class="dados">
+             <h1>Número do cartão:</h1>
+             <div class="dados3">
+                <h1>****</h1>
+                <h1>****</h1>
+                <h1>****</h1>
+                <h1>{{this.finalCartao}}</h1>
+            </div>
+        </div>
+        </div>
+        <div class="dados">
+         <h1>Nome do titular:</h1>
+            <h1>{{this.nomeCartao}}</h1>
+        </div>
+</div>
+
+
+
+
+<div *ngIf="pix" class="pagamentoPix">
+    <div>
+        <div>
+            <img src="../../../../assets/images/pix.png" alt="">
+            <h1>PIX</h1>
+        </div>
+        <div class="qrcode">
+            <img src="../../../../assets/images/qrcode.png" alt="">
+        </div>
+        <div class="pixCode">
+            <h1>{{gerarNumeroAleatorio(12345678910, 9876543211)}}</h1>
+            <div>
+                <img src="../../../../assets/images/copiartexto.png" alt="copiar">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>

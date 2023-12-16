@@ -1,7 +1,7 @@
 <app-header></app-header>
 <app-loading *ngIf="carregar"></app-loading>
 <main *ngIf="notEmpty">
-<button class="voltar" [routerLink]="['']">Voltar</button>
+<button class="voltar" [routerLink]="['']"><img src="../../../../assets/images/voltar.png" alt=""></button>
 <h1 class="titulo">Seu carrinho:</h1>
 <div class="card" *ngFor="let camiseta of camisetas">
     <a [routerLink]="['/details', camiseta.camiseta.id]">

@@ -1,15 +1,30 @@
 
+main{
+  flex-wrap: wrap;
+}
 .container{
     display: block;
     align-items: center;
     margin: auto;
     width: 70%;
 }
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.voltarWidth{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
 input{
     margin-top: 2vw;
     margin-left: 1vw;
-    border-radius: 10pc;
+    border-radius: 5px;
     width: 30vw;
+    height: 2vw;
     
 }
 .payment{
@@ -21,7 +36,8 @@ input{
     width: 25vw;
     height: 5vw;
     font-size: 2vw;
-    border-radius: 3vw;
+    border-radius: 5px;
+    cursor: pointer;
 }
 .aprovado {
     position: fixed; /* Define a posição fixa */
@@ -77,16 +93,20 @@ input{
 
 }
 .voltar{
-  margin-right: 70%;
   margin-bottom: 3vw;
   background-color: #F4483C;
   color: white;
-  width: 15vw;
-  height: 5vw;
+  width: 10vw;
+  height: 4vw;
   font-size: 2vw;
-  border-radius: 3vw;
+  border-radius: 1vw;
   border-color: #F4483C;
   margin-left: 2vw;
+  cursor: pointer;
+ }
+
+ .voltar img{
+  height: 90%;
  }
  .cadastrar_btn{
   background-color: #1f796c;
@@ -96,6 +116,35 @@ input{
  .input{
   margin-bottom: 2vw;
  }
+ .opcoes-pagamento{
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #00BDAE;
+  padding: 1vw;
+  border-radius: 10px;
+  margin-bottom: 2vw;
+ }
+ .opcoes-pagamento img{
+  width: 5vw;
+ }
+ .opcoes-pagamento div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 1vw;
+ }
+ .opcoes-pagamento div:hover{
+background-color: #acaeae;
+ }
+ .opcoes-pagamento h1{
+  font-size: 1.5vw;
+
+ }
+
 @media (max-width: 767px) {
   .voltar{
     width: 25vw;
@@ -108,8 +157,8 @@ input{
    }
    input{
     display: block;
-    border-radius: 3vw;
-    width: 50vw;
+    width: 60vw;
+    height: 4vw;
    }
    label{
     font-size: 4vw;
@@ -122,34 +171,304 @@ input{
    main h3{
     font-size: 5vw;
    }
-   .quadrado{
-    margin-left: 15vw;
-    width: 70vw;
-    height: 45vw;
-    background-color: white;
-    border-radius: 40px;
-    animation: splash 2s ease-in-out; /* Defina o nome da animação, duração e função de temporização */
-    animation-fill-mode: forwards; /* Mantenha o último quadro da animação após a conclusão */
-    opacity: 0; /* Inicialmente invisível */
-  }
-  .quadrado img{
-    width: 30vw;
+
+
+ .opcoes-pagamento img{
+  width: 10vw;
+ }
+ .opcoes-pagamento div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 1vw;
+ }
+ .opcoes-pagamento div:hover{
+  background-color: #acaeae;
+  cursor: pointer;
+ }
+ .opcoes-pagamento h1{
+  font-size: 3vw;
+
+ }
+ 
+}
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Rubik:wght@300;400&display=swap');
+.pagamento{
+    width: fit-content;
     height: fit-content;
-    margin-left: 20vw;
-    margin-bottom: wvw;
-  }
-.quadrado h1{
-    font-size: 5vw;
-    margin-left: 8vw;
+    border: 1px solid black;
+}
+.tituloPagamento{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    font-size: 1vw;
+}
+.tituloPagamento h1{
+  margin-left: 1vw;
+}
+.tituloPagamento div{
+    width: 30%;
+    border-right: 1px solid black;
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    color: #F4483C;
+}
+.pagamento div{
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+}
+.setenta{
+    width: 70%;
+    border: 1px solid black;
+    height: 5vh;
+    font-size: 1vw;
+}
+.setenta h1{
+    font-size:  1.5vw;
+    
+}
+.trinta{
+    width:30%;
+    border: 1px solid black;
+    height: 5vh;
+    font-size:  1.5vw;
+}
+.trinta h1{
+    font-size: 1.5vw;
+    
+}
+.cem{
+    height: 5vh;
+    width: 100%;
+    border: 1px solid black;
+}
+.cem h1{
+    font-size:  1.5vw;
+    
+}
+.instrucoes{
+    width: 70%;
+    border: 1px solid black;
+    height: 50vh;
+    font-size: 1vw;
+    display: flex;
+}
+.instrucoes div{
+   display: block;
+}
+.instrucoes h1{
+    font-size:  1.5vw;
+}
+.codigodebarras{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+.codigodebarras img{
+    margin-top: 2vw;
+    width: 20%;
+}
+.hcem{
+    height: 50vh;
+    border: 1px solid black;
+    width: 30%;
+}
+.hcem div{
+    display: block;
+}
+.trinta2{
+    width:149%;
+    border: 1px solid black;
+    height: 5vh;
+    font-size:  1.5vw;
+    display: block;
+    border-right: none;
+}
+.trinta2 h1{
+    font-size: 1.5vw;
+    
+}
+.qrcode{
+    width: 100%;
+    margin-bottom: 1vh;
+}
+.pagamentoPix{
+    border: 5px solid #00BDAE;
+    border-radius: 10px;
+    width: 50vw;
+    height: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.pagamentoPix div{
+    width: 100%;
+    font-size: 1vw;
+}
+.pagamentoPix div div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pagamentoPix img{
+    width: 5vw;
+}
+.qrcode img{
+    width: 30vw;
+    margin: auto;
+}
+.pixCode{
+    border-top: #00BDAE;
+}
+
+.pagamentoCartao{
+    width: 80vw;
+    height: 40vw;
+    background-color: #F4483C;
+    border: 1px solid #F4483C;
+    border-radius: 20px;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+}
+.pagamentoCartao .faixaBranca{
+    margin-top: 4vw;
+    width: 100%;
+    height: 5vw;
+    background-color: rgb(242, 242, 242);
+    margin-bottom: 4vw;
+}
+.pagamentoCartao .dados{
+    margin-top: 2vw;
+    width: 100%;
+    height: 7vw;
+    display: block;
+    align-items: flex-start;
+    font-size: 0.8vw;
+}
+.pagamentoCartao .dados > *{
+    margin-left: 1vw;
+}
+.cvv > *{
+    margin-left: 1vw;
+}
+.pagamentoCartao .dados2{
+    display: flex;
+ 
+}
+.dados2 div{
+    width: 30%;
+    height: 100%;
+    
+}
+
+.dados input{
+    font-size: 1.5vw;
+}
+.inputLongo{
+    width: 40vw;
+    height: 2vw;
+}
+.inputCurto{
+    width: 3vw;
+    height: 2vw;
+}
+.inputMedio{
+    width: 4vw;
+    height: 2vw;
+    font-size: 1vw;
+}
+.dados select{
+    font-size: 1.5vw;
+}
+.dados label{
+    font-size: 1.5vw;
+}
+.pagamentoCartao input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.pagamentoCartao  input[type="number"]::-webkit-inner-spin-button,
+.pagamentoCartao input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.pagamentoCartao input{
+    background-color: #F4483C;
+    border: none;
+    color: white;
+   
+}
+.pagamentoCartao input:focus {
+   outline: none;
+}
+.ano{
+    margin-left: 1vw;
+}
+.pixCode img{
+    width: 3vw;
+}
+.pixCode div{
+    margin-left: 1vw;
+    border: 1px solid #00BDAE;
+    padding: 1vw;
+    max-width: 4vw;
+    height: auto;
+    border-radius: 10px;
+}
+.pixCode div:hover{
+    background-color: #b7b7b7;
+    cursor: pointer;
+}
+
+.back{
+  position: fixed; /* Define a posição fixa */
+    top: 0; /* A partir do topo */
+    left: 0; /* A partir da esquerda */
+    width: 100%; /* Largura de 100% da janela */
+    height: 100%; /* Altura de 100% da janela */
+    background-color: rgb(255, 255, 255); /* Cor de fundo (use rgba para torná-la semi-transparente) */
+    z-index: 1000; /* Coloca a div acima de outros elementos usando um alto z-index */
+    display: flex; /* Use um layout flex para centralizar o conteúdo verticalmente e horizontalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    font-family: 'Lexend', sans-serif;
+}
+.pagamento{
+    background-color: white;
+}
+.pagamentoPix{
+    background-color: white;
+}
+.selecionado{
+    background-color: #acaeae;
+}
+.cartao-btn{
+width: 20vw;
+background-color:#1f796c;
+color: white;
+height: 5vw;
+margin-top: 2vw;
+cursor: pointer;
+font-size: 2vw;
+}
+.back2{
+      background-color: rgba(23, 23, 23, 0.633);
+}
+.dados3{
+    display: flex;
 
 }
-.aprovado button{
-  margin-top: 30vw;
-  margin-left: 15vw;
-  animation: splash 1s ease-in-out; /* Defina o nome da animação, duração e função de temporização */
-  animation-fill-mode: forwards; /* Mantenha o último quadro da animação após a conclusão */
-
-
+.dados3 > *{
+    margin-right: 1vw;
 }
-
+.pagamentoNoCartao{
+    font-size: 1.5vw;
 }

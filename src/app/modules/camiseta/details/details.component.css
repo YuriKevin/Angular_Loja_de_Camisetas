@@ -91,6 +91,7 @@ main{
     border-radius: 1vw;
     border-color: #F4483C;
     margin-left: 2vw;
+    cursor: pointer;
    }
    input{
     width: 4vw;
