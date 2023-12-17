@@ -12,8 +12,6 @@
     margin-left: 25vw;
     width: fit-content;
     align-items: center;
-
-    
 }
 .pedido h1{
     margin-left: 4vw;
@@ -40,6 +38,7 @@ button{
     margin-left: 10.8vw;
     margin-top: 1vw;
     margin-bottom: 2vw;
+    cursor: pointer;
 
 }
 .card{

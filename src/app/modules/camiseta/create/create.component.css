@@ -1,0 +1,11 @@
+.create-image img{
+    height: 20vw;
+    width: auto;
+    margin-top: 1vw;
+}
+.create-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}

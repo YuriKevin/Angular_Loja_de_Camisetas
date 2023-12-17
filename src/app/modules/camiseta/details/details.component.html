@@ -1,6 +1,6 @@
 <app-header></app-header>
 <app-loading *ngIf="carregar"></app-loading>
-<button class="voltar" [routerLink]="['']">Voltar</button>
+<button class="voltar" [routerLink]="['']"><img src="../../../../assets/images/voltar.png" alt=""></button>
 <main *ngIf="camiseta">
     <div class="card">
       <img [src]="camiseta.imagem" alt="{{ camiseta.clube }}">

@@ -7,11 +7,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
-  styleUrls: ['../edit/edit.component.css']
+  styleUrls: ['../edit/edit.component.css', './create.component.css']
 })
 export class CreateComponent implements OnInit{
   form!: FormGroup;
   carregar:boolean = true;
+  imagemFormulario!:string;
 
   constructor(
     public camisetaService: CamisetaService,

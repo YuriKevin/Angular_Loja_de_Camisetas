@@ -60,20 +60,21 @@
             <div class="atributos">
                 <label for="imagem">URL da Imagem:</label>
                 <input 
+                    [(ngModel)]="imagemFormulario"
                     formControlName="imagem"
                     id="imagem" 
                     type="text">
                 <div *ngIf="f['imagem'].touched && f['imagem'].invalid" class="alert">
                     <div *ngIf="f['imagem'].errors?.['required']">(Preencha o campo acima)</div>
                 </div>
-                <div *ngIf="f['imagem'].touched && f['imagem'].valid" class="alert">
-                    <div *ngIf="f['imagem'].errors?.['required']"><img src="" alt=""></div>
+                <div *ngIf="f['imagem'].touched && f['imagem'].valid" class="create-image">
+                    <div *ngIf="imagemFormulario"><img [src]="imagemFormulario" alt="Camiseta"></div>
                 </div>
             </div>
             <button type="submit" [disabled]="!form.valid">Adicionar</button>
         </form>
     </div>
-
+    
     </main>
 </body>
 <app-footer class="footer"></app-footer>
