@@ -13,11 +13,10 @@ Esta aplicação complementa uma API construída em Java com Spring Boot que est
 - Transforma as imagens dos usuários em strings na base 64 para salvar no servidor;
 - Usa recursos importantes do framework Angular, como: manipulação de rotas, separação de módulos, uso de Observable, uso de diretivas estruturais, reutilização de componentes do core (que são utilizados em todo o sistema, como header e footer), importação de bilbiotecas como "HTTP" e "Router", entre outras coisas.
 
-###
+## Como utilizar?
 Para utilizar esta aplicação, execute-a na porta 4200 (padrão do angular) abrindo a pasta no terminal e executando o comando "ng serve".  
 Não se esqueça de executar o back-end junto! [(back-end)](https://github.com/YuriKevin/SpringBoot_Loja_de_Camisetas)
 
-###
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+### This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
 
