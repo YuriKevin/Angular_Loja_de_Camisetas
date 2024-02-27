@@ -42,12 +42,15 @@ export class DetailsComponent implements OnInit {
   
     if (this.id !== null) {
       console.log(this.id);
-
-       this.camisetaService.find(this.id).subscribe((data: Camiseta)=>{
-        this.camiseta = data;
-        this.carregar=false;
-
-        })
+      this.camisetaService.find(this.id).subscribe({
+        next: (data: Camiseta) => {
+          this.camiseta = data;
+        this.carregar = false;
+      },
+      error: (error: any) => {
+        console.error('Ocorreu um erro ao buscar a camiseta:', error);
+        this.carregar = false; }
+      });
        
     }
     else{

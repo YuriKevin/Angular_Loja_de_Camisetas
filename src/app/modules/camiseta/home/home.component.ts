@@ -70,14 +70,19 @@ export class HomeComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.camisetaService.getCamisetas().subscribe((data: Camiseta[])=>{
-    this.camisetas = data;
-    this.camisetasFiltradas = this.camisetas;
-    this.carregar=false;
-    
-    
-    })
-    }
+    this.carregar = true; 
+  
+    this.camisetaService.getCamisetas().subscribe({
+      next: (data: Camiseta[]) => {
+        this.camisetas = data;
+        this.camisetasFiltradas = this.camisetas;
+      this.carregar = false;
+    },
+    error: (error: any) => {
+      console.error('Ocorreu um erro ao buscar as camisetas:', error);
+      this.carregar = false; }
+    });
+  }
     
     mostrarProximaImagem() {
       this.imagemAtualIndex = (this.imagemAtualIndex + 1) % this.imagens.length;

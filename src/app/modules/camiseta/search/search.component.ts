@@ -23,11 +23,16 @@ export class SearchComponent implements OnInit {
 
       if (this.nome !== '') {
         console.log(this.nome);
-
-        this.camisetaService.findByClub(this.nome).subscribe((data: Camiseta[]) => {
-          this.camisetas = data;
-          console.log(this.camisetas);
-          this.carregar = false;
+        this.camisetaService.findByClub(this.nome).subscribe({
+          next: (data:Camiseta[]) => {
+            this.camisetas = data;
+            console.log(this.camisetas);
+            this.carregar = false;
+          },
+          error: (error: any) => {
+            this.carregar = false;
+            alert('nenhuma camiseta encontrada.');
+          }
         });
       } else {
         this.router.navigateByUrl('');
@@ -38,10 +43,16 @@ export class SearchComponent implements OnInit {
       if (this.nome !== '') {
         console.log(this.nome);
 
-        this.camisetaService.findByPais(this.nome).subscribe((data: Camiseta[]) => {
+        this.camisetaService.findByPais(this.nome).subscribe({
+          next: (data:Camiseta[]) => {
           this.camisetas = data;
           console.log(this.camisetas);
           this.carregar = false;
+          },
+          error: (error: any) => {
+            this.carregar = false;
+            alert('nenhuma camiseta encontrada.');
+          }
         });
       } else {
         this.router.navigateByUrl('');

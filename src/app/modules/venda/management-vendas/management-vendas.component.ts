@@ -14,22 +14,34 @@ export class ManagementVendasComponent implements OnInit{
 
   constructor(public vendaService: VendaService) { }
   ngOnInit(): void {
-    this.vendaService.getVendas().subscribe((data: Venda[])=>{
-    this.vendas = data;
-    this.vendasFiltradas = this.vendas;
-    this.carregar = false;
+    this.vendaService.getVendas().subscribe({
+      next: (data:Venda[]) => {
+        this.vendas = data;
+        this.vendasFiltradas = this.vendas;
+        this.carregar = false;
+      },
+      error: (error) => {
+        this.carregar = false;
+        alert('erro ao carregar as informações.');
+      }
     })
     }
     deleteVenda(id: number): void {
       if (confirm('Tem certeza que deseja excluir esta venda?')) {
         
-        this.vendaService.delete(id).subscribe((res) => {
+        this.vendaService.delete(id).subscribe({
+          next: () => {
           this.carregar=true;
           const index = this.vendas.findIndex(venda => venda.id === id);
           if (index !== -1) {
-            this.vendas.splice(index, 1); // Remove a camiseta do array pelo índice
+            this.vendas.splice(index, 1);
           }
           this.carregar = false;
+        },
+        error: (error) => {
+          this.carregar = false;
+          alert('erro ao deletar a venda.');
+        }
         });
       }
     }
