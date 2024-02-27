@@ -115,10 +115,6 @@ export class BuyComponent implements OnInit{
         return;
       }
     }
-     
-
-    
-
     this.carregar=true;
     this.venda = {} as Venda
     this.venda.camisetaVendas = this.camisetas;
