@@ -62,7 +62,7 @@ export class CamisetaService {
 
     create(camiseta:Camiseta):  Observable<any> {
 
-      return this.httpClient.post(this.apiURL + 'camisetas/', JSON.stringify(camiseta), this.httpOptions)
+      return this.httpClient.post(this.apiURL + 'camisetas', JSON.stringify(camiseta), this.httpOptions)
   
       .pipe(
         catchError(this.errorHandler)
@@ -79,7 +79,7 @@ export class CamisetaService {
     }
        
     delete(id:number){
-      return this.httpClient.delete(this.apiURL + '/camisetas/' + id, this.httpOptions)
+      return this.httpClient.delete(this.apiURL + 'camisetas/' + id, this.httpOptions)
       .pipe(
         catchError(this.errorHandler)
       )
