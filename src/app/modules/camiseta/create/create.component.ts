@@ -37,12 +37,46 @@ export class CreateComponent implements OnInit{
 
       submit(){
         this.carregar=true;
+        this.form.patchValue({
+          imagem: this.imagemFormulario
+        });
         console.log(this.form.value);
-        this.camisetaService.create(this.form.value).subscribe(res => {
-          this.carregar=false;
-             alert('Camiseta criada com sucesso!');
-             this.router.navigateByUrl('details/'+res.id), { target: '_blank' };
+        this.camisetaService.create(this.form.value).subscribe({
+          next: (data:Camiseta) => {
+            this.carregar=false;
+            alert('Camiseta criada com sucesso!');
+            this.router.navigateByUrl('details/'+data.id), { target: '_blank' };
+          },
+          error: (error) => {
+            this.carregar=false;
+            alert('Erro ao criar a camiseta.');
+          }
         })
+      }
+      handleFileInput(event: Event): void {
+        const inputElement = event.target as HTMLInputElement;
+        const files = inputElement?.files;
+        if (files && files.length > 0) {
+          const file = files[0];
+          if (this.isImageFile(file)) {
+            this.readFileAsBase64(file);
+          } else {
+            console.log("O arquivo selecionado não é uma imagem.");
+          }
+        }
+      }
+    
+      isImageFile(file: File): boolean {
+        return file.type.startsWith('image/');
+      }
+    
+      readFileAsBase64(file: File): void {
+        const reader = new FileReader();
+        reader.onload = () => {
+          this.imagemFormulario = reader.result as string;
+          console.log(this.imagemFormulario);
+        };
+        reader.readAsDataURL(file);
       }
         
 
