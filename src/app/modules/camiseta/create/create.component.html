@@ -58,17 +58,20 @@
                 </div>
             </div>
             <div class="atributos">
-                <label for="imagem">URL da Imagem:</label>
+                <div class="input-image">
+                    <label for="fileInput" class="custom-file-upload">
+                        Escolher arquivo da imagem
+                    </label>
+                    <input  id="fileInput" type="file" (change)="handleFileInput($event)" hidden>
+                </div>
                 <input 
                     [(ngModel)]="imagemFormulario"
                     formControlName="imagem"
                     id="imagem" 
-                    type="text">
-                <div *ngIf="f['imagem'].touched && f['imagem'].invalid" class="alert">
-                    <div *ngIf="f['imagem'].errors?.['required']">(Preencha o campo acima)</div>
-                </div>
-                <div *ngIf="f['imagem'].touched && f['imagem'].valid" class="create-image">
-                    <div *ngIf="imagemFormulario"><img [src]="imagemFormulario" alt="Camiseta"></div>
+                    type="text"
+                    hidden>
+                <div *ngIf="imagemFormulario" class="create-image">
+                    <div><img [src]="imagemFormulario" alt="Camiseta"></div>
                 </div>
             </div>
             <button type="submit" [disabled]="!form.valid">Adicionar</button>
