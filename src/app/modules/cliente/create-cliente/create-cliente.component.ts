@@ -38,8 +38,8 @@ export class CreateClienteComponent  implements OnInit{
         this.clienteService.create(this.form.value).subscribe(res => {
           this.carregar = false;
           
-             alert('Camiseta criada com sucesso!');
-             this.router.navigateByUrl('clientes/details/'+res.id);
+             alert('Cliente criado com sucesso!');
+             this.router.navigateByUrl('create');
         })
       }
         
