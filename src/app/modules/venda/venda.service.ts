@@ -20,7 +20,7 @@ export class VendaService {
 
     getVendas(): Observable<Venda[]> {
 
-      const url = this.apiURL + 'vendas/';
+      const url = this.apiURL + 'vendas';
   
       return this.httpClient.get<Venda[]>(url, this.httpOptions)
         .pipe(
@@ -62,7 +62,7 @@ export class VendaService {
 
     }
     AtualizaCamisetasVenda(camiseta:CamisetaVenda){
-      return this.httpClient.put(this.apiURL + '/vendas/atualiza_camiseta', JSON.stringify(camiseta), this.httpOptions)
+      return this.httpClient.put(this.apiURL + 'vendas/atualiza_camiseta', JSON.stringify(camiseta), this.httpOptions)
       .pipe(
         catchError(this.errorHandler)
       )
@@ -84,7 +84,7 @@ export class VendaService {
     }
 
     save(venda:Venda): Observable<any>{
-      return this.httpClient.post(this.apiURL + 'vendas/', JSON.stringify(venda), this.httpOptions)
+      return this.httpClient.post(this.apiURL + 'vendas', JSON.stringify(venda), this.httpOptions)
       .pipe(
         catchError((error: any) => {
             const mensagemDeErro = error.error.message;

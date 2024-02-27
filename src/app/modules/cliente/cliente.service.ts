@@ -45,7 +45,7 @@ export class ClienteService {
 
     create(cliente:Cliente):  Observable<any> {
 
-      return this.httpClient.post(this.apiURL + 'clientes/', JSON.stringify(cliente), this.httpOptions)
+      return this.httpClient.post(this.apiURL + 'clientes', JSON.stringify(cliente), this.httpOptions)
   
       .pipe(
         catchError((error: any) => {
@@ -67,7 +67,7 @@ export class ClienteService {
     }
 
     delete(id:number){
-      return this.httpClient.delete(this.apiURL + '/clientes/' + id, this.httpOptions)
+      return this.httpClient.delete(this.apiURL + 'clientes/' + id, this.httpOptions)
       .pipe(
         catchError(this.errorHandler)
       )
