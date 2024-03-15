@@ -17,6 +17,9 @@ Esta aplicação complementa uma API construída em Java com Spring Boot que est
 Para utilizar esta aplicação, execute-a na porta 4200 (padrão do angular) abrindo a pasta no terminal e executando o comando "ng serve".  
 Não se esqueça de executar o back-end junto! [(back-end)](https://github.com/YuriKevin/SpringBoot_Loja_de_Camisetas)
 
+## Diagrama de classes
+![Diagrama de classes](diagrama_classes.jpg)
+
 ### This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
 
